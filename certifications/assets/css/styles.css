@@ -1,0 +1,9 @@
+#certifications_container
+{
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_2);
+    margin: auto;
+    padding: 0;
+}

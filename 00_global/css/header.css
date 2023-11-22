@@ -1,0 +1,141 @@
+#header
+{
+    height: 75px;
+    width: 900px;
+    max-width: 900px;
+    background: var(--first);
+    margin: 0 auto 0px auto;
+    padding: var(--gap_1) var(--gap_2);
+    box-shadow: var(--shadow_max);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#header > a
+{
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    font-size: .9rem;
+}
+
+#header #header_nav
+{
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: .9rem;
+}
+#header #header_nav a:last-child
+{
+    background: var(--second);
+    color: var(--first);
+    padding: .5rem 1rem;
+}
+#header_menu_button
+{
+    display: none;
+    -webkit-transition: var(--transition_1);
+    -moz-transition: var(--transition_1);
+    -o-transition: var(--transition_1);
+    transition: var(--transition_1);
+    overflow: hidden;
+}
+
+#header_mobile_menu
+{
+    display: flex;
+    max-height:0px;
+    flex-direction: column;
+    padding: 0 var(--gap_2);
+    gap: var(--gap_1);
+    overflow: hidden;
+    background: var(--second);
+
+    -webkit-transition: var(--transition_2);
+    -moz-transition: var(--transition_2);
+    -o-transition: var(--transition_2);
+    transition: var(--transition_2);
+}
+#header_mobile_menu > a
+{
+    flex-direction: column;
+    padding: var(--gap_0) var(--gap_1);
+    color: var(--first); 
+    max-width: 50%;
+    border-left: solid 5px var(--first);
+    border-bottom: solid 2px var(--first);
+}
+
+/* Tablet */
+/* Tablet */
+/* Tablet */
+/* Tablet */
+    
+@media only screen and (max-width: 821px) 
+{  
+    #header #header_nav
+    {
+        display: none;
+    }
+    #header
+    {
+        width: 100%;
+        padding: 15px 25px;
+    }
+    #header_menu_button
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: 25px;
+        height: 25px;
+        justify-content: center;
+        margin: 0 0 0 auto;
+    }
+    #header_menu_button > div
+    {
+        height: 2px;
+        width: 100%;
+        background: var(--second);
+    }
+}
+    
+/* Mobile */
+/* Mobile */
+/* Mobile */
+/* Mobile */
+    
+@media only screen and (max-width: 439px)  
+{ 
+    #header .header_nav
+    {
+        display: none;
+    }
+    #header
+    {
+        width: 100%;
+        padding: 15px 25px;
+    }
+    #header_menu_button
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        width: 25px;
+        height: 25px;
+        justify-content: center;
+        margin: 0 0 0 auto;
+    }
+    #header_menu_button > div
+    {
+        height: 2px;
+        width: 100%;
+        background: var(--second);
+    }
+    #header_mobile_menu > a
+    {
+        max-width: 60%;
+    }
+}

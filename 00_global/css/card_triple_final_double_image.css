@@ -1,0 +1,112 @@
+#card_triple_final_double_image
+{
+    display: flex;
+    max-width: 900px;
+    width: 900px;
+    margin: 0 auto 0 auto;
+    z-index: 2;
+    gap: 3rem;
+}
+#card_triple_final_double_image > div:not(.small_couple_image)
+{
+    display: flex;
+    box-shadow: var(--shadow_max);
+    z-index: 2;
+    background: var(--first);
+    justify-content: space-around;
+    width: 33%;
+}
+.small_couple_image
+{
+    display: flex;
+    z-index: 2;
+    gap: 2rem;
+    justify-content: space-around;
+    width: 33%;
+    box-shadow: none;
+}
+
+.small_couple_image > div
+{
+    box-shadow: var(--shadow_max);
+}
+
+
+
+/* Tablet */
+/* Tablet */
+/* Tablet */
+/* Tablet */
+    
+@media only screen and (max-width: 821px) 
+{  
+    #card_triple_final_double_image
+    {
+        display: flex;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        z-index: 2;
+        gap: var(--gap_3);
+    }
+    #card_triple_final_double_image > div:not(.small_couple_image)
+    {
+        display: flex;
+        z-index: 2;
+        justify-content: center;
+        width: 33%;
+        margin: auto;
+    }
+    #card_triple_final_double_image > div > img
+    {
+        width: 100%;
+    }
+    .small_couple_image
+    {
+        display: flex;
+        z-index: 2;
+        gap: var(--gap_2);
+        justify-content: space-around;
+        width:30%;
+    }
+    #card_triple_final_double_image > .small_couple_image > img
+    {
+        width: 100%;
+    }
+}
+    
+/* Mobile */
+/* Mobile */
+/* Mobile */
+/* Mobile */
+    
+@media only screen and (max-width: 439px)  
+{ 
+    #card_triple_final_double_image
+    {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        z-index: 2;
+        gap: 50px;
+        padding: 0 50px;
+    }
+    #card_triple_final_double_image > div:not(.small_couple_image)
+    {
+        width: 100%;
+    }
+    #card_triple_final_double_image > div img
+    {
+        width: 100%;
+    }
+    .small_couple_image
+    {
+        width: 100% !important;
+        padding: 0 0px;
+        gap: 0px;
+        justify-content: space-between;
+    }
+}

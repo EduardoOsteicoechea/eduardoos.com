@@ -1,0 +1,130 @@
+#card_couple_vertical_text
+{
+    display: flex;
+    max-width: 900px;
+    margin:25px auto 0 auto;
+    z-index: 2;
+    gap: 3rem;
+}
+.card_couple_vertical_text
+{
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap_4);
+    box-shadow: var(--shadow_max);
+    z-index: 2;
+    background: var(--first);
+    width: 50%;
+    gap: var(--gap_3);
+}
+#card_couple_vertical_text_left
+{
+    justify-content: space-between;
+}
+
+#card_couple_vertical_text_left a button
+{
+    width: 100%;
+    display: block;
+    background: var(--second);
+    color: var(--first);
+    align-self: flex-end;
+}
+#card_couple_vertical_text_right
+{
+
+}
+#card_couple_vertical_text_right > div
+{
+    display: flex;
+    z-index: 2;
+    gap: var(--gap_2);
+    width: 100%;
+}
+#card_couple_vertical_text_right > div *
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    gap: var(--gap_2);
+}
+
+#card_couple_vertical_text_right a
+{
+    width: 100%;
+    display: block;
+}
+#card_couple_vertical_text_right a button
+{
+    width: 100%;
+    display: block;
+    background: var(--second);
+    color: var(--first);
+    align-self: flex-end;
+    bottom: 0;
+}
+
+
+
+
+/* Tablet */
+/* Tablet */
+/* Tablet */
+/* Tablet */
+    
+@media only screen and (max-width: 821px) 
+{  
+
+}
+    
+/* Mobile */
+/* Mobile */
+/* Mobile */
+/* Mobile */
+    
+@media only screen and (max-width: 439px)  
+{ 
+    #card_couple_vertical_text
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 0 auto;
+    z-index: 2;
+    gap: var(--gap_2);
+    padding: 0 25px;
+}
+.card_couple_vertical_text
+{
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap_2) var(--gap_2) var(--gap_3) var(--gap_2);
+    box-shadow: var(--shadow_max);
+    z-index: 2;
+    background: var(--first);
+    gap: var(--gap_2);
+}
+#card_couple_vertical_text_left
+{
+    width: 100%;
+}
+#card_couple_vertical_text_right
+{
+    width: 100%;
+}
+#card_couple_vertical_text_right > div
+{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    gap: 1rem;
+}
+#card_couple_vertical_text_right > div *
+{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    gap: 1rem;
+}
+}
