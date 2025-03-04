@@ -1,8 +1,10 @@
 <?php
-$root_folder = "../";
-include $root_folder . "_/_.php";
-
-new page_head($root_folder,null,"Inicio","inicio","La cosmovisión de Eduardo Osteicoechea.",  [""], "light");
-
-new page_foot($root_folder);
+   $root_folder = "../";
+   include $root_folder . "_/_.php";
+   include $root_folder . "_/components/hero/hero_001/_.php";
+   
+   $hero_001 = new hero_001($root_folder,null,"Inicio","inicio","Eduardo Osteicoechea", "light","fotoPersonal1080x1920.jpg","Personal Image");
+   new page_head($root_folder,null,"Inicio","inicio","La cosmovisión de Eduardo Osteicoechea.",  [$hero_001->print_styles()], "light");
+   echo $hero_001->print_markup();
+   new page_foot($root_folder);
 ?>

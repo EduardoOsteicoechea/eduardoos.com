@@ -85,6 +85,8 @@
                padding: 1.25rem 1.25rem 0rem 1.25rem;
                height:4rem;
                width:100%;
+               position:absolute;
+               z-index:10000;
             }
 
             .'.$this->component_class.'_logo_container

@@ -88,9 +88,10 @@
                width:100%;
                background:var(--c1);
                position:absolute;
-               top:3.5rem;
+               top:3.25rem;
                left:0%;
-               transition:var(--tr2)
+               transition:var(--tr2);
+               z-index:10000;
             }
 
             .opened_menu
