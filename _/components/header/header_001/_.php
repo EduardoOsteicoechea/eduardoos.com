@@ -38,16 +38,17 @@
             id="' . $this->component_id . "_" . 'outer_container"
             class="' . $this->component_class . "_" . 'outer_container"
             >
-               <div
-               id="' . $this->component_id . "_" . 'logo_container"
-               class="' . $this->component_class . "_" . 'logo_container"
-               >eduardoos.com</div>
-
                <button
                id="' . $this->component_id . "_" . 'button"
                class="' . $this->component_class . "_" . 'button"
                data-target-checkbox="'.$this->menu_outer_container_id.'"
                >menú</button>
+
+               <div
+               id="' . $this->component_id . "_" . 'logo_container"
+               class="' . $this->component_class . "_" . 'logo_container"
+               >eduardoos.com</div>
+
             </div>
 
             <script type="module">
@@ -96,7 +97,7 @@
             .'.$this->component_class.'_button
             {
                height: 2rem;
-               margin: 0 0 0 auto;
+               margin: 0 auto 0 0;
             }
 
              @media only screen and (max-width: 650px) 

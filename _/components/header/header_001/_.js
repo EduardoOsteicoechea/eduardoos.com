@@ -13,7 +13,7 @@ export default class
    ) 
    {
       let outer_container = document.getElementById(outer_container_id);
-      let outer_container_button = outer_container.children[1];
+      let outer_container_button = outer_container.children[0];
       
       let menu_outer_container = document.getElementById(menu_outer_container_id);
       let menu_outer_container_checkbox = menu_outer_container.children[0];
