@@ -1,0 +1,38 @@
+name: Deploy to ec2
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Connect to EC2 instance
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{ secrets.HOST_DNS }} 
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e # Exit immediately if a command exits with a non-zero status.
+            sudo rm -rf /var/cache/nginx/* # Clear Nginx cache
+            sudo rm -rf /var/www/html/eduardoos.com #remove old directory
+            sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com /var/www/html/eduardoos.com #clone the new directory
+            sudo chown -R $USER:$USER /var/www/html/eduardoos.com #ensure proper permissions
+            sudo systemctl restart nginx #restart nginx
+            sudo systemctl reload nginx #reload nginx to apply changes if config changed
+            sudo systemctl status nginx #optionally check nginx status
+      - name: Wait for deployment
+        run: |
+          sleep 10
