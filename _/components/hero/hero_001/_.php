@@ -94,6 +94,7 @@
                justify-content:flex-end;
                height:100dvh;
                width:100%;
+               overflow:hidden;
             }
             .'.$this->component_class.'_background_container
             {
@@ -103,10 +104,11 @@
                position:absolute;
                top:0;
                left:0;
+               overflow:hidden;
             }
             .'.$this->component_class.'_background_container_image
             {
-               height:100%;
+               height:115%;
                position:absolute;
                top:0;
                left:0;
@@ -124,6 +126,8 @@
             {
                height: 3rem;
                width: 9rem;
+               font-size:1rem;
+               font-family:f1bl;
             }
             .'.$this->component_class.'_buttons_container_button_1
             {
