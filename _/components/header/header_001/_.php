@@ -77,27 +77,27 @@
             .'.$this->component_class.'_outer_container
             {
                display:flex;
-               justify-content:center;
+               align-items:center;
                padding: 0rem 1.25rem 0rem 1.25rem;
-               height:3.5rem;
+               height:4rem;
                width:100%;
+               border: solid 1px red
             }
 
             .'.$this->component_class.'_logo_container
             {
                display:flex;
-               align-items:flex-end;
+               align-items:center;
                justify-content:center;
                font-family:f1b;
                font-size: 1.5rem;
-               padding: 0 0 .3rem 0;
             }
 
             .'.$this->component_class.'_button
             {
                padding: 1rem 2.25rem;
                height: 2rem;
-               margin: auto 0 .0rem auto;
+               margin: 0 0 0 auto;
             }
 
              @media only screen and (max-width: 650px) 
