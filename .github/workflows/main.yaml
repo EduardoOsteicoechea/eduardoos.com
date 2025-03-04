@@ -33,4 +33,4 @@ jobs:
             sudo systemctl reload nginx
       - name: Wait for deployment
         run: |
-          sleep 30
+          sleep 10
