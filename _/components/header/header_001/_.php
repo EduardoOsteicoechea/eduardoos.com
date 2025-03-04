@@ -103,14 +103,14 @@
              { 
                .'.$this->component_class.'_logo_container
                {
-                  font-size: 1rem;
+                  font-size: 1.25rem;
                   font-family:f1b;
                   height:100% !important;
                }
 
                .'.$this->component_class.'_button
                {
-                  padding: 0.95rem 1.25rem;
+                  padding: 0.95rem 1.5rem;
                   height: 1.35rem;
                   font-size: .8rem;
                }
