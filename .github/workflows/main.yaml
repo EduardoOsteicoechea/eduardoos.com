@@ -25,7 +25,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            set -e # Exit immediately if a command exits with a non-zero status.
             sudo rm -rf /var/cache/nginx/* # Clear Nginx cache
             sudo rm -rf /var/www/html/eduardoos.com #remove old directory
             sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com /var/www/html/eduardoos.com #clone the new directory
