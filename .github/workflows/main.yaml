@@ -27,6 +27,7 @@ jobs:
           script: |
             sudo rm -rf /var/cache/nginx/* 
             sudo rm -r /var/www/html/eduardoos.com
+            cd /var/www/html/
             sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com
             sudo systemctl restart nginx
             sudo systemctl reload nginx

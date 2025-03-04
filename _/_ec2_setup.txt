@@ -10,6 +10,20 @@ sudo apt autoremove
 sudo reboot
 
 --------------------------------
+install php
+--------------------------------
+
+sudo apt install php php-fpm
+
+sudo systemctl restart php8.3-fpm
+
+sudo systemctl status php8.3-fpm
+
+sudo nginx -t
+  
+sudo systemctl reload nginx
+
+--------------------------------
 install nginx
 --------------------------------
 
@@ -20,21 +34,24 @@ sudo vim /etc/nginx/sites-available/default
 server {
         listen 443 ssl default_server;
         listen [::]:443 ssl default_server;
+
         root /var/www/html/eduardoos.com;
-        index.php;
+
+        index index.php;
+
         ssl_certificate your_domain_chain.crt;
+
         ssl_certificate_key eduardoos_com.key;
+
         server_name eduardoos.com;
+
         location / {
                 try_files $uri $uri/ =404;
         }
+
         location ~ \.php$ {
                 include snippets/fastcgi-php.conf;
-
-                # With php-fpm (or other unix sockets):
-                fastcgi_pass unix:/run/php/php7.4-fpm.sock;
-                # With php-cgi (or other tcp sockets):
-                fastcgi_pass 127.0.0.1:9000;
+                fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         }
 }
 
