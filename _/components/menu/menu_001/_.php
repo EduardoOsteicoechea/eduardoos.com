@@ -8,6 +8,7 @@
       public $page_name;
       public $html;
       public $is_outer_container_id;
+      public $application_anchors;
 
       public function __construct
       (
@@ -25,6 +26,10 @@
          $this->component_class = static::class;
          $this->component_id = $this->page_name . "_" . $this->component_class;
          $this->is_outer_container_id = $this->component_id . "_" . "outer_container";
+         
+         include $root_folder . "_/components/anchors/anchors_001/_.php";
+         
+         $this->application_anchors = new anchors_001($root_folder, $session, $page_name, $this->component_id, $this->component_class);
 
          $this->html .= '
             <div
@@ -34,7 +39,18 @@
                closed_menu
             "
             >
-            aaaaaa
+
+               <nav
+               id="' . $this->component_id . "_" . 'navigation"
+               class="' . $this->component_class . "_" . 'navigation"
+               >
+                  <ul
+                  id="' . $this->component_id . "_" . 'navigation_list"
+                  class="' . $this->component_class . "_" . 'navigation_list"
+                  >
+                     '.$this->application_anchors->print_markup().'
+                  </ul>
+               </nav>
             </div>
 
             <script type="module">
@@ -67,24 +83,42 @@
             .'.$this->component_class.'_outer_container
             {
                display:flex;
-               justify-content:center;
-               padding: 1rem 1rem 1rem 1rem;
-               height:8.5rem;
+               height:100dvh;
+               overflow-y:auto;
                width:100%;
-               background:red;
+               background:var(--c1);
                position:absolute;
                top:3.5rem;
                left:0%;
                transition:var(--tr2)
             }
+
             .opened_menu
             {
                left:0%;
             }
+
             .closed_menu
             {
                left:-100%;
             }
+
+            .'.$this->component_class.'_navigation
+            {
+               height:100%;
+               width:100%;
+               padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+            }
+
+            .'.$this->component_class.'_navigation_list
+            {
+               list-style-type: none;
+               display:flex;
+               flex-direction: column;
+               gap:.75rem;
+            }
+
+            '.$this->application_anchors->print_styles().'
          ';
       }
    }
