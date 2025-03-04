@@ -229,14 +229,12 @@
       
       button {
          font-weight: 900;
-         padding: 1rem 1.25rem;
          background: var(--c2);
          color: var(--c1);
          border:none;
          display:flex;
          align-items:center;
          justify-content:center;
-         margin: 0 0 0 auto;
          cursor:pointer;
          border-radius:0;
       }

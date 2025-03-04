@@ -77,8 +77,8 @@
             .'.$this->component_class.'_outer_container
             {
                display:flex;
-               align-items:center;
-               padding: 0rem 1.25rem 0rem 1.25rem;
+               align-items:flex-start;
+               padding: 1.25rem 1.25rem 0rem 1.25rem;
                height:4rem;
                width:100%;
             }
@@ -90,30 +90,41 @@
                justify-content:center;
                font-family:f1b;
                font-size: 1.5rem;
+               height: 2rem;
             }
 
             .'.$this->component_class.'_button
             {
-               padding: 1rem 2.25rem;
                height: 2rem;
                margin: 0 0 0 auto;
             }
 
              @media only screen and (max-width: 650px) 
              { 
+               .'.$this->component_class.'_outer_container
+               {
+                  display:flex;
+                  align-items:flex-start;
+                  padding: 1.25rem 1.25rem 0rem 1.25rem;
+                  height:3.75rem;
+                  width:100%;
+               }
+
                .'.$this->component_class.'_logo_container
                {
                   font-size: 1.4rem;
-                  font-family:f1b;
+                  font-family:f1bl;
                   height:100% !important;
+                  height:2.5rem;
                }
 
                .'.$this->component_class.'_button
                {
-                  padding: 1.15rem 1.75rem;
                   height: 1.35rem;
                   font-family:f1b;
                   font-size: 1rem;
+                  height:2.25rem;
+                  width: 6rem;
                }
             }
          ';
