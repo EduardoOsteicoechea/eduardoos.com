@@ -79,7 +79,7 @@
                display:flex;
                justify-content:center;
                padding: 0rem 1rem 0rem 1rem;
-               height:3rem;
+               height:3.5rem;
                width:100%;
             }
 
@@ -111,7 +111,7 @@
 
                .'.$this->component_class.'_button
                {
-                  padding: 1.05rem 1.75rem;
+                  padding: 1.15rem 1.75rem;
                   height: 1.35rem;
                   font-family:f1b;
                   font-size: 1rem;
