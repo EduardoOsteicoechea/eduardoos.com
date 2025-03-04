@@ -79,40 +79,45 @@
                display:flex;
                justify-content:center;
                padding: 0rem 1rem 0rem 1rem;
-               height:3.5rem;
+               height:3rem;
                width:100%;
             }
 
             .'.$this->component_class.'_logo_container
             {
                display:flex;
-               align-items:center;
+               align-items:flex-end;
                justify-content:center;
                font-family:f1b;
-               font-size: 1.5rem
+               font-size: 1.5rem;
+               padding: 0 0 .3rem 0;
             }
 
             .'.$this->component_class.'_button
             {
                padding: 1rem 2.25rem;
                height: 2rem;
-               margin: auto 0 auto auto;
+               margin: auto 0 .0rem auto;
+               background: var(--c1);
+               color: var(--c2);
+               border: var(--b2);
             }
 
              @media only screen and (max-width: 650px) 
              { 
                .'.$this->component_class.'_logo_container
                {
-                  font-size: 1.25rem;
+                  font-size: 1.4rem;
                   font-family:f1b;
                   height:100% !important;
                }
 
                .'.$this->component_class.'_button
                {
-                  padding: 0.95rem 1.5rem;
+                  padding: 0.95rem 1.75rem;
                   height: 1.35rem;
-                  font-size: .8rem;
+                  font-family:f1b;
+                  font-size: 1rem;
                }
             }
          ';

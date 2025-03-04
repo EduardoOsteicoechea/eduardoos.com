@@ -156,7 +156,7 @@
          font-family: f1r, system-ui;
          scroll-behavior: smooth;
          --b1: solid .1rem red;
-         --b2: solid .1rem rgb(226, 226, 226);
+         --b2: solid .15rem rgb(0, 0, 0);
          --shadow_1: 1rem 1rem 1rem rgba(255,255,255,.25);
          --sh2: .0rem .0rem 1rem rgba(0,0,0, 0.15);
          --sh3: .15rem .15rem 1rem rgba(0,0,0, 0.1);
