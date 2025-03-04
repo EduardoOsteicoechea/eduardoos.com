@@ -99,6 +99,7 @@
             {
                height:100%;
                width:100%;
+               display:flex;
                position:absolute;
                top:0;
                left:0;
@@ -106,6 +107,9 @@
             .'.$this->component_class.'_background_container_image
             {
                height:100%;
+               position:absolute;
+               top:0;
+               left:0;
                display:flex;
             }
             .'.$this->component_class.'_buttons_container
@@ -113,13 +117,13 @@
                display:flex;
                align-items:center;
                justify-content:center;
-               gap:1.5rem;
+               gap:1rem;
                margin: 0 0 2rem 0;
             }
             .'.$this->component_class.'_buttons_container_button
             {
                height: 3rem;
-               width: 10rem;
+               width: 9rem;
             }
             .'.$this->component_class.'_buttons_container_button_1
             {
