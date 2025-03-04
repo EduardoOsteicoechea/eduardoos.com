@@ -26,10 +26,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             sudo rm -rf /var/cache/nginx/*
-            sudo rm -rf /var/www/html/eduardoos.com
+            sudo rm -r /var/www/html/eduardoos.com
             sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com
             sudo systemctl restart nginx
             sudo systemctl reload nginx
       - name: Wait for deployment
         run: |
-          sleep 10
+          sleep 30
