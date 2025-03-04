@@ -108,15 +108,15 @@
                .'.$this->component_class.'_outer_container
                {
                   display:flex;
-                  align-items:flex-start;
+                  align-items:center;
                   padding: 1.25rem 1.25rem 0rem 1.25rem;
-                  height:3.75rem;
+                  height:3.30rem;
                   width:100%;
                }
 
                .'.$this->component_class.'_logo_container
                {
-                  font-size: 1.4rem;
+                  font-size: 1.5rem;
                   font-family:f1bl;
                   height:100% !important;
                   height:2.25rem;
