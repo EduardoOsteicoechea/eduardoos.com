@@ -81,7 +81,6 @@
                padding: 0rem 1.25rem 0rem 1.25rem;
                height:4rem;
                width:100%;
-               border: solid 1px red
             }
 
             .'.$this->component_class.'_logo_container
