@@ -119,7 +119,7 @@
                   font-size: 1.4rem;
                   font-family:f1bl;
                   height:100% !important;
-                  height:2.5rem;
+                  height:2.25rem;
                }
 
                .'.$this->component_class.'_button
@@ -127,8 +127,8 @@
                   height: 1.35rem;
                   font-family:f1b;
                   font-size: 1rem;
-                  height:2.15rem;
-                  width: 6rem;
+                  height:2.05rem;
+                  width: 5rem;
                }
             }
          ';
