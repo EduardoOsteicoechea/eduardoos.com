@@ -78,7 +78,7 @@
             {
                display:flex;
                justify-content:center;
-               padding: 0rem 1rem 0rem 1rem;
+               padding: 0rem 1.25rem 0rem 1.25rem;
                height:3.5rem;
                width:100%;
             }
