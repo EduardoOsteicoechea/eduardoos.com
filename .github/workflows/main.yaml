@@ -28,7 +28,6 @@ jobs:
             sudo rm -rf /var/cache/nginx/*
             sudo rm -rf /var/www/html/eduardoos.com
             sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com
-            sudo chown -R $USER:$USER /var/www/html/eduardoos.com
             sudo systemctl restart nginx
             sudo systemctl reload nginx
       - name: Wait for deployment
