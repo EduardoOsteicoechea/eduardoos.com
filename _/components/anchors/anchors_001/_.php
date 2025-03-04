@@ -90,19 +90,17 @@
                background:none;
                font-size:1rem;
                padding: 0 1rem;
+               font-family: f1bl;
             }
 
             .current_page_anchor
             {
                background:var(--c3);
                color:var(--c10);
-               font-family: f1bl;
             }
 
             .non_current_page_anchor
             {
-               border:var(--b2);
-               font-family: f1b;
             }
          ';
       }

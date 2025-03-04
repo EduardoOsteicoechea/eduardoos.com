@@ -1,14 +1,17 @@
 {
    "non_authenticated":[
       ["inicio","Inicio"],
-      ["creencias","Creencias"]
+      ["creencias","Creencias"],
+      ["contacto","Contacto"]
    ],
    "authenticated_base_user":[
       ["inicio","Inicio"],
-      ["creencias","Creencias"]
+      ["creencias","Creencias"],
+      ["contacto","Contacto"]
    ],
    "authenticated_admin":[
       ["inicio","Inicio"],
-      ["creencias","Creencias"]
+      ["creencias","Creencias"],
+      ["contacto","Contacto"]
    ]
 }
