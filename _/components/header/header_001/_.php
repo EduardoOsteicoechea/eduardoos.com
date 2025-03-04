@@ -47,7 +47,7 @@
                id="' . $this->component_id . "_" . 'button"
                class="' . $this->component_class . "_" . 'button"
                data-target-checkbox="'.$this->menu_outer_container_id.'"
-               >Menú</button>
+               >menú</button>
             </div>
 
             <script type="module">
@@ -98,9 +98,6 @@
                padding: 1rem 2.25rem;
                height: 2rem;
                margin: auto 0 .0rem auto;
-               background: var(--c1);
-               color: var(--c2);
-               border: var(--b2);
             }
 
              @media only screen and (max-width: 650px) 
@@ -114,7 +111,7 @@
 
                .'.$this->component_class.'_button
                {
-                  padding: 0.95rem 1.75rem;
+                  padding: 1.05rem 1.75rem;
                   height: 1.35rem;
                   font-family:f1b;
                   font-size: 1rem;
