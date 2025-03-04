@@ -25,13 +25,12 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo rm -rf /var/cache/nginx/* # Clear Nginx cache
-            sudo rm -rf /var/www/html/eduardoos.com #remove old directory
-            sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com /var/www/html/eduardoos.com #clone the new directory
-            sudo chown -R $USER:$USER /var/www/html/eduardoos.com #ensure proper permissions
-            sudo systemctl restart nginx #restart nginx
-            sudo systemctl reload nginx #reload nginx to apply changes if config changed
-            sudo systemctl status nginx #optionally check nginx status
+            sudo rm -rf /var/cache/nginx/*
+            sudo rm -rf /var/www/html/eduardoos.com
+            sudo git clone https://github.com/EduardoOsteicoechea/eduardoos.com
+            sudo chown -R $USER:$USER /var/www/html/eduardoos.com
+            sudo systemctl restart nginx
+            sudo systemctl reload nginx
       - name: Wait for deployment
         run: |
           sleep 10
