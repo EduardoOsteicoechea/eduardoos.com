@@ -62,7 +62,7 @@
 
       private function generate_page_header()
       {
-         include "../_/components/header/header_001/_.php";
+         include "../_/components/header/header_001/header_001.php";
 
          $this->page_header = new header_001(
             $this->root_folder,
@@ -152,12 +152,14 @@
       private string $styles_root_base = '
       :root {
          font-size: 16px;
+         letter-spacing:0;
          line-height: 1.35rem;
          font-family: f1r, system-ui;
          scroll-behavior: smooth;
          --b1: solid .1rem red;
          --b2: solid .1rem rgb(0, 0, 0);
          --shadow_1: 1rem 1rem 1rem rgba(255,255,255,.25);
+         --sh1: 1rem 1rem 1rem rgba(255,255,255,.25);
          --sh2: .0rem .0rem 1rem rgba(0,0,0, 0.15);
          --sh3: .15rem .15rem 1rem rgba(0,0,0, 0.1);
          --sh4: .25rem .25rem .25rem rgba(0,0,0, 0.5);
@@ -297,9 +299,14 @@
       
       body
       {
+         max-width:1920px;
+         display:flex;
+         flex-direction:column;
+         align-items:center;
          width:100%;
          overflow-x: hidden;
          transition: none;
+         margin: 0 auto;
       }
       
       

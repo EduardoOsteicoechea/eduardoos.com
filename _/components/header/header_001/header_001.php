@@ -85,7 +85,8 @@
                padding: 1.25rem 1.25rem 0rem 1.25rem;
                height:4rem;
                width:100%;
-               z-index:10000;
+               z-index:12000;
+               box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             }
 
             .'.$this->component_class.'_logo_container
