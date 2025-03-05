@@ -30,33 +30,17 @@
 
       protected function generate_component_markup_and_styles()
       {
-         $this->add_component("form_element",[""],"form",[""],[
-         '.'.$this->component_class."_form_element".'{
-            display: flex;
-            flex-direction:column;
-            background: yellow;
-            width: 300px;
-            height: 300px;
-         }'
-         ],
-            [
-               $this->add_subcomponent("paragraph","form_element",["sub-class"],"p",[""],["This is a subcomponent"],[
-                  '.'.$this->component_class.'{
-                     display: flex;
-                     background: red;
-                     width: 100px;
-                     height: 100px;
-                  }'
-               ],),
-               $this->add_subcomponent("paragraph","form_element",["sub-class"],"a",["href='https://eduardoos.com'"],["This is second a subcomponent"],[
-                  '.'.$this->component_class.'{
-                     display: flex;
-                     background: red;
-                     width: 100px;
-                     height: 100px;
-                  }'
-               ],),
-            ],
+         $this->add_component("form","form_element",[
+            ["","display: flex; flex-direction:column; background: yellow; width: 300px;"],
+            ],[
+               $this->add_subcomponent("p","paragraph","form_element",["This is a subcomponent"],[
+                  ["","display: flex; background: red; width: 100px; height: 100px;"],
+               ],[],[]),
+               $this->add_subcomponent("a","anchor_1","form_element",["This is second a subcomponent"],[
+                  ["","display: flex; background: blue; width: 100px; height: 100px;"],
+                  ["asdasd","font-family: f1bl;"],
+               ],["asdasd"],["href='https://eduardoos.com'"]),
+            ],[],[]
          );
       }
    }

@@ -72,63 +72,77 @@ class base_component
 
    protected function add_component
    (
-      string $component_name,
-      array $component_classes,
       string $component_tag,
-      array $component_attributes,
+      string $component_name,
       array $component_styles,
       array $component_content,
+      array $component_classes = [],
+      array $component_attributes = [],
    ): void
    {
-      $new_component = '<'.$component_tag.'
-         id="'.$this->component_id . "_" . $component_name.'"
-         class="'.$this->component_class . "_" . $component_name . " " . implode(" ", $component_classes) .'"
-         '.implode(" ", $component_attributes).'
-      ';
+      $formatted_id = $this->component_id . "_" . $component_name;
+      $formatted_class = $this->component_class . "_" . $component_name;
+      $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
+      $formatted_attributes = implode(" ", $component_attributes);
+      $formatted_styles_class = $this->generate_formated_componet_styles($formatted_class, $component_styles);
+      $formatted_content = implode(" ", $component_content);
 
-      if($this->tag_is_simple($component_tag) === false)
-      {
-         $new_component .= ">" ;
-         $new_component .= implode(" ", $component_content);
-         $new_component .= "</";
-         $new_component .= $component_tag;
-      };
-
+      $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
+      if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
       $new_component .= ">";
 
-      $this->component_markup .=  $new_component;
-      $this->component_styles .= implode(" ", $component_styles);
+      $this->component_markup .= $new_component;
+      $this->component_styles .= $formatted_styles_class;
    }
 
    protected function add_subcomponent
    (
+      string $component_tag,
       string $component_name,
       string $parent_component_name,
-      array $component_classes,
-      string $component_tag,
-      array $component_attributes,
       array $component_content,
       array $component_styles,
+      array $component_classes = [],
+      array $component_attributes = [],
    ): string
    {
-      $new_component = '<'.$component_tag.'
-         id="'.$this->component_id . "_" . $parent_component_name . "_" . $component_name.'"
-         class="'.$this->component_class . "_" . $parent_component_name . "_" . $component_name . " " . implode(" ", $component_classes) .'"
-         '.implode(" ", $component_attributes).'
-      ';
+      $formatted_id = $this->component_id . "_" . $parent_component_name . "_" . $component_name;
+      $formatted_class = $this->component_class . "_" . $parent_component_name . "_" . $component_name;
+      $formatted_classes = $this->component_class . "_" . $parent_component_name . "_" . $component_name . " " . implode(" ", $component_classes);
+      $formatted_attributes = implode(" ", $component_attributes);
+      $formatted_styles_class = $this->generate_formated_componet_styles($formatted_class, $component_styles);
+      $formatted_content = implode(" ", $component_content);
 
-      if($this->tag_is_simple($component_tag) === false)
-      {
-         $new_component .= ">" ;
-         $new_component .= implode(" ", $component_content);
-         $new_component .= "</";
-         $new_component .= $component_tag;
-      };
-
+      $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
+      if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
       $new_component .= ">";
 
-      $this->component_styles = $this->component_styles . implode(" ", $component_styles);
+      $this->component_styles .= $formatted_styles_class;
       return $new_component;
+   }
+
+   private function generate_formated_componet_styles
+   (
+      string $component_class_name, 
+      array $style_array
+   )
+   {
+      $formated_styles = "";
+      foreach ($style_array as $style_properties) 
+      {
+         $particular_element_singular_name = $style_properties[0];
+         $particular_element_styles = $style_properties[1];
+
+         if($style_properties[0] === "")
+         {
+            $formated_styles .= "." . $component_class_name . "{\n" . $particular_element_styles . "\n}\n";
+         }
+         else
+         {
+            $formated_styles .= "." . $particular_element_singular_name . "{\n" . $particular_element_styles . "\n}\n";
+         };
+      };
+      return $formated_styles;
    }
 
    private function tag_is_simple
