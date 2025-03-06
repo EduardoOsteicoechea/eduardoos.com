@@ -183,9 +183,10 @@
             --c5: rgb(255, 255, 255);
             --c6: rgb(226, 226, 226);
             --c7: rgb(119, 119, 119);
-            --c10: rgb(194, 194, 194);
             --c8: #f8f8f8;
             --c9: #cdcdcd;
+            --c10: rgb(194, 194, 194);
+            --c11:rgb(148, 255, 193);
             --c_whatsapp: #25D366;
 
             --success_1:rgb(0, 200, 73);
@@ -247,7 +248,6 @@
          align-items:center;
          justify-content:center;
          cursor:pointer;
-         border-radius:0;
       }
       
       a { font-size: 1rem; cursor: pointer; text-decoration:none; }

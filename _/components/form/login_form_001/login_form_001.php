@@ -73,7 +73,16 @@
                ],["login_form_item", "login_form_input"],["type='password'"]),
 
                $this->add_subcomponent("input","submit_button","login_form_element",["Acceder"],[
-                  ["","display: flex; font-size:1rem; margin: 3.5rem 0 0 0; background:var(--c1); color:var(--c2) !important; font-family:f1bl; height:2.25rem !important;"],
+                  ["","
+                  display: flex; 
+                  font-size:1rem; 
+                  margin: 3.5rem 0 0 0; 
+                  background:var(--c1); 
+                  color:var(--c2) !important; 
+                  font-family:f1bl; 
+                  height:2.25rem !important;
+                  cursor:pointer;"
+                  ],
                ],["login_form_item"],["type='submit'"]),
 
             ],[],["method='post'", "action='".$this->root_folder."_/components/form/login_form_001/login_action.php'"]

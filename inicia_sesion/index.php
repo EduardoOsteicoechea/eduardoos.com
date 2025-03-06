@@ -1,9 +1,9 @@
 <?php
    $root_folder = "../";
    $session = isset($_SESSION) ? $_SESSION : null;
-   $page_title = "Creencias - Edición";
-   $page_name = "creencias_edicion";
-   $page_description = "La cosmovisión de Eduardo Osteicoechea";
+   $page_title = "Inicia Sesión";
+   $page_name = "sesion_iniciar";
+   $page_description = "Inicia sesión y accede a los servicios disponibles.";
    $page_color_scheme = "light";
 
    include $root_folder . "_/global.php";

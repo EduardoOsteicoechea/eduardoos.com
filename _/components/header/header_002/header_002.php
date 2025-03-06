@@ -41,7 +41,7 @@
                   display:flex;
                   align-items:center;
                   justify-content: space-between;
-                  padding: 0rem 1.25rem 0rem 1.25rem;
+                  padding: 0rem 1.25rem 0rem 0rem;
                   width:100%;
                   z-index:12000;
                   height:var(--header_height);
@@ -52,14 +52,10 @@
                      ["","
                         display:flex;
                         align-items:center;
-                        justify-content:center;
                         font-family:f1bl;
-                        background: var(--c2);
-                        color: var(--c1) !important;
-                        width: 9rem;
                         padding: var(--header_item_padding);
                         height: var(--header_item_height);
-                        font-size: 1rem;
+                        font-size: 1.5rem;
                      "]
                   ]),
                ],[],[],["href='".$this->root_folder."inicio'"]),
