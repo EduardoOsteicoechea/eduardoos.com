@@ -307,7 +307,7 @@
          flex-direction:column;
          align-items:center;
          width:100%;
-         overflow-x: hidden;
+         overflow: hidden;
          transition: none;
          margin: 0 auto;
       }
@@ -318,14 +318,19 @@
       
       
       
-      @media only screen and (max-width: 450px) {  
-      }
-
-      @media only screen and (max-width: 250px) {  
+      @media only screen and (max-width: 450px) {
          body
          {
-            width:250px;
-            overflow-x: hidden;
+            display:block;
+            max-width:100%;
+         }
+      }
+
+      @media only screen and (max-width: 345px) {  
+         body
+         {
+            display:block;
+            width:345px;
          }
       }
       

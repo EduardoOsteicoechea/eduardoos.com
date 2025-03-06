@@ -137,10 +137,22 @@ class base_component
          {
             $formated_styles .= "." . $component_class_name . "{\n" . $particular_element_styles . "\n}\n";
          }
+         else if(str_contains($style_properties[0], "@media"))
+         {
+            $formated_styles .= $particular_element_singular_name.'{
+   .'.$component_class_name.'{
+      '.$style_properties[1].'
+   }
+}
+';
+         }
          else
          {
             $formated_styles .= "." . $particular_element_singular_name . "{\n" . $particular_element_styles . "\n}\n";
          };
+         
+
+
       };
       return $formated_styles;
    }

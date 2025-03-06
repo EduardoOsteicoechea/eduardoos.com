@@ -98,12 +98,12 @@
                align-items:center;
                justify-content:center;
                font-family:f1bl;
-               font-size: 1.1rem;
                height: 2.25rem;
-               width: 10rem;
                padding: 0 .75rem;
                background: var(--c2);
                color: var(--c1) !important;
+               width: 10rem;
+               font-size: 1.1rem;
             }
 
             .'.$this->component_class.'_button
@@ -128,10 +128,9 @@
 
                .'.$this->component_class.'_logo_container
                {
-                  font-size: 1.5rem;
-                  font-family:f1bl;
-                  height:100% !important;
-                  height:2.25rem;
+                  height:2.05rem;
+                  width: 10rem;
+                  font-size: 1.1rem;
                }
 
                .'.$this->component_class.'_button

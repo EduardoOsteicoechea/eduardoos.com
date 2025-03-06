@@ -38,15 +38,18 @@
                gap:.5rem;
                background:var(--c2);
                color:var(--c1);
-               padding:2.5rem 2.05rem;
-               margin: 2rem 0 0 0;
-               max-width: 24rem;
+               padding:2.5rem 1.85rem;
+               margin: 2rem 1.25rem;
+               width:100%;
+               max-width:19rem;
             "],
-            ["login_form_item","display:flex; align-items:center; justify-content:start; height: 2rem; width:15rem; color:var(--c1); font-family:f1b; padding: 0rem .5rem;"],
+            ["@media only screen and (max-width: 450px)","margin: 1.25rem 1.25rem;"],
+            ["login_form_item","display:flex; align-items:center; justify-content:start; height: 2rem; width:100%; color:var(--c1); font-family:f1b; padding: 0rem .5rem;"],
             ["login_form_input","color:var(--c2) !important; padding: 0rem .5rem;"],
             ],[
                $this->add_subcomponent("h2","form_heading","login_form_element",["Inicia sesión"],[
                   ["","font-size:1.5rem; font-family:f1bl; letter-spacing:0px; margin: 0 0 3rem 0; color:var(--c1)"],
+                  ["@media only screen and (max-width: 450px)","width:100% !important;"],
                ],[],[]),
 
                $this->add_subcomponent("label","username_label","login_form_element",["Nombre de Usuario"],[
