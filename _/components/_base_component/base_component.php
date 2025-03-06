@@ -2,7 +2,7 @@
 class base_component
 {
    protected string $root_folder = "";
-   protected array | null $session = null;
+   protected string $component_folder = "";
    protected bool $session_is_active = false;
    protected string $parent_component_id = "";
    protected string $parent_component_class = "";
@@ -15,27 +15,34 @@ class base_component
    protected string $component_markup = "";
    protected string $component_styles = "";
 
+   protected array | null $session = null;
+   protected array | null $external_elements_ids = null;
+
    public function __construct
    (
       string $root_folder, 
-      array | null $session, 
+      string $component_folder, 
       string $page_title,
       string $page_name,
       string $page_description,
       string $color_mode,
       string $parent_component_id,
       string $parent_component_class,
+      array | null $session = null,
+      array | null $external_elements_ids = null,
    )
    {
       $this->set_component_base_properties(
          $root_folder, 
-         $session, 
+         $component_folder,
          $page_title,
          $page_name,
          $page_description,
          $color_mode,
          $parent_component_id,
          $parent_component_class,
+         $session, 
+         $external_elements_ids
       );
       $this->validate_session();
       $this->generate_component_markup_and_styles();
@@ -43,18 +50,20 @@ class base_component
    
    private function set_component_base_properties
    (
-      $root_folder, 
-      $session, 
-      $page_title,
-      $page_name,
-      $page_description,
-      $color_mode,
-      $parent_component_id,
-      $parent_component_class,
+      string $root_folder, 
+      string $component_folder, 
+      string $page_title,
+      string $page_name,
+      string $page_description,
+      string $color_mode,
+      string $parent_component_id,
+      string $parent_component_class,
+      array | null $session = null,
+      array | null $external_elements_ids = null,
    )
    {
       $this->root_folder = $root_folder;
-      $this->session = $session;
+      $this->component_folder = $component_folder;
       $this->page_title = $page_title;
       $this->page_name = $page_name;
       $this->page_description = $page_description;
@@ -63,6 +72,8 @@ class base_component
       $this->component_class = static::class;
       $this->component_id = $this->page_name . "_" . $this->component_class;
       $this->color_mode = $color_mode;
+      $this->session = $session;
+      $this->external_elements_ids = $external_elements_ids;
    }
 
    protected function generate_component_markup_and_styles()
@@ -78,18 +89,21 @@ class base_component
       array $component_content,
       array $component_classes = [],
       array $component_attributes = [],
+      array $external_elements_ids = ["dont_trigger"],
    ): void
    {
       $formatted_id = $this->component_id . "_" . $component_name;
       $formatted_class = $this->component_class . "_" . $component_name;
       $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
-      $formatted_styles_class = $this->generate_formated_componet_styles($formatted_class, $component_styles);
+      $formatted_styles_class = $this->generate_formated_component_styles($formatted_class, $component_styles);
       $formatted_content = implode(" ", $component_content);
+      $formatted_javascript = $this->generate_formated_component_javascript($formatted_id,$component_name, $external_elements_ids);
 
       $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
       if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
       $new_component .= ">";
+      $new_component .= $formatted_javascript;
 
       $this->component_markup .= $new_component;
       $this->component_styles .= $formatted_styles_class;
@@ -110,7 +124,7 @@ class base_component
       $formatted_class = $this->component_class . "_" . $parent_component_name . "_" . $component_name;
       $formatted_classes = $this->component_class . "_" . $parent_component_name . "_" . $component_name . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
-      $formatted_styles_class = $this->generate_formated_componet_styles($formatted_class, $component_styles);
+      $formatted_styles_class = $this->generate_formated_component_styles($formatted_class, $component_styles);
       $formatted_content = implode(" ", $component_content);
 
       $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
@@ -121,7 +135,51 @@ class base_component
       return $new_component;
    }
 
-   private function generate_formated_componet_styles
+   private function generate_formated_component_javascript
+   (
+      $formatted_id,
+      string $component_name, 
+      array $external_elements_ids
+   ): string
+   {
+      if($external_elements_ids[0] === "dont_trigger" ) return "";
+      
+      $component_base_javascript_path = $this->component_folder."/".static::class;
+      
+      $markup = "";
+
+      $formated_external_elements_ids = "";
+      foreach ($external_elements_ids as $id) 
+      {
+         $formated_external_elements_ids .= '"'.$id.'",';
+      };
+
+      $markup = '<script
+         id="'.$formatted_id.'_script"
+         type="module"
+         >
+            import '.$component_name.'_class from "'.$component_base_javascript_path.'.js";                  
+            new '.$component_name.'_class
+            (
+               "'.$this->root_folder.'",
+               "'.$this->component_folder.'",
+               "'.$this->page_title.'",
+               "'.$this->page_name.'",
+               "'.$this->page_description.'",
+               "'.$this->parent_component_id.'",
+               "'.$this->parent_component_class.'",
+               "'.$this->component_class.'",
+               "'.$this->component_id.'",
+               "'.$this->color_mode.'",
+               "'.$this->session.'",
+               ['.$formated_external_elements_ids.'],
+            );
+      </script>';
+      
+      return $markup;
+   }
+
+   private function generate_formated_component_styles
    (
       string $component_class_name, 
       array $style_array
@@ -150,9 +208,6 @@ class base_component
          {
             $formated_styles .= "." . $particular_element_singular_name . "{\n" . $particular_element_styles . "\n}\n";
          };
-         
-
-
       };
       return $formated_styles;
    }

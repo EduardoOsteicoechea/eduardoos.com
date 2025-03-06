@@ -5,26 +5,30 @@
    {
       public function __construct
       (
-         string $root_folder, 
-         array | null $session, 
+         string $root_folder,
+         string $component_folder,
          string $page_title,
          string $page_name,
          string $page_description,
          string $color_mode,
          string $parent_component_id,
          string $parent_component_class,
+         array | null $session = null,
+         array | null $external_elements_ids = null,
       )
       {
          parent::__construct
          (
-            $root_folder, 
-            $session, 
+            $root_folder,
+            $component_folder,
             $page_title,
             $page_name,
             $page_description,
             $color_mode,
             $parent_component_id,
             $parent_component_class,
+            $session,
+            $external_elements_ids,
          );
       }
 
@@ -39,12 +43,12 @@
                background:var(--c2);
                color:var(--c1);
                padding:2.5rem 1.85rem;
-               margin: 2rem 1.25rem;
+               margin: 1.25rem 1.25rem;
                width:100%;
                max-width:19rem;
             "],
-            ["@media only screen and (max-width: 450px)","margin: 1.25rem 1.25rem;"],
-            ["login_form_item","display:flex; align-items:center; justify-content:start; height: 2rem; width:100%; color:var(--c1); font-family:f1b; padding: 0rem .5rem;"],
+            ["@media only screen and (max-width: 950px)"," max-width:1000px; width:calc(100% - 2.5rem); min-width:calc(350px- 2.5rem);"],
+            ["login_form_item","display:flex; align-items:center; justify-content:start; height: 2rem; width:100%;  color:var(--c1); font-family:f1b; padding: 0rem .5rem;"],
             ["login_form_input","color:var(--c2) !important; padding: 0rem .5rem;"],
             ],[
                $this->add_subcomponent("h2","form_heading","login_form_element",["Inicia sesión"],[

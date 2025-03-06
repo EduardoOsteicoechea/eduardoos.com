@@ -62,17 +62,21 @@
 
       private function generate_page_header()
       {
-         include "../_/components/header/header_001/header_001.php";
+         include $this->root_folder."_/components/header/header_002/header_002.php";
 
-         $this->page_header = new header_001(
+         $this->page_header = new header_002(
             $this->root_folder,
-            $this->session,
+            $this->root_folder."_/components/header/header_002",
             $this->page_title,
             $this->page_name,
+            $this->page_description,
             $this->component_id,
             $this->component_class,
             $this->color_mode,
-            $this->page_menu->provide_outer_container_id()
+            $this->session,
+            [
+               $this->page_menu->provide_outer_container_id()
+            ]
          );
       }
 
@@ -167,6 +171,8 @@
          --tr1: all ease 1000ms;
          --tr2: all ease 200ms;
          --header_height: 4rem;
+         --header_item_height: 2.25rem;
+         --header_item_padding: 0rem 1.25rem;
       ';
 
       private string $styles_light_color_scheme = '
@@ -307,7 +313,8 @@
          flex-direction:column;
          align-items:center;
          width:100%;
-         overflow: hidden;
+         overflow-x: hidden;
+         overflow-y: auto;
          transition: none;
          margin: 0 auto;
       }
@@ -321,12 +328,10 @@
       @media only screen and (max-width: 450px) {
          body
          {
-            display:block;
-            max-width:100%;
          }
       }
 
-      @media only screen and (max-width: 345px) {  
+      @media only screen and (max-width: 350px) {  
          body
          {
             display:block;

@@ -11,13 +11,14 @@
 
    $login_form_001 = new login_form_001(
       $root_folder,
-      $session,
+      $root_folder . "_/components/form/login_form_001/",
       $page_title,
       $page_name,
       $page_description,
       $page_color_scheme,
       "",
-      ""
+      "",
+      $session,
    );
 
    new page_top($root_folder,

@@ -86,10 +86,11 @@
             {
                display:flex;
                align-items:center;
+               justify-content: space-between;
                padding: 0rem 1.25rem 0rem 1.25rem;
-               height:var(--header_height);
                width:100%;
                z-index:12000;
+               height:var(--header_height);
             }
 
             .'.$this->component_class.'_logo_container
@@ -98,48 +99,36 @@
                align-items:center;
                justify-content:center;
                font-family:f1bl;
-               height: 2.25rem;
-               padding: 0 .75rem;
                background: var(--c2);
                color: var(--c1) !important;
-               width: 10rem;
-               font-size: 1.1rem;
+               width: 9rem;
+               padding: var(--header_item_padding);
+               height: var(--header_item_height);
             }
 
             .'.$this->component_class.'_button
             {
-               margin: 0 0 0 auto;
-               height:2.05rem;
-               width: 6rem;
                font-family:f1bl;
                font-size: 1rem;
+               padding: 0 .75rem;
+               width: 4.5rem;
+               padding: var(--header_item_padding);
+               height: var(--header_item_height);
             }
 
-             @media only screen and (max-width: 950px) 
+             @media only screen and (max-width: 450px) 
              { 
                .'.$this->component_class.'_outer_container
                {
-                  display:flex;
-                  align-items:center;
-                  padding: 1.25rem 1.25rem 0rem 1.25rem;
-                  height:3.30rem;
-                  width:100%;
+                  min-width:350px;
                }
 
                .'.$this->component_class.'_logo_container
                {
-                  height:2.05rem;
-                  width: 10rem;
-                  font-size: 1.1rem;
                }
 
                .'.$this->component_class.'_button
                {
-                  height: 1.35rem;
-                  font-family:f1b;
-                  font-size: 1rem;
-                  height:2.05rem;
-                  width: 5rem;
                }
             }
          ';
