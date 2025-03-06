@@ -1,5 +1,5 @@
 <?php 
-   class page_foot
+   class page_bottom
    {
       public function __construct
       (

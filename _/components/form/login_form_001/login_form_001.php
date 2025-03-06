@@ -34,33 +34,41 @@
             ["","
                display: flex;
                flex-direction:column;
-               align-items:center;
+               align-items:start;
                gap:.5rem;
-               background:var(--c1);
-               box-shadow:0em 0em 4em rgba(0,0,0,.15);
-               padding:2.5rem 1.75rem;
+               background:var(--c2);
+               color:var(--c1);
+               padding:2.5rem 2.05rem;
                margin: 2rem 0 0 0;
+               max-width: 24rem;
             "],
-            ["login_form_item","display:flex; align-items:center; justify-content:center; height: 2rem; width:200px; color:var(--c7)"],
+            ["login_form_item","display:flex; align-items:center; justify-content:start; height: 2rem; width:15rem; color:var(--c1); font-family:f1b; padding: 0rem .5rem;"],
+            ["login_form_input","color:var(--c2) !important; padding: 0rem .5rem;"],
             ],[
                $this->add_subcomponent("h2","form_heading","login_form_element",["Inicia sesión"],[
-                  ["","font-size:1.5rem; font-family:f1bl; letter-spacing:0px; margin: 0 0 1.75rem 0;"],
+                  ["","font-size:1.5rem; font-family:f1bl; letter-spacing:0px; margin: 0 0 3rem 0; color:var(--c1)"],
                ],[],[]),
+
                $this->add_subcomponent("label","username_label","login_form_element",["Nombre de Usuario"],[
                   ["","display: flex; font-size:1rem;"],
                ],["login_form_item"],[]),
+
                $this->add_subcomponent("input","username_input","login_form_element",["Nombre de Usuario"],[
                   ["","display: flex; font-size:1rem;"],
-               ],["login_form_item"],["type='text'"]),
+               ],["login_form_item", "login_form_input"],["type='text'"]),
+
                $this->add_subcomponent("label","password_label","login_form_element",["Contraseña"],[
                   ["","display: flex; font-size:1rem;"],
                ],["login_form_item"],[]),
+               
                $this->add_subcomponent("input","password_input","login_form_element",["Nombre de Usuario"],[
                   ["","display: flex; font-size:1rem;"],
-               ],["login_form_item"],["type='text'"]),
+               ],["login_form_item", "login_form_input"],["type='password'"]),
+
                $this->add_subcomponent("input","submit_button","login_form_element",["Acceder"],[
-                  ["","display: flex; font-size:1rem; margin: 2.75rem 0 0 0; background:var(--c2); color:var(--c1) !important; font-family:f1b; height:2.25rem !important;"],
+                  ["","display: flex; font-size:1rem; margin: 3.5rem 0 0 0; background:var(--c1); color:var(--c2) !important; font-family:f1bl; height:2.25rem !important;"],
                ],["login_form_item"],["type='submit'"]),
+
             ],[],["method='post'", "action='".$this->root_folder."_/components/form/login_form_001/login_action.php'"]
          );
       }

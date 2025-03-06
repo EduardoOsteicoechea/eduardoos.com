@@ -38,12 +38,16 @@
             id="' . $this->component_id . "_" . 'outer_container"
             class="' . $this->component_class . "_" . 'outer_container"
             >
-               <div
-               id="' . $this->component_id . "_" . 'logo_container"
-               class="' . $this->component_class . "_" . 'logo_container"
+               <a
+               href="'.$this->root_folder.'inicio"
                >
-                  eduardoos.com
-               </div>
+                  <div
+                  id="' . $this->component_id . "_" . 'logo_container"
+                  class="' . $this->component_class . "_" . 'logo_container"
+                  >
+                     eduardoos.com
+                  </div>
+               </a>
 
                <button
                id="' . $this->component_id . "_" . 'button"
@@ -55,7 +59,7 @@
             </div>
 
             <script type="module">
-               import ' . $this->component_id. "_" . 'class from "'.$root_folder.'_/components/header/header_001/_.js";                  
+               import ' . $this->component_id. "_" . 'class from "'.$root_folder.'_/components/header/header_001/header_001.js";                  
                new ' . $this->component_id. "_" . 'class
                (
                   "' . $this->root_folder . '",
@@ -81,12 +85,11 @@
             .'.$this->component_class.'_outer_container
             {
                display:flex;
-               align-items:flex-start;
-               padding: 1.25rem 1.25rem 0rem 1.25rem;
-               height:4rem;
+               align-items:center;
+               padding: 0rem 1.25rem 0rem 1.25rem;
+               height:var(--header_height);
                width:100%;
                z-index:12000;
-               box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             }
 
             .'.$this->component_class.'_logo_container
@@ -94,18 +97,25 @@
                display:flex;
                align-items:center;
                justify-content:center;
-               font-family:f1b;
-               font-size: 1.5rem;
-               height: 2rem;
+               font-family:f1bl;
+               font-size: 1.1rem;
+               height: 2.25rem;
+               width: 10rem;
+               padding: 0 .75rem;
+               background: var(--c2);
+               color: var(--c1) !important;
             }
 
             .'.$this->component_class.'_button
             {
-               height: 2rem;
                margin: 0 0 0 auto;
+               height:2.05rem;
+               width: 6rem;
+               font-family:f1bl;
+               font-size: 1rem;
             }
 
-             @media only screen and (max-width: 650px) 
+             @media only screen and (max-width: 950px) 
              { 
                .'.$this->component_class.'_outer_container
                {

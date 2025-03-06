@@ -76,7 +76,7 @@
                align-items:center;
                justify-content:flex-start;
                height:2.25rem;
-               width:7rem;
+               width:15rem;
             }
 
             .'.$this->component_class . "_" . "li" . "_" . "anchor".'
@@ -89,7 +89,7 @@
                text-decoration:none;
                background:none;
                font-size:1rem;
-               padding: 0 1rem;
+               padding: 0 .75rem;
                font-family: f1bl;
             }
 

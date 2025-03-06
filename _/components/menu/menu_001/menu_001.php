@@ -54,7 +54,7 @@
             </div>
 
             <script type="module">
-               import ' . $this->component_id. "_" . 'class from "'.$root_folder.'_/components/menu/menu_001/_.js";                  
+               import ' . $this->component_id. "_" . 'class from "'.$root_folder.'_/components/menu/menu_001/menu_001.js";                  
                new ' . $this->component_id. "_" . 'class
                (
                   "' . $this->root_folder . '",
@@ -88,7 +88,7 @@
                width:100%;
                background:var(--c1);
                position:absolute;
-               top:3.25rem;
+               top:var(--header_height);
                left:0%;
                transition:var(--tr2);
                z-index:10000;
@@ -108,7 +108,7 @@
             {
                height:100%;
                width:100%;
-               padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+               padding: 1.25rem 2.5rem 1.25rem 2.25rem;
             }
 
             .'.$this->component_class.'_navigation_list

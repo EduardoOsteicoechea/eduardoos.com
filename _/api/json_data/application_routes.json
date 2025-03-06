@@ -2,6 +2,7 @@
    "non_authenticated":[
       ["inicio","Inicio"],
       ["creencias","Creencias"],
+      ["creencias_edicion","Creencias - Edición"],
       ["contacto","Contacto"]
    ],
    "authenticated_base_user":[

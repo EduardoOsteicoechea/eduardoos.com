@@ -1,5 +1,5 @@
 <?php 
-   class page_head
+   class page_top
    {
       public $root_folder;
       public $session;
@@ -78,7 +78,7 @@
 
       private function generate_page_menu()
       {
-         include "../_/components/menu/menu_001/_.php";
+         include "../_/components/menu/menu_001/menu_001.php";
 
          $this->page_menu = new menu_001(
             $this->root_folder, 
@@ -166,13 +166,14 @@
          --sh5: .25rem .25rem .5rem rgba(0,0,0, 0.25);
          --tr1: all ease 1000ms;
          --tr2: all ease 200ms;
+         --header_height: 4rem;
       ';
 
       private string $styles_light_color_scheme = '
             --c1:#fff;
             --c2:#000;
             --c3:#f0f0f0;
-            --c4:#fcf7cb;
+            --c4:#fafafa;
             --c5: rgb(255, 255, 255);
             --c6: rgb(226, 226, 226);
             --c7: rgb(119, 119, 119);
@@ -218,10 +219,12 @@
          margin: 0;
          padding: 0;
          box-sizing: border-box;
+         border:none;
          position: relative;
          transition: var(--tr1);
          color: var(--c2);
          font-family: var(--f1l);
+         border-radius:.2rem !important;
       }
       
       b {
@@ -241,7 +244,7 @@
          border-radius:0;
       }
       
-      a { font-size: 1rem; cursor: pointer; }
+      a { font-size: 1rem; cursor: pointer; text-decoration:none; }
       p { font-size: 1rem; }
       h1{font-family: f1b; font-size: 2.5rem;}
       h2{font-family: f1b; font-size: 2rem;}
