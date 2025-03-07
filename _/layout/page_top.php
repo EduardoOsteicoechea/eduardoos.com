@@ -1,42 +1,51 @@
-<?php 
-   class page_top
+<?php
+   class page_top extends base_component
    {
-      public $root_folder;
-      public $session;
-      public $page_title;
-      public $page_name;
-      public $color_mode;
-      public $component_id;
-      public $component_class;
-      public $html;
-      public $page_header;
-      public $page_menu;
-      public $page_description;
+      private header_002 | null $page_header;
+      private menu_001 | null $page_menu = null;
+      private string $page_styles = "";
 
       public function __construct
       (
          string $root_folder, 
-         array | null $session, 
+         string $component_folder, 
          string $page_title,
          string $page_name,
-         string $page_description, 
-         array $page_styles,
-         string $color_mode
+         string $page_description,
+         string $parent_component_id = "",
+         string $parent_component_class = "",
+         array | null $external_elements_ids = null,
+         string $color_mode = "",
+         array | null $session = null,
+         array | null $get = null,
+         array | null $post = null,
+         array | null $files = null,
+         string $page_styles = "",
       )
       {
-         $this->root_folder = $root_folder;
-         $this->session = $session;
-         $this->page_title = $page_title;
-         $this->page_name = $page_name;
-         $this->component_class = static::class;
-         $this->component_id = $this->page_name . "_" . $this->component_class;
-         $this->color_mode = $color_mode;
-         $this->page_description = $page_description;
+         parent::__construct
+         (
+            $root_folder,
+            $component_folder,
+            $page_title,
+            $page_name,
+            $page_description,
+            $parent_component_id,
+            $parent_component_class,
+            $external_elements_ids,
+            $color_mode,
+            $session,
+            $get,
+            $post,
+            $files,
+         );
+
+         $this->page_styles = $page_styles;
 
          $this->generate_page_menu();
          $this->generate_page_header();
 
-         $html = '
+         echo '
             <!DOCTYPE html>
             <html lang="es">
             <head>
@@ -46,55 +55,49 @@
                <link rel="icon" type="image/x-icon" href="'.$this->root_folder.'_/media/favicon.ico">
                <style>'. 
                   $this->generate_page_styles(
-                     $this->root_folder, 
-                     $page_styles, 
+                     $this->root_folder,
                      $color_mode
                   )
                .'</style>
             </head>
             <body>
-               '.$this->page_header->print_markup().'
-               '.$this->page_menu->print_markup().'
-         ';
+               '.$this->page_header->provide_markup().'
+               '.$this->page_menu->provide_markup().'
+            ';
+      }
 
-         echo $html;
+      private function generate_page_menu()
+      {
+         include $this->root_folder . "_/components/menu/menu_001/menu_001.php";
+
+         $this->page_menu = new menu_001(
+            $this->root_folder, 
+            $this->page_title,
+            $this->page_name,
+            $this->page_description,
+            $this->color_mode,
+            $this->environment_variables["session"], 
+         );
       }
 
       private function generate_page_header()
       {
          include $this->root_folder."_/components/header/header_002/header_002.php";
-
+         
          $this->page_header = new header_002(
             $this->root_folder,
             $this->root_folder."_/components/header/header_002",
             $this->page_title,
             $this->page_name,
             $this->page_description,
-            $this->component_id,
-            $this->component_class,
+            "","",
+            [$this->page_menu->provide_outer_container_id()],
             $this->color_mode,
-            $this->session,
-            [
-               $this->page_menu->provide_outer_container_id()
-            ]
+            $this->environment_variables["session"],
          );
       }
 
-      private function generate_page_menu()
-      {
-         include "../_/components/menu/menu_001/menu_001.php";
-
-         $this->page_menu = new menu_001(
-            $this->root_folder, 
-            $this->session, 
-            $this->page_title,
-            $this->page_name,
-            $this->page_description,
-            $this->color_mode
-         );
-      }
-
-      private function generate_page_styles(string $root_folder, array $page_styles,string $color_mode)
+      private function generate_page_styles(string $root_folder, string $color_mode)
       {
          $styles = '';
          
@@ -117,10 +120,9 @@
             );
          };
 
-         $styles .= $this->page_header->print_styles();
-         $styles .= $this->page_menu->print_styles();
-
-         $styles .= implode(" ", $page_styles);
+         $styles .= $this->page_header->provide_styles();
+         $styles .= $this->page_menu->provide_styles();
+         $styles .= $this->page_styles;
 
          return $styles;
       }
@@ -130,7 +132,8 @@
          return $fonts . $root_base . $color_scheme . $common_elements;
       }
 
-      private function generate_fonts_styles($root_folder) {
+      private function generate_fonts_styles($root_folder) 
+      {
          return '
          @font-face{ font-family:  f1t    ; src: url(	'.$this->root_folder.'_/fonts/Raleway-Thin.ttf             ); }
          @font-face{ font-family:  f1ti   ; src: url(	'.$this->root_folder.'_/fonts/Raleway-ThinItalic.ttf       ); }
@@ -231,12 +234,6 @@
          transition: var(--tr1);
          color: var(--c2);
          font-family: var(--f1l);
-         border-radius:.2rem !important;
-      }
-      
-      b {
-         font-weight: 900;
-         padding: 1rem 1.25rem;
       }
       
       button {
@@ -248,63 +245,16 @@
          align-items:center;
          justify-content:center;
          cursor:pointer;
+         border-radius:.2rem !important;
       }
-      
+         
       a { font-size: 1rem; cursor: pointer; text-decoration:none; }
       p { font-size: 1rem; }
+      b { font-family:f1bl; }
       h1{font-family: f1b; font-size: 2.5rem;}
       h2{font-family: f1b; font-size: 2rem;}
       h3{font-family: f1b; font-size: 1.5rem;}
       h4{font-family: f1b; font-size: 1rem;}
-      
-      .active_button
-      {
-         pointer-events: all;
-         background: var(--success_1) !important;
-      }
-      .disabled_button
-      {
-         pointer-events: none;
-         background: var(--inactive_1) !important;
-      }
-      .active_input
-      {
-         pointer-events: all;
-         background: var(--c1) !important;
-      }
-      .disabled_input
-      {
-         pointer-events: none;
-         background: var(--disabled_1) !important;
-      }
-      
-      .disabled_container
-      {
-         height: 0 !important;
-         overflow: hidden;
-         display: none !important;
-         padding: 0 1rem !important;
-      }
-      
-      .enabled_container
-      {
-         padding: 1rem !important;
-      }
-      
-      .awaiter_screen
-      {
-         z-index: 5000;
-         opacity: 1;
-         display: flex;
-         width: 100%;
-         height: 100%;
-         background: var(--c3);
-         position: absolute;
-         left: 0;
-         top: 0;
-         transition: opacity ease 1000ms;
-         pointer-events: none;
-      }
       
       body
       {
@@ -317,19 +267,11 @@
          overflow-y: auto;
          transition: none;
          margin: 0 auto;
-      }
+      }      
       
+      @media only screen and (max-width: 950px) and (min-width: 451px) {}
       
-      @media only screen and (max-width: 950px) and (min-width: 451px) { 
-      }
-      
-      
-      
-      @media only screen and (max-width: 450px) {
-         body
-         {
-         }
-      }
+      @media only screen and (max-width: 450px) {}
 
       @media only screen and (max-width: 350px) {  
          body
@@ -337,8 +279,7 @@
             display:block;
             width:345px;
          }
-      }
-      
+      }      
       ';
    }
 ?>

@@ -7,9 +7,9 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "Mis Creencias";
-   $page_name = "creencias";
-   $page_description = "Inicia sesión y accede a los servicios disponibles.";
+   $page_title = "Ten Ánimo Venezuela";
+   $page_name = "tenanimovzla";
+   $page_description = "Página web Oficial de la iniciativa Ten Ánimo Venezuela";
    $page_color_scheme = "light";
 
    new public_page(

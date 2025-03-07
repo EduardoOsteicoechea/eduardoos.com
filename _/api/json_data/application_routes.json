@@ -2,17 +2,25 @@
    "non_authenticated":[
       ["inicio","Inicio"],
       ["creencias","Creencias"],
-      ["inicia_sesion","Inicia Sesión"],
-      ["contacto","Contacto"]
+      ["contacto","Contacto"],
+      ["tenanimovzla","Ten Ánimo Venezuela",
+         [
+            ["sobre_esta_iniciativa", "Sobre esta iniciativa"],
+            ["conoce_a_dios", "Conoce a Dios"]
+         ]
+      ],      
+      ["inicia_sesion","Inicia Sesión"]
    ],
    "authenticated_base_user":[
       ["inicio","Inicio"],
       ["creencias","Creencias"],
-      ["contacto","Contacto"]
+      ["contacto","Contacto"],
+      ["inicia_sesion","Inicia Sesión"]
    ],
    "authenticated_admin":[
       ["inicio","Inicio"],
       ["creencias","Creencias"],
-      ["contacto","Contacto"]
+      ["contacto","Contacto"],
+      ["inicia_sesion","Inicia Sesión"]
    ]
 }

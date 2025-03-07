@@ -14,38 +14,56 @@ class base_component
    protected string $color_mode = "";
    protected string $component_markup = "";
    protected string $component_styles = "";
-
-   protected array | null $session = null;
+   protected array | null $environment_variables = null;
    protected array | null $external_elements_ids = null;
+
 
    public function __construct
    (
-      string $root_folder, 
-      string $component_folder, 
+      string $root_folder,
+      string $component_folder,
       string $page_title,
       string $page_name,
       string $page_description,
-      string $color_mode,
-      string $parent_component_id,
-      string $parent_component_class,
-      array | null $session = null,
+      string $parent_component_id = "",
+      string $parent_component_class = "",
       array | null $external_elements_ids = null,
+      string $color_mode = "",
+      array | null $session = null,
+      array | null $get = null,
+      array | null $post = null,
+      array | null $files = null,
    )
    {
       $this->set_component_base_properties(
-         $root_folder, 
+         $root_folder,
          $component_folder,
          $page_title,
          $page_name,
          $page_description,
-         $color_mode,
          $parent_component_id,
          $parent_component_class,
-         $session, 
-         $external_elements_ids
+         $external_elements_ids,
+         $color_mode,
+         $session,
+         $get,
+         $post,
+         $files,
       );
+      
+      $this->external_elements_ids = $external_elements_ids === null ? [] : $external_elements_ids;
       $this->validate_session();
       $this->generate_component_markup_and_styles();
+   }
+
+   private function validate_session()
+   {
+      $this->session_is_active = $this->environment_variables["session"] !== null;
+   }
+
+   protected function generate_component_markup_and_styles()
+   {
+
    }
    
    private function set_component_base_properties
@@ -55,11 +73,14 @@ class base_component
       string $page_title,
       string $page_name,
       string $page_description,
-      string $color_mode,
-      string $parent_component_id,
-      string $parent_component_class,
-      array | null $session = null,
+      string $parent_component_id = "",
+      string $parent_component_class = "",
       array | null $external_elements_ids = null,
+      string $color_mode = "",
+      array | null $session = null,
+      array | null $get = null,
+      array | null $post = null,
+      array | null $files = null,    
    )
    {
       $this->root_folder = $root_folder;
@@ -67,18 +88,35 @@ class base_component
       $this->page_title = $page_title;
       $this->page_name = $page_name;
       $this->page_description = $page_description;
+      
       $this->parent_component_id = $parent_component_id;
       $this->parent_component_class = $parent_component_class;
-      $this->component_class = static::class;
-      $this->component_id = $this->page_name . "_" . $this->component_class;
-      $this->color_mode = $color_mode;
-      $this->session = $session;
+      
+      if($parent_component_class !== "" && $parent_component_class !== null)
+      {
+         $this->parent_component_class = $parent_component_class;
+         $this->component_class = $this->page_name . "_" . $this->parent_component_class . "_" . $this->component_class;
+      }
+      else
+      {
+         $this->component_class = static::class;
+      };
+      
+      if($parent_component_id !== "" && $parent_component_id !== null)
+      {
+         $this->parent_component_id = $parent_component_id;
+         $this->component_id = $this->page_name . "_" . $this->parent_component_id . "_" . $this->component_class;
+      }
+      else
+      {
+         $this->component_id = $this->page_name . "_" . $this->component_class;
+      };
+      
       $this->external_elements_ids = $external_elements_ids;
-   }
+      
+      $this->color_mode = $color_mode;
 
-   protected function generate_component_markup_and_styles()
-   {
-
+      $this->environment_variables = ["session"=>$session,"get"=>$get,"post"=>$post,"files"=>$files];
    }
 
    protected function add_component
@@ -96,9 +134,18 @@ class base_component
       $formatted_class = $this->component_class . "_" . $component_name;
       $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
-      $formatted_styles_class = $this->generate_formated_component_styles($formatted_class, $component_styles);
+      
+      $formatted_styles_class = $this->generate_formated_component_styles(
+        $formatted_class,
+        $component_styles
+      );
       $formatted_content = implode(" ", $component_content);
-      $formatted_javascript = $this->generate_formated_component_javascript($formatted_id,$component_name, $external_elements_ids);
+      
+      $formatted_javascript = $this->generate_formated_component_javascript(
+        $formatted_id,
+        $component_name,
+        $external_elements_ids
+      );
 
       $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
       if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
@@ -114,8 +161,8 @@ class base_component
       string $component_tag,
       string $component_name,
       string $parent_component_name,
-      array $component_content,
       array $component_styles,
+      array $component_content,
       array $component_classes = [],
       array $component_attributes = [],
    ): string
@@ -137,7 +184,7 @@ class base_component
 
    private function generate_formated_component_javascript
    (
-      $formatted_id,
+      string $formatted_id,
       string $component_name, 
       array $external_elements_ids
    ): string
@@ -149,9 +196,16 @@ class base_component
       $markup = "";
 
       $formated_external_elements_ids = "";
-      foreach ($external_elements_ids as $id) 
+      if($external_elements_ids !== null)
       {
-         $formated_external_elements_ids .= '"'.$id.'",';
+        foreach ($external_elements_ids as $id) 
+        {
+           $formated_external_elements_ids .= '"'.$id.'",';
+        };
+      }
+      else
+      {
+        $formated_external_elements_ids = [];
       };
 
       $markup = '<script
@@ -168,11 +222,11 @@ class base_component
                "'.$this->page_description.'",
                "'.$this->parent_component_id.'",
                "'.$this->parent_component_class.'",
-               "'.$this->component_class.'",
                "'.$this->component_id.'",
+               "'.$this->component_class.'",
                "'.$this->color_mode.'",
-               "'.$this->session.'",
                ['.$formated_external_elements_ids.'],
+               ['.implode($this->environment_variables).'],
             );
       </script>';
       
@@ -220,12 +274,7 @@ class base_component
       $single_tags = ["img", "input", "br", "hr", "meta", "link", "area", "col", "embed", "source", "track", "wbr"];
       $compound_tags = ["div", "p", "span", "a", "ul", "ol", "li", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "form", "button", "select", "option", "textarea", "nav", "article", "section", "header", "footer", "aside", "main", "address", "time", "figure", "figcaption", "audio", "video"];
 
-      if
-      (
-         !in_array($component_tag, $single_tags, true) 
-            &&
-         !in_array($component_tag, $compound_tags, true)
-         )
+      if(!in_array($component_tag, $single_tags, true) && !in_array($component_tag, $compound_tags, true))
       {
          return null;
       };
@@ -233,18 +282,12 @@ class base_component
       return in_array($component_tag, $single_tags, true);
    }
 
-
-   private function validate_session()
-   {
-      $this->session_is_active = $this->session !== null;
-   }
-
-   public function print_markup()
+   public function provide_markup()
    {
       return $this->component_markup;
    } 
 
-   public function print_styles()
+   public function provide_styles()
    {
       return $this->component_styles;
    }

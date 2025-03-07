@@ -12,21 +12,50 @@
 
          if($item == $page_name)
          {
-
             $current_page_markup = "current_page";
          };
 
-         $html .= '
-            <li>
-               <a
+         echo "aaaaaaaaa";
+
+         if(count($item) > 2)
+         {
+            $html .= '
+               <li
                id=""
                class="'.$current_page_markup.'"
-               href="'. $root_folder. $item[0] .'"
                >
-               '. $item[1] .'
-               </a>
-            </li>
-         ';
+                  <a
+                  id=""
+                  class="'.$current_page_markup.'"
+                  href="'. $root_folder. $item[0] .'"
+                  >
+                  '. $item[1] .'
+                  </a>
+               </li>
+            ';
+         }
+         else
+         {
+            $html .= '
+               <li>
+                  <button>
+                  id="button"
+                  class="'.$current_page_markup.'"
+                  >
+                     '. $item[1] .'
+                     </a>
+                  </button>
+
+                  <a
+                  id=""
+                  class="'.$current_page_markup.'"
+                  href="'. $root_folder. $item[2][0] .'"
+                  >
+                  '. $item[2][1] .'
+                  </a>
+               </li>
+            ';
+         };
       }
       return $html;
    }

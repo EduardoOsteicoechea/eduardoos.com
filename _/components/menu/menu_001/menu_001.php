@@ -13,11 +13,11 @@
       public function __construct
       (
          string $root_folder, 
-         array | null $session, 
          string $page_title,
          string $page_name,
          string $page_description,
-         string $color_mode
+         string $color_mode,
+         array | null $session, 
       )
       {
          $this->root_folder = static::class;
@@ -67,7 +67,7 @@
          ';
       }
 
-      public function print_markup()
+      public function provide_markup()
       {
          return $this->html;
       }
@@ -77,15 +77,17 @@
          return $this->is_outer_container_id;
       }      
 
-      public function print_styles()
+      public function provide_styles()
       {
          return '
             .'.$this->component_class.'_outer_container
             {
                display:flex;
-               height:100dvh;
                overflow-y:auto;
+               border-radius:0px !important;
                width:100%;
+               height:auto;
+               height:calc(100% - var(--header_height));
                background:var(--c1);
                position:absolute;
                top:var(--header_height);
