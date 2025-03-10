@@ -46,6 +46,8 @@ class hero_002 extends base_component
         $post,
         $files,
       );
+      
+      $this->generate_component_markup_and_styles();
   }
 
   protected function generate_component_markup_and_styles()

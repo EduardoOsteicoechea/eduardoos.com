@@ -1,6 +1,8 @@
 <?php
    include "layout/public_page.php";
    include "components/base_component.php";
+   include "layout/page_content.php";
+   include "components/main/main_001/main_001.php";
 
    function redirect_if_variable_is_populated(string $root_folder, array $variable)
    {

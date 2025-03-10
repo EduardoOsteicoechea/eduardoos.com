@@ -16,6 +16,7 @@ class base_component
    protected string $component_styles = "";
    protected array | null $environment_variables = null;
    protected array | null $external_elements_ids = null;
+   protected array | null $elements_ids = null;
 
 
    public function __construct
@@ -53,7 +54,7 @@ class base_component
       
       $this->external_elements_ids = $external_elements_ids === null ? [] : $external_elements_ids;
       $this->validate_session();
-      $this->generate_component_markup_and_styles();
+      // $this->generate_component_markup_and_styles();
    }
 
    private function validate_session()
@@ -130,30 +131,50 @@ class base_component
       array $external_elements_ids = ["dont_trigger"],
    ): void
    {
+      ///////////////////////////////
+      // Generate component markup parts
+      ///////////////////////////////
+
       $formatted_id = $this->component_id . "_" . $component_name;
       $formatted_class = $this->component_class . "_" . $component_name;
       $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
-      
-      $formatted_styles_class = $this->generate_formated_component_styles(
-        $formatted_class,
-        $component_styles
-      );
       $formatted_content = implode(" ", $component_content);
+
+      ///////////////////////////////
+      // Register the component id to make it globally avaiable for external components and internal Javascript
+      ///////////////////////////////
+
+      $this->register_component_id($component_name, $formatted_id);
       
-      $formatted_javascript = $this->generate_formated_component_javascript(
-        $formatted_id,
-        $component_name,
-        $external_elements_ids
+      ///////////////////////////////
+      // "$this->generate_formated_component_javascript" must occur after "$this->register_component_id($component_name, $formatted_id)", because it uses the ids provide by the above.
+      ///////////////////////////////
+
+      $component_javascript_markup = $this->generate_formated_component_javascript(
+         $formatted_id,
+         $component_name,
+         $external_elements_ids,
       );
 
-      $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
-      if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
-      $new_component .= ">";
-      $new_component .= $formatted_javascript;
+      ///////////////////////////////
+      // Compose component markup
+      ///////////////////////////////
 
-      $this->component_markup .= $new_component;
-      $this->component_styles .= $formatted_styles_class;
+      $new_component_markup = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
+
+      if(!$this->tag_is_simple($component_tag)) $new_component_markup .= ">".$formatted_content."</".$component_tag;
+      
+      $new_component_markup .= ">";
+
+      $new_component_markup .= $component_javascript_markup;
+
+      ///////////////////////////////
+      // Register component markup and styles
+      ///////////////////////////////
+      
+      $this->generate_formated_component_styles($formatted_class,$component_styles); 
+      $this->register_component_markup($new_component_markup);
    }
 
    protected function add_subcomponent
@@ -167,19 +188,61 @@ class base_component
       array $component_attributes = [],
    ): string
    {
+      ///////////////////////////////
+      // Generate component markup parts
+      ///////////////////////////////
+      
       $formatted_id = $this->component_id . "_" . $parent_component_name . "_" . $component_name;
       $formatted_class = $this->component_class . "_" . $parent_component_name . "_" . $component_name;
       $formatted_classes = $this->component_class . "_" . $parent_component_name . "_" . $component_name . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
-      $formatted_styles_class = $this->generate_formated_component_styles($formatted_class, $component_styles);
       $formatted_content = implode(" ", $component_content);
 
-      $new_component = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
-      if(!$this->tag_is_simple($component_tag)) $new_component .= ">".$formatted_content."</".$component_tag;
-      $new_component .= ">";
+      ///////////////////////////////
+      // Register the component id to make it globally avaiable for external components and internal Javascript
+      ///////////////////////////////
 
-      $this->component_styles .= $formatted_styles_class;
-      return $new_component;
+      $this->register_component_id($component_name, $formatted_id);
+
+      ///////////////////////////////
+      // Compone component markup
+      ///////////////////////////////
+
+      $new_component_markup = '<'.$component_tag.' id="'.$formatted_id.'" class="'.$formatted_classes.'" '.$formatted_attributes;
+      
+      if(!$this->tag_is_simple($component_tag)) $new_component_markup .= ">".$formatted_content."</".$component_tag;
+      
+      $new_component_markup .= ">";
+
+      ///////////////////////////////
+      // Register component data and return it if required
+      ///////////////////////////////
+      
+      $this->generate_formated_component_styles($formatted_class, $component_styles);
+      return $new_component_markup;
+   }
+
+   protected function register_component_id(string $component_name, string $formatted_id):void 
+   {
+      $this->elements_ids[$component_name] = $formatted_id;
+   }
+
+   protected function register_subcomponent_ids(array $elements_ids):void 
+   {            
+      foreach ($elements_ids as $component_name => $id) 
+      {
+         $this->register_component_id($component_name, $id);
+      }
+   }
+
+   protected function register_component_markup(string $new_component_markup):void 
+   {
+      $this->component_markup .= $new_component_markup;
+   }
+
+   protected function register_component_styles(string $formatted_styles):void 
+   {
+      $this->component_styles .= $formatted_styles;
    }
 
    private function generate_formated_component_javascript
@@ -225,7 +288,7 @@ class base_component
                "'.$this->component_id.'",
                "'.$this->component_class.'",
                "'.$this->color_mode.'",
-               ['.$formated_external_elements_ids.'],
+               ['.$formated_external_elements_ids. implode(", ", $this->elements_ids).'],
                ['.implode($this->environment_variables).'],
             );
       </script>';
@@ -239,7 +302,7 @@ class base_component
       array $style_array
    )
    {
-      $formated_styles = "";
+      $formatted_styles = "";
       foreach ($style_array as $style_properties) 
       {
          $particular_element_singular_name = $style_properties[0];
@@ -247,11 +310,11 @@ class base_component
 
          if($style_properties[0] === "")
          {
-            $formated_styles .= "." . $component_class_name . "{\n" . $particular_element_styles . "\n}\n";
+            $formatted_styles .= "." . $component_class_name . "{\n" . $particular_element_styles . "\n}\n";
          }
          else if(str_contains($style_properties[0], "@media"))
          {
-            $formated_styles .= $particular_element_singular_name.'{
+            $formatted_styles .= $particular_element_singular_name.'{
    .'.$component_class_name.'{
       '.$style_properties[1].'
    }
@@ -260,10 +323,11 @@ class base_component
          }
          else
          {
-            $formated_styles .= "." . $particular_element_singular_name . "{\n" . $particular_element_styles . "\n}\n";
+            $formatted_styles .= "." . $particular_element_singular_name . "{\n" . $particular_element_styles . "\n}\n";
          };
       };
-      return $formated_styles;
+
+      $this->register_component_styles($formatted_styles);
    }
 
    private function tag_is_simple
@@ -282,14 +346,8 @@ class base_component
       return in_array($component_tag, $single_tags, true);
    }
 
-   public function provide_markup()
-   {
-      return $this->component_markup;
-   } 
-
-   public function provide_styles()
-   {
-      return $this->component_styles;
-   }
+   public function provide_markup() { return $this->component_markup; } 
+   public function provide_styles() { return $this->component_styles; }
+   public function provide_elements_ids() { return $this->elements_ids; }
 }
 ?>

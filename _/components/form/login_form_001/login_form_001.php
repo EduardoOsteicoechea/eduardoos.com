@@ -32,6 +32,8 @@ class login_form_001 extends base_component
         $post,
         $files,
       );
+
+      $this->generate_component_markup_and_styles();
   }
 
   protected function generate_component_markup_and_styles()
@@ -85,10 +87,11 @@ class login_form_001 extends base_component
                   display: flex; 
                   font-size:1rem; 
                   margin: 3.5rem 0 0 0; 
-                  background:var(--c1); 
+                  background:var(--c11); 
                   color:var(--c2) !important; 
                   font-family:f1bl; 
                   height:2.25rem !important;
+                  border-radius:.2rem;
                   cursor:pointer;"
           ],
         ], ["Acceder"], ["login_form_item"], ["type='submit'"]),

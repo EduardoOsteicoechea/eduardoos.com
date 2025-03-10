@@ -34,6 +34,8 @@
             $post,
             $files,
          );
+
+         $this->generate_component_markup_and_styles();
       }
 
       protected function generate_component_markup_and_styles()
@@ -58,7 +60,7 @@
                         font-family:f1bl;
                         padding: var(--header_item_padding);
                         height: var(--header_item_height);
-                        font-size: 1.35rem;
+                        font-size: 1.25rem;
                      "]
                   ],["eduardoos.com"]),
                ],[],["href='".$this->root_folder."inicio'"]),

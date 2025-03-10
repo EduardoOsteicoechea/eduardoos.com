@@ -12,7 +12,16 @@
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
-   $page_main_content = new main_001($root_folder, $root_folder . "_/components/main/main_001", $page_title, $page_name, $page_description, "","",null, $page_color_scheme, $session,null,null,null,[true,true,true]);
+   $page_main_content = new main_001($root_folder, $root_folder . "_/components/main/main_001", $page_title, $page_name, $page_description, "","",null, $page_color_scheme, $session,null,null,null,);
+
+   // $page_content = new page_content
+   // (
+   //    $root_folder, $root_folder . "_/layout/", $page_title, $page_name, $page_description,
+   //    "","",null, $page_color_scheme, $session,null,null,null, $page_main_content,
+   //    [
+   //       "floating_menu"=>$page_main_content->provide_markup(),
+   //    ]
+   // );
 
    new public_page
    (
