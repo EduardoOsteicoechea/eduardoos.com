@@ -12,7 +12,16 @@
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
-   $page_main_content = new main_001($root_folder, $root_folder . "_/components/main/main_001", $page_title, $page_name, $page_description, "","",null, $page_color_scheme, $session,null,null,null,[true,true,true]);
+   $page_main_content = new main_content_001(
+      $root_folder, 
+      $root_folder . "_/layout/main_content/main_content_001", 
+      $page_title, 
+      $page_name, 
+      $page_description, 
+      "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
+      "_/api/json_data/",
+      "application_routes.json",
+   );
 
    new public_page
    (

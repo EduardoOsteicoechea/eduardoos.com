@@ -1,7 +1,7 @@
 <?php
    function generate_application_anchors($root_folder, $session, $page_name)
    {
-      include $root_folder . "_/helpers/" . "read_json_file.php";
+      // include $root_folder . "_/helpers/" . "read_json_file.php";
 
       $anchors_data = read_json_file($root_folder . "_/api/json_data", "application_routes.json");
 

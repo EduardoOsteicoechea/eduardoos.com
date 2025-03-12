@@ -1,5 +1,5 @@
 <?php
-   class main_001 extends base_component
+   class main_content_001 extends base_component
    {
       private bool $must_print_floating_controls = false;
       private bool $must_print_sidebar = false;
@@ -25,6 +25,8 @@
          array | null $post = null,
          array | null $files = null,
          array | null $components_to_render = null,
+         string $main_content_json_directory_path = "",
+         string $main_content_json_file_path = "",
       )
       { 
          parent::__construct
@@ -45,10 +47,63 @@
          );
 
          $this->determine_required_elements($components_to_render);
-         $this->generate_floating_controls_if_required();
+
+         $this->register_component_styles('
+            .main_content
+            {
+               display:flex;
+               gap:1rem;
+               width:100%;
+               height:auto;
+               padding: 0 1.25rem 1.25rem 1.25rem;
+            }
+            @media only screen and (max-width: 950px)
+            {
+               .main_content
+               {
+                  flex-direction:column;
+               }
+            }
+         ');
+         
+         $this->register_component_markup('
+            <div
+            id="main_content"
+            class="main_content"
+            >
+         ');
+
+         $this->get_content_data_from_json_file($this->root_folder . $main_content_json_directory_path, $main_content_json_file_path);
+         print_r($this->content_data);
+         
          $this->generate_sidebar_if_required();
          $this->generate_main();
+         $this->generate_floating_controls_if_required();
          $this->generate_aside_if_required();
+
+         $formated_external_elements_ids = "";
+         foreach ($this->elements_ids as $id) 
+         {
+            $formated_external_elements_ids .= '"'.$id.'",';
+         };
+         
+         $this->register_component_markup('
+            </div>
+            <script
+            id="main_content"
+            type="module"
+            >
+               import main_content_class from "'.$this->root_folder.'_/layout/main_content/main_content_001/main_content_001.js";
+               new main_content_class(
+                  "'.$this->root_folder.'", 
+                  "'.$this->component_folder.'", 
+                  "'.$this->page_title.'",
+                  "'.$this->page_name.'",
+                  "'.$this->page_description.'",
+                  ['.$formated_external_elements_ids.'],
+               );
+            </script>
+         ');
       }
       
       public function determine_required_elements($components_to_render):void

@@ -39,11 +39,25 @@
 
       protected function generate_component_markup_and_styles()
       {
-         $this->add_component("div","aside",[["","
+         $this->add_component("div","floating_controls",[["","
             height:200px;
-            width:200px;
-            background:yellow;
-         "]],[
+            width:5rem;
+            overflow-y:auto;
+            overflow-x:hidden;
+            z-index:12000;
+            border-radius:.2rem;
+            background:var(--c1);
+            box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
+            transition: none;
+            padding:1.25rem;
+         "],
+         ["@media only screen and (max-width: 950px)", " 
+            position:fixed;
+            width:3rem;
+            right: var(--margin_common);
+            bottom: var(--margin_common);
+         "],
+      ],[
             "This are the floating controls"
          ],[],[],[""]);
       }

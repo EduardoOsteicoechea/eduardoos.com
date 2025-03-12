@@ -41,9 +41,17 @@
       {
          $this->add_component("sidebar","sidebar",[["","
             height:200px;
-            width:200px;
+            width:var(--main_content_sidebar_width);
             background:green;
-         "]],[
+            transition: none;
+            background:var(--c1);
+            box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
+            border-radius:.2rem;
+            padding:1.25rem;
+         "],
+         ["@media only screen and (max-width: 950px)", " 
+            width:100%;
+         "],],[
             "This is the sidebar"
          ],[],[],[""]);
       }

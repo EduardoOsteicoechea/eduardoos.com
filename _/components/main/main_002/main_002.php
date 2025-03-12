@@ -48,9 +48,10 @@
       protected function generate_component_markup_and_styles()
       {
          $this->add_component("main","main",[["","
-            height:200px;
-            width:200px;
-            background:brown;
+            height:500px;
+            width:100%;
+            transition: none;
+            padding:1.25rem;
          "]],[
             "This is the main"
          ],[],[],[""]);

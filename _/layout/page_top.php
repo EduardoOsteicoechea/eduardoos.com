@@ -176,6 +176,9 @@
          --header_height: 4rem;
          --header_item_height: 2.25rem;
          --header_item_padding: 0rem 1.25rem;
+         --margin_common: 1.25rem;
+         --main_content_sidebar_width: 33rem;
+         --main_content_aside_width: 33rem;
       ';
 
       private string $styles_light_color_scheme = '
