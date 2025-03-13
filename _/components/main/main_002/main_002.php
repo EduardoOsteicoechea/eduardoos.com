@@ -67,7 +67,7 @@
          $this->add_component("main","main",[["","
             display:flex;
             flex-direction:column;
-            gap:1.75rem;
+            gap:1.25rem;
             width:100%;
             transition: none;
             padding:1.25rem 3rem 1.25rem 0rem;
