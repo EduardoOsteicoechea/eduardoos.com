@@ -160,7 +160,7 @@
       :root {
          font-size: 16px;
          letter-spacing:0;
-         line-height: 1.5rem;
+         line-height: 1.35rem;
          font-family: f1r, system-ui;
          scroll-behavior: smooth;
          --b1: solid .1rem red;
