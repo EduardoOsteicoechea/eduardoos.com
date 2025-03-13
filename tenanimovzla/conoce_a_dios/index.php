@@ -19,8 +19,7 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "_/api/json_data/",
-      "application_routes.json",
+      "_/api/json_data/tenanimovzla/conoceadios/shortandshocking.json",
    );
 
    new public_page

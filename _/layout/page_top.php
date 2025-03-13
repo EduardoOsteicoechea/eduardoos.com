@@ -254,8 +254,16 @@
       a { font-size: 1rem; cursor: pointer; text-decoration:none; }
       p { font-size: 1rem; }
       b { font-family:f1bl; }
-      h1{font-family: f1b; font-size: 2.5rem;}
-      h2{font-family: f1b; font-size: 2rem;}
+      h1{
+         font-family: f1b; 
+         font-size: 2.5rem;
+         line-height: 3rem;
+      }
+      h2{
+         font-family: f1b; 
+         font-size: 2rem;
+         line-height: 3rem;
+      }
       h3{font-family: f1b; font-size: 1.5rem;}
       h4{font-family: f1b; font-size: 1rem;}
       

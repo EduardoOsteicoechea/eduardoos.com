@@ -350,10 +350,8 @@ class base_component
    public function provide_markup() { return $this->component_markup; } 
    public function provide_styles() { return $this->component_styles; }
    public function provide_elements_ids() { return $this->elements_ids; }
-   public function get_content_data_from_json_file(string $direcotry_path, string $file_path, array $files_names = null) : void
+   public function get_content_data_from_json_file(string $filepath, array $files_names = null) : void
    {
-      $filepath = $direcotry_path . "/" . $file_path;
-
       if (file_exists($filepath))
       {
          $contents = file_get_contents($filepath);

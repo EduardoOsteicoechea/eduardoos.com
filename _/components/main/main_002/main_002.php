@@ -24,6 +24,7 @@
          array | null $post = null,
          array | null $files = null,
          array | null $components_to_render = null,
+         $content_data,
       )
       { 
          parent::__construct
@@ -42,18 +43,36 @@
             $post,
             $files,
          );
+
+         $this->content_data = $content_data;
          $this->generate_component_markup_and_styles();
       }
 
       protected function generate_component_markup_and_styles()
       {
+         $title = "<h1>" . $this->content_data["el_senor_es_mi_pastor"]["title"] . "</h1>";
+         $content = "";
+         $passages = "";
+
+         foreach ($this->content_data["el_senor_es_mi_pastor"]["article"] as $line) 
+         {
+            $content .= "<p>" . $line . "</p>";
+         };
+
+         foreach ($this->content_data["el_senor_es_mi_pastor"]["passages"] as $passage) 
+         {
+            $passages .= "<p>" . $passage . "</p>";
+         };         
+
          $this->add_component("main","main",[["","
-            height:500px;
+            display:flex;
+            flex-direction:column;
+            gap:1rem;
             width:100%;
             transition: none;
             padding:1.25rem;
          "]],[
-            "This is the main"
+            $title . $content . $passages,
          ],[],[],[""]);
       }
    }

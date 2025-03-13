@@ -25,7 +25,6 @@
          array | null $post = null,
          array | null $files = null,
          array | null $components_to_render = null,
-         string $main_content_json_directory_path = "",
          string $main_content_json_file_path = "",
       )
       { 
@@ -73,8 +72,8 @@
             >
          ');
 
-         $this->get_content_data_from_json_file($this->root_folder . $main_content_json_directory_path, $main_content_json_file_path);
-         print_r($this->content_data);
+         $this->get_content_data_from_json_file($this->root_folder . $main_content_json_file_path);
+         // print_r($this->content_data);
          
          $this->generate_sidebar_if_required();
          $this->generate_main();
@@ -137,7 +136,9 @@
             $this->environment_variables["session"],
             $this->environment_variables["get"],
             $this->environment_variables["post"],
-            $this->environment_variables["files"]
+            $this->environment_variables["files"],
+            null,
+            $this->content_data
          );
          
          $this->register_component_markup($this->page_main->provide_markup());
