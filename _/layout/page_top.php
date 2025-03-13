@@ -160,7 +160,7 @@
       :root {
          font-size: 16px;
          letter-spacing:0;
-         line-height: 1.35rem;
+         line-height: 1.5rem;
          font-family: f1r, system-ui;
          scroll-behavior: smooth;
          --b1: solid .1rem red;
@@ -258,6 +258,7 @@
          font-family: f1b; 
          font-size: 2.5rem;
          line-height: 3rem;
+         margin-bottom: 1rem;
       }
       h2{
          font-family: f1b; 
