@@ -50,6 +50,7 @@
             padding:1.25rem;
          "],
          ["@media only screen and (max-width: 950px)", " 
+            display:none;
             width:100%;
          "],],[
             "This is the aside"

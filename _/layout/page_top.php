@@ -300,7 +300,6 @@
          font-size:.75rem;
          font-family:f1b;
          color:var(--c7);
-         margin-top:1.25rem;
       }
 
       @media only screen and (max-width: 950px) and (min-width: 451px) {}

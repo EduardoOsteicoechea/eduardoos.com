@@ -71,7 +71,7 @@
          foreach ($content as $line) 
          {
             $markup .= '<p class="'.$line[1].'">' . $line[0];
-            if($line[2])
+            if(isset($line[2]))
             {
                $markup .= '<span class="biblical_reference_small">'. $line[2] .'</span>';
             };
@@ -88,7 +88,7 @@
          $content = $this->generate_article_body($this->content_data["el_senor_es_mi_pastor"]["article"]);
          $abstract = $this->generate_article_abstract($this->content_data["el_senor_es_mi_pastor"]["abstract"]);
 
-         $this->article_content = $title . $abstract . $content . $passages;
+         $this->article_content = $title . $abstract . $content;
       }
 
       protected function generate_component_markup_and_styles()
@@ -101,7 +101,7 @@
             gap:1.35rem;
             width:100%;
             transition: none;
-            padding:1.25rem 3rem 1.25rem 0rem;
+            padding:1.25rem 4rem 1.25rem 0rem;
          "]],[
             $this->article_content,
          ],[],[],[""]);

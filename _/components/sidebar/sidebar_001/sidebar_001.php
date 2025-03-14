@@ -51,6 +51,7 @@
          "],
          ["@media only screen and (max-width: 950px)", " 
             width:100%;
+            display:none;
          "],],[
             "This is the sidebar"
          ],[],[],[""]);
