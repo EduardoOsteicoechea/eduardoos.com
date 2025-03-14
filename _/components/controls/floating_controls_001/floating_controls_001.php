@@ -41,12 +41,13 @@
       {
          $this->add_component("div","floating_controls",[["","
             height:200px;
-            width:5rem;
+            width:5.5rem;
             overflow-y:auto;
             overflow-x:hidden;
             z-index:12000;
-            border-radius:15rem;
-            background:var(--c3);
+            border-radius:0rem;
+            background:var(--c2);
+            color:var(--c1);
             box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             transition: none;
             padding:1.25rem;
