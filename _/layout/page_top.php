@@ -284,9 +284,12 @@
       
       .article_abstract
       {
-         font-size:.75rem;
          background: var(--c3);
          padding:1rem;
+      }
+      .article_abstract > *
+      {
+         font-size:.75rem !important;
       }
       
       .biblical_passage

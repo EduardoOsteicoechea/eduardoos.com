@@ -54,8 +54,8 @@
       {
          return '
             <div class="article_abstract">
-               <b><i>Idea clave:</i></b><br>
-               <i>'.$content.'</i>
+               <b>Idea clave:</b>
+               <p>'.$content.'</p>
             </div>
          ';
       }
@@ -70,12 +70,24 @@
          $markup = "";
          foreach ($content as $line) 
          {
-            $markup .= '<p class="'.$line[1].'">' . $line[0];
-            if(isset($line[2]))
+            $markup .= '<p class="'.$line[1].'">';
+
+            if($line[1] === "biblical_passage")
             {
-               $markup .= '<span class="biblical_reference_small">'. $line[2] .'</span>';
+               $markup .= '"' . $line[0] . '"';
+
+               if(isset($line[2]))
+               {
+                  $markup .= '<span class="biblical_reference_small">'. $line[2] .'</span>';
+               };
+   
+               $markup .= '</p>';
+            }
+            else
+            {
+               $markup .= $line[0];
+               $markup .= '</p>';
             };
-            $markup .= '</p>';
          };
          return $markup;
       }
