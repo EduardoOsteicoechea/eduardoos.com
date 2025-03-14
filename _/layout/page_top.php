@@ -313,7 +313,7 @@
          gap:1.35rem;
          width:100%;
          transition: none;
-         padding: 0 4rem 1.25rem 0rem;
+         padding: 0 0 1.25rem 0;
       }
 
       @media only screen and (max-width: 950px) and (min-width: 451px) {}

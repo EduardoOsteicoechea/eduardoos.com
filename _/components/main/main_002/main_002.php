@@ -105,7 +105,7 @@
          foreach ($content as $idea) 
          {
             $idea_heading = $this->generate_article_idea_heading($idea[0]);
-            $idea_id = $idea[1];
+            $idea_id = $this->component_id . "_" . $idea[1];
             $idea_subideas = $this->generate_article_body_idea($idea[2]);
             $markup .= '
                <div
@@ -141,6 +141,7 @@
             gap:1.35rem;
             width:100%;
             transition: none;
+            padding: 0 4rem 1.25rem 0rem;
          "]],[
             $this->article_content,
          ],[],[],[""]);

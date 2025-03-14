@@ -45,7 +45,7 @@
             overflow-y:auto;
             overflow-x:hidden;
             z-index:12000;
-            border-radius:0rem;
+            border-radius:.2rem;
             background:var(--c2);
             color:var(--c1);
             box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
