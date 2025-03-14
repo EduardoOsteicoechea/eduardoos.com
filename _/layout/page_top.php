@@ -160,7 +160,7 @@
       :root {
          font-size: 16px;
          letter-spacing:0;
-         line-height: 1.35rem;
+         line-height: 1.25rem;
          font-family: f1r, system-ui;
          scroll-behavior: smooth;
          --b1: solid .1rem red;
@@ -256,9 +256,8 @@
       b { font-family:f1bl; }
       h1{
          font-family: f1b; 
-         font-size: 2.5rem;
-         line-height: 3rem;
-         margin-bottom: 1rem;
+         font-size: 2rem;
+         line-height: 2.5rem;
       }
       h2{
          font-family: f1b; 
@@ -268,6 +267,8 @@
       h3{font-family: f1b; font-size: 1.5rem;}
       h4{font-family: f1b; font-size: 1rem;}
       
+
+
       body
       {
          max-width:1920px;
@@ -281,6 +282,27 @@
          margin: 0 auto;
       }      
       
+      .article_abstract
+      {
+         font-size:.75rem;
+         background: var(--c3);
+         padding:1rem;
+      }
+      
+      .biblical_passage
+      {
+         font-family:f1b;
+      }
+      
+      .biblical_reference_small
+      {
+         display:block;
+         font-size:.75rem;
+         font-family:f1b;
+         color:var(--c7);
+         margin-top:1.25rem;
+      }
+
       @media only screen and (max-width: 950px) and (min-width: 451px) {}
       
       @media only screen and (max-width: 450px) {}
@@ -291,7 +313,8 @@
             display:block;
             width:345px;
          }
-      }      
+      }
+               
       ';
    }
 ?>

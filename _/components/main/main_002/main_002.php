@@ -7,6 +7,7 @@
       public floating_controls_001 | null $page_floating_controls = null;
       public sidebar_001 | null $page_sidebar = null;
       public aside_001 | null $page_aside = null;
+      public string $article_content = "";
 
       public function __construct
       (
@@ -45,24 +46,54 @@
          );
 
          $this->content_data = $content_data;
+         $this->generate_article_content();
          $this->generate_component_markup_and_styles();
+      }
+
+      protected function generate_article_abstract(string $content): string
+      {
+         return '
+            <div class="article_abstract">
+               <b><i>Idea clave:</i></b>
+               <i>'.$content.'</i>
+            </div>
+         ';
+      }
+
+      protected function generate_article_title(string $content): string
+      {
+         return "<h1>".$content."</h1>";
+      }
+
+      protected function generate_article_body(array $content): string
+      {
+         $markup = "";
+         foreach ($content as $line) 
+         {
+            $markup .= '<p class="'.$line[1].'">' . $line[0];
+            if($line[2])
+            {
+               $markup .= '<span class="biblical_reference_small">'. $line[2] .'</span>';
+            };
+            $markup .= '</p>';
+         };
+         return $markup;
+      }
+
+      protected function generate_article_content()
+      {
+         $this->article_content = "";
+         
+         $title = $this->generate_article_title($this->content_data["el_senor_es_mi_pastor"]["title"]);
+         $content = $this->generate_article_body($this->content_data["el_senor_es_mi_pastor"]["article"]);
+         $abstract = $this->generate_article_abstract($this->content_data["el_senor_es_mi_pastor"]["abstract"]);
+
+         $this->article_content = $title . $abstract . $content . $passages;
       }
 
       protected function generate_component_markup_and_styles()
       {
-         $title = "<h1>" . $this->content_data["el_senor_es_mi_pastor"]["title"] . "</h1>";
-         $content = "";
-         $passages = "";
-
-         foreach ($this->content_data["el_senor_es_mi_pastor"]["article"] as $line) 
-         {
-            $content .= "<p>" . $line . "</p>";
-         };
-
-         foreach ($this->content_data["el_senor_es_mi_pastor"]["passages"] as $passage) 
-         {
-            $passages .= "<p>" . $passage . "</p>";
-         };         
+                 
 
          $this->add_component("main","main",[["","
             display:flex;
@@ -72,7 +103,7 @@
             transition: none;
             padding:1.25rem 3rem 1.25rem 0rem;
          "]],[
-            $title . $content . $passages,
+            $this->article_content,
          ],[],[],[""]);
       }
    }
