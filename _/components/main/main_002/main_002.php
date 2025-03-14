@@ -54,7 +54,7 @@
       {
          return '
             <div class="article_abstract">
-               <b><i>Idea clave:</i></b>
+               <b><i>Idea clave:</i></b><br>
                <i>'.$content.'</i>
             </div>
          ';
