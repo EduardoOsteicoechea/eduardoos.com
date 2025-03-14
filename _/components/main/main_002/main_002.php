@@ -65,7 +65,7 @@
          return "<h1>".$content."</h1>";
       }
 
-      protected function generate_article_body(array $content): string
+      protected function generate_article_body_idea(array $content): string
       {
          $markup = "";
          foreach ($content as $line) 
@@ -74,7 +74,7 @@
 
             if($line[1] === "biblical_passage")
             {
-               $markup .= '"' . $line[0] . '"';
+               $markup .= '"' . $line[0] . '".';
 
                if(isset($line[2]))
                {
@@ -88,6 +88,34 @@
                $markup .= $line[0];
                $markup .= '</p>';
             };
+         };
+         return $markup;
+      }
+
+      protected function generate_article_idea_heading(string $content): string
+      {
+         if($content === "") return "";
+
+         return "<h2>".$content."</h2>";
+      }
+
+      protected function generate_article_body(array $content): string
+      {
+         $markup = "";
+         foreach ($content as $idea) 
+         {
+            $idea_heading = $this->generate_article_idea_heading($idea[0]);
+            $idea_id = $idea[1];
+            $idea_subideas = $this->generate_article_body_idea($idea[2]);
+            $markup .= '
+               <div
+               id="'.$idea_id.'"
+               class="article_idea"
+               >
+                  '.$idea_heading.'
+                  '.$idea_subideas.'
+               </div>
+            ';
          };
          return $markup;
       }
@@ -113,7 +141,6 @@
             gap:1.35rem;
             width:100%;
             transition: none;
-            padding:1.25rem 4rem 1.25rem 0rem;
          "]],[
             $this->article_content,
          ],[],[],[""]);

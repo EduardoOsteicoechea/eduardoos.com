@@ -261,8 +261,8 @@
       }
       h2{
          font-family: f1b; 
-         font-size: 2rem;
-         line-height: 3rem;
+         font-size: 1.5rem;
+         line-height: 1.5rem;
       }
       h3{font-family: f1b; font-size: 1.5rem;}
       h4{font-family: f1b; font-size: 1rem;}
@@ -286,6 +286,7 @@
       {
          background: var(--c3);
          padding:1rem;
+         margin-bottom:.5rem;
       }
       .article_abstract > *
       {
@@ -303,6 +304,16 @@
          font-size:.75rem;
          font-family:f1b;
          color:var(--c7);
+      }
+      
+      .article_idea
+      {
+         display:flex;
+         flex-direction:column;
+         gap:1.35rem;
+         width:100%;
+         transition: none;
+         padding: 0 4rem 1.25rem 0rem;
       }
 
       @media only screen and (max-width: 950px) and (min-width: 451px) {}
