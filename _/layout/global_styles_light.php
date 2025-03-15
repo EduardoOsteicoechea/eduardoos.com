@@ -199,7 +199,7 @@ function provide_global_styles($root_folder)
          {
             display:flex;
             flex-direction:column;
-            gap:1.35rem;
+            gap:1.15rem;
             width:100%;
             transition: none;
             padding: 0 0 1.25rem 0;
