@@ -97,7 +97,7 @@ function provide_global_styles($root_folder)
          b { font-family:f1bl; }
          h1{
             font-family: f1b; 
-            font-size: 2rem;
+            font-size: 3rem;
             line-height: 3rem;
          }
          h2{
