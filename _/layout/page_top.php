@@ -320,7 +320,7 @@
       .scroll_button_arrow_bar
       {
          width:.2rem;
-         height:40%;
+         height:50%;
          background:var(--c2);
          border-radius:1rem;
       }

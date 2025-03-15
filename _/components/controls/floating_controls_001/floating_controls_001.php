@@ -90,10 +90,10 @@
             gap:1rem;
             height:fit-content;
             width:5.5rem;
-            padding:1rem;
+            padding:.75rem 1rem;
             overflow-y:auto;
             overflow-x:hidden;
-            z-index:12000;
+            z-index:0;
             border-radius:.2rem;
             background:var(--c3);
             color:var(--c1);
@@ -109,8 +109,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
             ["","
                background:var(--c3);
-               width: 2rem;
-               height: 2rem;
+               width: 1.5rem;
+               height: 1.5rem;
                font-size:inherit;
             "]],[
                '<div class="scroll_button_arrow_bar scroll_top_button_arrow_left_bar"></div>',
@@ -127,8 +127,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
                ["","
                   background:var(--c3);
-                  width: 2rem;
-                  height: 2rem;
+                  width: 1.5rem;
+                  height: 1.5rem;
                   font-size:inherit;
                "]],[
                   '<div class="scroll_button_arrow_bar scroll_down_button_arrow_left_bar"></div>',
