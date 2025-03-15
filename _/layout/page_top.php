@@ -179,6 +179,7 @@
          --margin_common: 1.25rem;
          --main_content_sidebar_width: 33rem;
          --main_content_aside_width: 33rem;
+         --right_side_small_control: 3.75rem;
       ';
 
       private string $styles_light_color_scheme = '

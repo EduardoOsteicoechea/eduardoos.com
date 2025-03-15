@@ -70,7 +70,7 @@
                   font-family:f1bl;
                   font-size: 1rem;
                   padding: 0 .75rem;
-                  width: 4.5rem;
+                  width: var(--right_side_small_control);
                   padding: var(--header_item_padding);
                   height: var(--header_item_height);
                "]],["menú"])

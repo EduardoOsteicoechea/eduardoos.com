@@ -41,8 +41,10 @@
 
                ["Busca al Señor mientras puedas hallarlo","biblical_passage"],
                ["Abandona tu camino de impiedad y deja atrás tus pensamientos de maldad","biblical_passage"],
-               ["¡Vuélvete al Señor! Él será compasivo y amplio para perdonarte","biblical_passage","Isaías.55.6-7"],
-
+               ["¡Vuélvete al Señor! Él será compasivo y amplio para perdonarte","biblical_passage","Isaías.55.6-7"]
+            ]
+         ],
+         ["Conversemos al respecto","conversemos_al_respecto",[
                ["Si quieres conocer cómo acercarte al Dios de la Biblia, responde a este mensaje y conversaremos sobre ello.",""],
                ["Que Dios te ayude en todo.",""]
             ]

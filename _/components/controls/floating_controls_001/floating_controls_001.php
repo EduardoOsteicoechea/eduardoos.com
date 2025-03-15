@@ -51,10 +51,11 @@
             box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             transition: none;
             padding:1.25rem;
+            position: sticky;
+            top: 1.25rem;
          "],
-         ["@media only screen and (max-width: 950px)", " 
-            position:fixed;
-            width:3rem;
+         ["@media only screen and (max-width: 950px)", "
+            width:var(--right_side_small_control);
             right: var(--margin_common);
             bottom: var(--margin_common);
          "],

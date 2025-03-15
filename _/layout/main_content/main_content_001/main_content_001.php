@@ -60,7 +60,8 @@
             {
                .main_content
                {
-                  flex-direction:column;
+                  flex-direction:row;
+                  flex-wrap:wrap;
                }
             }
          ');

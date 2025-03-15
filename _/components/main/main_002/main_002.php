@@ -141,7 +141,10 @@
             gap:1.35rem;
             width:100%;
             transition: none;
-            padding: 0 4rem 1.25rem 0rem;
+            padding: 0 0 1.25rem 0rem;
+         "],["@media only screen and (max-width: 950px)","
+            padding: 0 0 1.25rem 0rem;
+            width:calc(100% - 4.75rem);
          "]],[
             $this->article_content,
          ],[],[],[""]);
