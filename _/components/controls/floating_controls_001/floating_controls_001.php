@@ -16,6 +16,7 @@
          array | null $get = null,
          array | null $post = null,
          array | null $files = null,
+         $content_data,
       )
       { 
          parent::__construct
@@ -34,25 +35,70 @@
             $post,
             $files,
          );
+
+         $this->content_data = $content_data;
          $this->generate_component_markup_and_styles();
       }
 
+      protected function generate_article_control_points(): string
+      {
+         $markup = "";
+         $counter = 1;
+         foreach ($this->content_data["data"][0]["article"] as $article) 
+         {
+            $subcomponent_id = $article[1]."_button";
+            $article_idea_id = $article[1]."_article_idea";
+            $markup .= $this->add_subcomponent(
+               "button",$subcomponent_id,"",[
+               ["","
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  background:var(--c1);
+                  color:var(--c2);
+                  width: 1.75rem;
+                  height: 1.75rem;
+                  font-size:inherit;
+                  border-radius:10rem !important;
+               "]],["p.".$counter],[],[
+                  'onclick="
+                     const element = document.getElementById(\''.$article_idea_id.'\');
+                     element.scrollIntoView();
+                  "'
+               ]
+            );
+            
+            $counter = $counter + 1;
+         };
+
+         return $markup;
+
+      }
+
+      // box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
       protected function generate_component_markup_and_styles()
       {
+         $articles_control_points = $this->generate_article_control_points();
+
          $this->add_component("div","floating_controls",[["","
-            height:200px;
+            position: sticky;
+            top: 1.25rem;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:1rem;
+            height:fit-content;
             width:5.5rem;
+            padding:1rem;
             overflow-y:auto;
             overflow-x:hidden;
             z-index:12000;
             border-radius:.2rem;
-            background:var(--c2);
+            background:var(--c3);
             color:var(--c1);
-            box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             transition: none;
-            padding:1.25rem;
-            position: sticky;
-            top: 1.25rem;
+            font-size:.5rem;
          "],
          ["@media only screen and (max-width: 950px)", "
             width:var(--right_side_small_control);
@@ -60,7 +106,41 @@
             bottom: var(--margin_common);
          "],
       ],[
-            "This are the floating controls"
+            $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
+            ["","
+               background:var(--c3);
+               width: 2rem;
+               height: 2rem;
+               font-size:inherit;
+            "]],[
+               '<div class="scroll_button_arrow_bar scroll_top_button_arrow_left_bar"></div>',
+               '<div class="scroll_button_arrow_bar scroll_top_button_arrow_right_bar"></div>',
+            ],[],[
+               'onclick="window.scroll({
+                  top: 0,
+                  left: 0,
+                  behavior: \'smooth\'
+                  });
+               "',
+            ]),
+            $articles_control_points,
+            $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
+               ["","
+                  background:var(--c3);
+                  width: 2rem;
+                  height: 2rem;
+                  font-size:inherit;
+               "]],[
+                  '<div class="scroll_button_arrow_bar scroll_down_button_arrow_left_bar"></div>',
+                  '<div class="scroll_button_arrow_bar scroll_down_button_arrow_right_bar"></div>',
+               ],[],[
+                  'onclick="window.scroll({
+                     top: 100000,
+                     left: 0,
+                     behavior: \'smooth\'
+                     });
+                  "',
+               ])
          ],[],[],[""]);
       }
    }

@@ -317,6 +317,34 @@
          padding: 0 0 1.25rem 0;
       }
 
+      .scroll_button_arrow_bar
+      {
+         width:.2rem;
+         height:40%;
+         background:var(--c2);
+         border-radius:1rem;
+      }
+      .scroll_top_button_arrow_left_bar
+      {
+         transform: rotate(45deg);
+         left:-7%;
+      }
+      .scroll_top_button_arrow_right_bar
+      {
+         transform: rotate(-45deg);
+         left:7%;
+      }
+      .scroll_down_button_arrow_left_bar
+      {
+         transform: rotate(135deg);
+         left:-7%;
+      }
+      .scroll_down_button_arrow_right_bar
+      {
+         transform: rotate(-135deg);
+         left:7%;
+      }
+
       @media only screen and (max-width: 950px) and (min-width: 451px) {}
       
       @media only screen and (max-width: 450px) {}

@@ -106,6 +106,7 @@
          {
             $idea_heading = $this->generate_article_idea_heading($idea[0]);
             $idea_id = $this->component_id . "_" . $idea[1];
+            $idea_id = $idea[1] . "_article_idea";
             $idea_subideas = $this->generate_article_body_idea($idea[2]);
             $markup .= '
                <div
@@ -124,9 +125,9 @@
       {
          $this->article_content = "";
          
-         $title = $this->generate_article_title($this->content_data["el_senor_es_mi_pastor"]["title"]);
-         $content = $this->generate_article_body($this->content_data["el_senor_es_mi_pastor"]["article"]);
-         $abstract = $this->generate_article_abstract($this->content_data["el_senor_es_mi_pastor"]["abstract"]);
+         $title = $this->generate_article_title($this->content_data["data"][0]["title"]);
+         $content = $this->generate_article_body($this->content_data["data"][0]["article"]);
+         $abstract = $this->generate_article_abstract($this->content_data["data"][0]["abstract"]);
 
          $this->article_content = $title . $abstract . $content;
       }

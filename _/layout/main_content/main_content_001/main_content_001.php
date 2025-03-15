@@ -169,7 +169,8 @@
                $this->environment_variables["session"],
                $this->environment_variables["get"],
                $this->environment_variables["post"],
-               $this->environment_variables["files"]
+               $this->environment_variables["files"],
+               $this->content_data
             );
             
             $this->register_component_markup($this->page_floating_controls->provide_markup());
