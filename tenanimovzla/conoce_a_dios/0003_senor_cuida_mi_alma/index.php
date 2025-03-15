@@ -7,7 +7,7 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "tenanimovzla - Conoce a Dios - El Señor es mi Pastor";
+   $page_title = "tenanimovzla - Conoce a Dios - Señor, cuida mi alma";
    $page_name = "el_senor_es_mi_pastor";
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";

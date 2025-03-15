@@ -138,8 +138,6 @@
 
       protected function generate_component_markup_and_styles()
       {
-                 
-
          $this->add_component("main","main",[["","
             display:flex;
             flex-direction:column;

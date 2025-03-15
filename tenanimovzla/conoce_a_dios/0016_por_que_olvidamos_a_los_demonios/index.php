@@ -7,8 +7,8 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "tenanimovzla - Conoce a Dios - La voz del Padre";
-   $page_name = "la_voz_del_padre";
+   $page_title = "tenanimovzla - Conoce a Dios - ¿Por qué olvidamos a los demonios?";
+   $page_name = "por_que_olvidamos_a_los_demonios";
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0004_la_voz_del_padre/article_data.json",
+      "tenanimovzla/conoce_a_dios/0016_por_que_olvidamos_a_los_demonios/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["La voz del Padre","tenanimovzla/conoce_a_dios/0004_la_voz_del_padre/"],
+         ["¿Por qué olvidamos a los demonios?","tenanimovzla/conoce_a_dios/0016_por_que_olvidamos_a_los_demonios/"],
       ]
    );
 

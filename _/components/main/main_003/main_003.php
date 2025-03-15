@@ -103,19 +103,24 @@
          $directories_paths = $this->get_articles_directories_paths();
          $directories_articles_data = $this->get_directories_article_data($directories_paths);
 
-         foreach ($directories_articles_data as $article_data) 
-         {
+         for ($i=0; $i < count($directories_articles_data); $i++) 
+         { 
+            $article_data = $directories_articles_data[$i];
             $markup .= '
             <a 
             class="article_card"
             href="'.$this->articles_directory_path . "/" . $article_data[0].'"
             >
             ';
-            $markup .= '<h3 class="article_card_heading">' . $article_data[1]["title"] . '</h3>';
+            $markup .= '<h3 class="article_card_heading">' . ($i + 1) . ". " . $article_data[1]["title"] . '</h3>';
             $markup .= '<p class="article_card_abstract">' . $article_data[1]["abstract"] . '</p>';
             $markup .= '<p class="article_card_author">' . $article_data[1]["author"] . '</p>';
             $markup .= '<p class="article_card_date">' . $article_data[1]["date"] . '</p>';
+            $markup .= '<button class="article_card_button">Leer</button>';
             $markup .= '</a>';
+         };
+         foreach ($directories_articles_data as $article_data) 
+         {
          };
          
          return $markup;

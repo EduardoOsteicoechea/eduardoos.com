@@ -5,37 +5,36 @@
    "author":"Eduardo Osteicoechea",
    "date":"2025/03/15",
    "passages": [
-      "salmo.23",
-      "Juan.10.12-27",
-      "Mateo.7.21",
-      "Isaías.55.6-7"
    ],
    "article": [
       ["Protegiendo a los señalados","potegiendo_a_los_senalados",[
-            ["Escrito está en los profetas:", ""],
-            ["Y serán todos enseñados por Dios", ""],
-            ["Así que, todo el que oyó al Padre, y aprendió de Él, viene a Mí\". (Juan.6.45).", ""],
-            ["Estas palabras encierran una verdad determinante.", ""],
-            ["... el que oyó al Padre, y aprendió de Él, viene a mí\".", ""],
-            ["Este es el factor que hace que una persona camine con Jesucristo.", ""],
-            ["Dios habla al corazón de Sus escogidos, y quienes le oyen, deciden seguirle.", ""],
-            ["En ocasiones, vemos cómo personas continúan creyendo, obedeciendo y sirviendo al Dios de las Escrituras, incluso cuando sus circunstancias son adversas.", ""]
+            ["Escrito está en los profetas:", "biblical_passage"],
+            ["Y serán todos enseñados por Dios", "biblical_passage"],
+            ["Así que, todo el que oyó al Padre, y aprendió de Él, viene a Mí", "biblical_passage", ""],
+            ["Estas palabras encierran una verdad determinante.", "Juan.6.45"],
+            ["\"... el que oyó al Padre, y aprendió de Él, viene a mí\".", ""],
+            ["Este es el factor que produce que una persona camine con Jesucristo.", ""],
+            ["Dios habla al corazón de Sus escogidos, y cuando le oyen, deciden seguirle.", ""]
          ]
       ],
       ["Conflicto de valores","conflicto_de_valores",[
+            ["En ocasiones, vemos cómo personas continúan creyendo, obedeciendo y sirviendo al Dios de las Escrituras, incluso cuando sus circunstancias son adversas.", ""],
             ["En ocasiones preguntamos, ¿Qué encuentran en esa religión? ¿Acaso no ven la situación en la que viven?", ""],
             ["Y aunque en verdad, muchos sufren por patrones destructivos, otros, viven la realidad de este pasaje:", ""],
-            ["... el que oyó al Padre, y aprendió de Él, viene a mí\".", ""],
-            ["Muchos experimentan un llamamiento divino, a través de experiencias, conversaciones e impresiones, que les lleva a comprender que Dios les ha convocado.", ""],
-            ["Dios ha continuado hablando por generaciones, y en este momento puede estar hablándote a través de este mensaje.", ""],
-            ["Puede que hayas atravesado otras experiencias, puede que hayas acumulando un grupo de evidencias tan palpables que sabrás que Dios está buscándote para que le sirvas.", ""],
-            ["Dios quiere que le sigas. Quiere que dejes de lado tu vida centrada en deseos pecaminosos. Quiere que te sometas a Su reino a través de Jesucristo.", ""],
-            ["Todo lo que el Padre me da, vendrá a mí; y al que a mí viene, no le echo fuera\". (Juan.6.37).", ""],
-            ["Debes reconocer la autoridad y reino de Jesús. Debes reconocerlo como prioridad. Debes determinarte a obedecerlo.", ""],
-            ["Tienes el privilegio de encontrar el perdón de tus pecados por medio de Jesucristo.", ""],
-            ["Dios te da el honor de ser hecho parte de Su pueblo si crees en Cristo y abandonas tus pecados.", ""]
+            ["... el que oyó al Padre, y aprendió de Él, viene a mí", "biblical_passage"],
+            ["Muchos experimentan un llamamiento divino, a través de experiencias, conversaciones e impresiones, que les lleva a comprender que Dios les ha convocado.", ""]
          ]
       ],
+      ["Conflicto de valores","conflicto_de_valores",[
+               ["Dios ha continuado hablando por generaciones, y en este momento puede estar hablándote a través de este mensaje.", ""],
+               ["Puede que hayas atravesado otras experiencias, puede que hayas acumulando un grupo de evidencias tan palpables que sabrás que Dios está buscándote.", ""],
+               ["Dios quiere que le sigas. Quiere que dejes de lado tu vida centrada en deseos pecaminosos. Quiere que te sometas a Su reino a través de Jesucristo.", ""],
+               ["Todo lo que el Padre me da, vendrá a mí; y al que a mí viene, no le echo fuera","biblical_passage", "Juan.6.37"],
+               ["Debes reconocer la autoridad y reino de Jesús. Debes reconocerlo como prioridad. Debes determinarte a obedecerlo.", ""],
+               ["Tienes el privilegio de encontrar el perdón de tus pecados por medio de Jesucristo.", ""],
+               ["Dios te da el honor de ser hecho parte de Su pueblo si crees en Cristo y abandonas tus pecados.", ""]
+            ]
+         ],
       ["Conversemos al respecto","conversemos_al_respecto",[
             ["Si quieres seguirlo, responde a este mensaje y te ayudaremos en el proceso.", ""],
             ["Que Dios te ayude en todo.", ""]

@@ -201,7 +201,17 @@ function provide_global_styles($root_folder)
          {
             font-size:.75rem;
             color:var(--c7)
-         }         
+         }
+         .article_card_button
+         {
+            height:1.75rem;
+            font-size:.7rem;
+            width:45%;
+            margin: auto 0 0 auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+         }        
          .article_idea
          {
             display:flex;
