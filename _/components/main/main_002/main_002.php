@@ -149,7 +149,7 @@
             padding: 0 0 1.25rem 0rem;
          "],["@media only screen and (max-width: 950px)","
             padding: 0 0 1.25rem 0rem;
-            width:calc(100% - 4.75rem);
+            width:calc(100% - 3.25rem);
          "]],[
             $this->location_tracker_markup,
             $this->article_content,

@@ -43,7 +43,7 @@ function provide_global_styles($root_folder)
             --margin_common: 1.25rem;
             --main_content_sidebar_width: 33rem;
             --main_content_aside_width: 33rem;
-            --right_side_small_control: 3.75rem;
+            --right_side_small_control: 2.5rem;
 
             --c1:#fff;
             --c2:#000;
@@ -123,8 +123,15 @@ function provide_global_styles($root_folder)
             overflow-y: auto;
             transition: none;
             margin: 0 auto;
-         }      
+         } 
          
+         .header_button_bar
+         {
+            height:.1rem;
+            width:40%;
+            background:var(--c1);
+            border-radius:2rem;
+         }         
          .article_abstract
          {
             background: var(--c3);
@@ -139,8 +146,7 @@ function provide_global_styles($root_folder)
          .biblical_passage
          {
             font-family:f1b;
-         }
-         
+         }         
          .biblical_reference_small
          {
             display:block;
@@ -157,8 +163,7 @@ function provide_global_styles($root_folder)
             width:100%;
             transition: none;
             padding: 0 0 1.25rem 0;
-         }
-         
+         }         
          .article_card
          {
             display:flex;
@@ -168,33 +173,28 @@ function provide_global_styles($root_folder)
             transition: none;
             padding: 1.25rem 1rem;
             box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
-         }
-         
+         }         
          .article_card_heading
          {
             margin-bottom:.5rem;
-         }
-         
+         }         
          .article_card_abstract
          {
             background: var(--c3);
             padding:1rem;
             margin-bottom:.5rem;
             font-size:.8rem !important;
-         }
-         
+         }         
          .article_card_author
          {
             font-size:.75rem;
             line-height:.75rem;
-         }
-         
+         }         
          .article_card_date
          {
             font-size:.75rem;
             color:var(--c7)
-         }
-         
+         }         
          .article_idea
          {
             display:flex;
@@ -205,14 +205,14 @@ function provide_global_styles($root_folder)
             padding: 0 0 1.25rem 0;
          }
 
+
          .vertical_arrow_bar
          {
-            width:.2rem;
+            width:.15rem;
             height:50%;
             background:var(--c2);
             border-radius:1rem;
          }
-
          .horizontal_arrow_bar
          {
             width:25%;
@@ -232,7 +232,6 @@ function provide_global_styles($root_folder)
             left:2%;
             top:-10%;
          }
-
          .top_arrow_left_bar
          {
             transform: rotate(45deg);
@@ -254,6 +253,7 @@ function provide_global_styles($root_folder)
             left:7%;
          }
 
+
          .location_tracker_outer_container
          {
             display:flex;
@@ -263,7 +263,6 @@ function provide_global_styles($root_folder)
             row-gap:.5rem;
             width:100%;
          }
-
          .location_tracker_outer_container_item
          {
             display:flex;
@@ -272,7 +271,6 @@ function provide_global_styles($root_folder)
             gap:1rem;
             width:100%;
          }
-
          .location_tracker_outer_container_arrow_container
          {
             display:flex;
@@ -284,7 +282,6 @@ function provide_global_styles($root_folder)
             height: 1.25rem;
             font-size:inherit;
          }
-
          .location_tracker_outer_container_anchor
          {
             display:flex;

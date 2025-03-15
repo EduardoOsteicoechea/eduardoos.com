@@ -45,7 +45,6 @@
             background:red;
             transition: none;
             background:var(--c1);
-            box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
             border-radius:.2rem;
             padding:1.25rem;
          "],
@@ -53,7 +52,7 @@
             display:none;
             width:100%;
          "],],[
-            "This is the aside"
+            
          ],[],[],[""]);
       }
    }

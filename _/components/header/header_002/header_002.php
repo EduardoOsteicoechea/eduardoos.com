@@ -67,13 +67,18 @@
 
                $this->add_subcomponent("button","menu_button","outer_container",[
                ["","
+                  display:flex;
+                  flex-direction:column;
+                  align-items:center;
+                  gap:.25rem;
                   font-family:f1bl;
                   font-size: 1rem;
-                  padding: 0 .75rem;
-                  width: var(--right_side_small_control);
-                  padding: var(--header_item_padding);
+                  width: var(--header_item_height);
                   height: var(--header_item_height);
-               "]],["menú"])
+               "]],[
+                  '<div class="header_button_bar"></div>',
+                  '<div class="header_button_bar"></div>',
+               ])
 
             ],[],[], array_merge([$this->component_id."_outer_container"], $this->external_elements_ids )
          );

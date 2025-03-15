@@ -374,9 +374,12 @@ class base_component
       >
       ';
 
-      
-      foreach ($this->location_tracker_elements as $location_tracker_element) 
-      {
+      $location_tracker_elements_count = count($this->location_tracker_elements);
+
+      for ($i=0; $i < $location_tracker_elements_count; $i++) 
+      { 
+         $location_tracker_element = $this->location_tracker_elements[$i];
+
          $this->location_tracker_markup .= '
             <a
             href="'.$this->root_folder . $location_tracker_element[1].'"
@@ -384,6 +387,11 @@ class base_component
             >
                '.$location_tracker_element[0].'
             </a>
+         ';
+
+         if($i < $location_tracker_elements_count - 1)
+         {
+            $this->location_tracker_markup .= '
             <div
             class="location_tracker_outer_container_arrow_container"
             >
@@ -391,8 +399,8 @@ class base_component
                <div class="horizontal_arrow_bar top_arrow_bottom_bar"></div>
             </div>
          ';
-         
-      };
+         };
+      }
 
       $this->location_tracker_markup .= '</div>';      
    }

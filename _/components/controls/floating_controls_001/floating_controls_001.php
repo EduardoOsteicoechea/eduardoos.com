@@ -56,8 +56,8 @@
                   justify-content:center;
                   background:var(--c1);
                   color:var(--c2);
-                  width: 1.75rem;
-                  height: 1.75rem;
+                  width: 1.25rem;
+                  height: 1.25rem;
                   font-size:inherit;
                   border-radius:10rem !important;
                "]],["p.".$counter],[],[
@@ -89,7 +89,7 @@
             justify-content:center;
             gap:1rem;
             height:fit-content;
-            width:5.5rem;
+            width:var(--header_item_height);
             padding:.75rem 1rem;
             overflow-y:auto;
             overflow-x:hidden;
@@ -101,7 +101,7 @@
             font-size:.5rem;
          "],
          ["@media only screen and (max-width: 950px)", "
-            width:var(--right_side_small_control);
+            width:var(--header_item_height);
             right: var(--margin_common);
             bottom: var(--margin_common);
          "],
@@ -109,8 +109,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
             ["","
                background:var(--c3);
-               width: 1.5rem;
-               height: 1.5rem;
+               width: 1rem;
+               height: 1rem;
                font-size:inherit;
             "]],[
                '<div class="vertical_arrow_bar top_arrow_left_bar"></div>',
@@ -127,8 +127,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
                ["","
                   background:var(--c3);
-                  width: 1.5rem;
-                  height: 1.5rem;
+                  width: 1rem;
+                  height: 1rem;
                   font-size:inherit;
                "]],[
                   '<div class="vertical_arrow_bar down_arrow_left_bar"></div>',
