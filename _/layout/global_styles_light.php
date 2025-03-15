@@ -131,16 +131,6 @@ function provide_global_styles($root_folder)
             width:40%;
             background:var(--c1);
             border-radius:2rem;
-         }         
-         .article_abstract
-         {
-            background: var(--c3);
-            padding:1rem;
-            margin-bottom:.5rem;
-         }
-         .article_abstract > *
-         {
-            font-size:.75rem !important;
          }
          
          .biblical_passage
@@ -154,7 +144,24 @@ function provide_global_styles($root_folder)
             font-family:f1b;
             color:var(--c7);
          }
-         
+
+
+
+                  
+         .article_abstract
+         {
+            background: var(--c3);
+            padding:1rem;
+            margin:2rem 0;
+         }
+         .article_abstract > *
+         {
+            font-size:.75rem !important;
+         }
+         .article_main_heading
+         {
+            margin-top:1.75rem;
+         }
          .articles_links_container
          {
             display:flex;
@@ -182,8 +189,8 @@ function provide_global_styles($root_folder)
          {
             background: var(--c3);
             padding:1rem;
-            margin-bottom:.5rem;
             font-size:.8rem !important;
+            margin:0rem 0 .75rem 0;
          }         
          .article_card_author
          {

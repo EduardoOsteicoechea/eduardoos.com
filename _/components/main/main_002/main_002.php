@@ -66,7 +66,7 @@
 
       protected function generate_article_title(string $content): string
       {
-         return "<h1>".$content."</h1>";
+         return '<h1 class="article_main_heading">'.$content.'</h1>';
       }
 
       protected function generate_article_body_idea(array $content): string
@@ -100,7 +100,7 @@
       {
          if($content === "") return "";
 
-         return "<h2>".$content."</h2>";
+         return '<h2>'.$content.'</h2>';
       }
 
       protected function generate_article_body(array $content): string
@@ -145,9 +145,7 @@
             flex-direction:column;
             width:100%;
             transition: none;
-            padding: 0 0 1.25rem 0rem;
          "],["@media only screen and (max-width: 950px)","
-            padding: 0 0 1.25rem 0rem;
             width:calc(100% - 3.25rem);
          "]],[
             $this->location_tracker_markup,
