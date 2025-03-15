@@ -97,18 +97,18 @@ function provide_global_styles($root_folder)
          b { font-family:f1bl; }
          h1{
             font-family: f1b; 
-            font-size: 3rem;
-            line-height: 3rem;
+            font-size: 2rem;
+            line-height: 2rem;
          }
          h2{
             font-family: f1b; 
             font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 1.5rem;
          }
          h3{
             font-family: f1b; 
             font-size: 1rem;
-            line-height: 1.5rem;
+            line-height: 1rem;
          }
          h4{font-family: f1b; font-size: 1rem;}
 
