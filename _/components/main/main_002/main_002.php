@@ -143,7 +143,6 @@
          $this->add_component("main","main",[["","
             display:flex;
             flex-direction:column;
-            gap:1.35rem;
             width:100%;
             transition: none;
             padding: 0 0 1.25rem 0rem;
