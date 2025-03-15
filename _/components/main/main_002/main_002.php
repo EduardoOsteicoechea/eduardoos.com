@@ -26,8 +26,10 @@
          array | null $files = null,
          array | null $components_to_render = null,
          $content_data,
+         string $main_content_json_file_path = "",
+         array | null $location_tracker_elements = null,
       )
-      { 
+      {
          parent::__construct
          (
             $root_folder, 
@@ -44,9 +46,11 @@
             $post,
             $files,
          );
-
+         $this->location_tracker_elements = $location_tracker_elements;
+         $this->articles_directory_path = $main_content_json_file_path;
          $this->content_data = $content_data;
          $this->generate_article_content();
+         $this->generate_and_register_location_tracker_markup();
          $this->generate_component_markup_and_styles();
       }
 
@@ -147,6 +151,7 @@
             padding: 0 0 1.25rem 0rem;
             width:calc(100% - 4.75rem);
          "]],[
+            $this->location_tracker_markup,
             $this->article_content,
          ],[],[],[""]);
       }

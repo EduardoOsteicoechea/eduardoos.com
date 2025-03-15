@@ -9,6 +9,8 @@
       public aside_001 | null $page_aside = null;
       public main_003 | null $page_main = null;
       public string $articles_directory_path = "";
+      public array | null $location_tracker_elements = null;
+      public string $location_tracker_markup = "";
 
       public function __construct
       (
@@ -27,6 +29,7 @@
          array | null $files = null,
          array | null $components_to_render = null,
          string $articles_directory_path = "",
+         array | null $location_tracker_elements = null,
       )
       { 
          parent::__construct
@@ -44,8 +47,11 @@
             $get,
             $post,
             $files,
+            $articles_directory_path,
+            $location_tracker_elements,
          );
 
+         $this->location_tracker_elements = $location_tracker_elements;
          $this->articles_directory_path = $articles_directory_path;
 
          $this->determine_required_elements($components_to_render);
@@ -139,7 +145,9 @@
             $this->environment_variables["post"],
             $this->environment_variables["files"],
             null,
-            $this->articles_directory_path
+            $this->articles_directory_path,
+            "",
+            $this->location_tracker_elements
          );
          
          $this->register_component_markup($this->page_main->provide_markup());

@@ -8,6 +8,8 @@
       public sidebar_001 | null $page_sidebar = null;
       public aside_001 | null $page_aside = null;
       public main_002 | null $page_main = null;
+      public array | null $location_tracker_elements = null;
+      public string $location_tracker_markup = "";
 
       public function __construct
       (
@@ -26,6 +28,7 @@
          array | null $files = null,
          array | null $components_to_render = null,
          string $main_content_json_file_path = "",
+         array | null $location_tracker_elements = null,
       )
       { 
          parent::__construct
@@ -43,8 +46,13 @@
             $get,
             $post,
             $files,
+            $main_content_json_file_path,
+            $location_tracker_elements,
          );
 
+         $this->location_tracker_elements = $location_tracker_elements;
+         $this->articles_directory_path = $main_content_json_file_path;
+         
          $this->determine_required_elements($components_to_render);
 
          $this->register_component_styles('
@@ -64,7 +72,7 @@
                   flex-wrap:wrap;
                }
             }
-         ');
+         ');         
          
          $this->register_component_markup('
             <div
@@ -74,8 +82,7 @@
          ');
 
          $this->get_content_data_from_json_file($this->root_folder . $main_content_json_file_path);
-         // print_r($this->content_data);
-         
+
          $this->generate_sidebar_if_required();
          $this->generate_main();
          $this->generate_floating_controls_if_required();
@@ -139,7 +146,9 @@
             $this->environment_variables["post"],
             $this->environment_variables["files"],
             null,
-            $this->content_data
+            $this->content_data,
+            $this->articles_directory_path,
+            $this->location_tracker_elements,
          );
          
          $this->register_component_markup($this->page_main->provide_markup());

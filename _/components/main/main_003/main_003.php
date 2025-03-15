@@ -27,6 +27,8 @@
          array | null $files = null,
          array | null $components_to_render = null,
          $articles_directory_path,
+         string $main_content_json_file_path = "",
+         array | null $location_tracker_elements = null,
       )
       { 
          parent::__construct
@@ -46,6 +48,7 @@
             $files,
          );
 
+         $this->location_tracker_elements = $location_tracker_elements;
          $this->articles_directory_path = $this->root_folder . $articles_directory_path;
          $this->generate_component_markup_and_styles();
       }
@@ -121,6 +124,7 @@
       protected function generate_component_markup_and_styles()
       {
          $this->articles_cards = $this->generate_articles_cards_markup();
+         $this->generate_and_register_location_tracker_markup();
 
          $this->add_component("main","main",[["","
             display:flex;
@@ -133,6 +137,8 @@
             padding: 0 0 1.25rem 0rem;
             width:calc(100% - 4.75rem);
          "]],[
+            
+            $this->location_tracker_markup,
 
             $this->add_subcomponent("h1","articles_links_container_heading","main",[
             ["","

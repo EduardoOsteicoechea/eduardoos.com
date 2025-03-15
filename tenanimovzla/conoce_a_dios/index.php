@@ -20,6 +20,10 @@
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[false,true,true],
       "tenanimovzla/conoce_a_dios",
+      [
+         ["Inicio","inicio"],
+         ["Conoce a Dios","tenanimovzla/conoce_a_dios/"]
+      ]
    );
 
    new public_page

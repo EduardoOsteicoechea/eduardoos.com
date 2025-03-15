@@ -18,6 +18,9 @@ class base_component
    protected array | null $external_elements_ids = null;
    protected array | null $elements_ids = null;
    protected array | null $content_data = null;
+   public array | null $location_tracker_elements = null;
+   public string $location_tracker_markup = "";
+   public string $articles_directory_path = "";
 
 
    public function __construct
@@ -35,6 +38,8 @@ class base_component
       array | null $get = null,
       array | null $post = null,
       array | null $files = null,
+      string $articles_directory_path = "",
+      array | null $location_tracker_elements = null,
    )
    {
       $this->set_component_base_properties(
@@ -51,11 +56,12 @@ class base_component
          $get,
          $post,
          $files,
+         $articles_directory_path,
+         $location_tracker_elements,
       );
       
       $this->external_elements_ids = $external_elements_ids === null ? [] : $external_elements_ids;
       $this->validate_session();
-      // $this->generate_component_markup_and_styles();
    }
 
    private function validate_session()
@@ -82,7 +88,7 @@ class base_component
       array | null $session = null,
       array | null $get = null,
       array | null $post = null,
-      array | null $files = null,    
+      array | null $files = null,
    )
    {
       $this->root_folder = $root_folder;
@@ -357,6 +363,38 @@ class base_component
          $contents = file_get_contents($filepath);
          $this->content_data = json_decode($contents, true);
       };
+   }
+      
+   public function generate_and_register_location_tracker_markup():void
+   {
+      $this->location_tracker_markup .= '
+      <div
+      id="location_tracker"
+      class="location_tracker_outer_container"
+      >
+      ';
+
+      
+      foreach ($this->location_tracker_elements as $location_tracker_element) 
+      {
+         $this->location_tracker_markup .= '
+            <a
+            href="'.$this->root_folder . $location_tracker_element[1].'"
+            class="location_tracker_outer_container_anchor"
+            >
+               '.$location_tracker_element[0].'
+            </a>
+            <div
+            class="location_tracker_outer_container_arrow_container"
+            >
+               <div class="horizontal_arrow_bar top_arrow_top_bar"></div>
+               <div class="horizontal_arrow_bar top_arrow_bottom_bar"></div>
+            </div>
+         ';
+         
+      };
+
+      $this->location_tracker_markup .= '</div>';      
    }
 }
 ?>

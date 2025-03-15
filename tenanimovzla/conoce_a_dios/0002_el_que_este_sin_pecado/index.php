@@ -19,7 +19,12 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "_/api/json_data/tenanimovzla/conoceadios/0002_el_senor_es_mi_pastor.json",
+      "tenanimovzla/conoce_a_dios/0002_el_que_este_sin_pecado/article_data.json",
+      [
+         ["Inicio","inicio"],
+         ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
+         ["El que esté sin pecado, lance la primera piedra","tenanimovzla/conoce_a_dios/0002_el_que_este_sin_pecado/"],
+      ]
    );
 
    new public_page

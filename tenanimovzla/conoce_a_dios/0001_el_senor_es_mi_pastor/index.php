@@ -19,7 +19,12 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "_/api/json_data/tenanimovzla/conoceadios/0001_el_senor_es_mi_pastor.json",
+      "tenanimovzla/conoce_a_dios/0001_el_senor_es_mi_pastor/article_data.json",
+      [
+         ["Inicio","inicio"],
+         ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
+         ["El Señor es Mi pastor, nada me faltará","tenanimovzla/conoce_a_dios/0001_el_senor_es_mi_pastor/"],
+      ]
    );
 
    new public_page

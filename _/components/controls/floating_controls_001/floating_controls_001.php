@@ -113,8 +113,8 @@
                height: 1.5rem;
                font-size:inherit;
             "]],[
-               '<div class="scroll_button_arrow_bar scroll_top_button_arrow_left_bar"></div>',
-               '<div class="scroll_button_arrow_bar scroll_top_button_arrow_right_bar"></div>',
+               '<div class="vertical_arrow_bar top_arrow_left_bar"></div>',
+               '<div class="vertical_arrow_bar top_arrow_right_bar"></div>',
             ],[],[
                'onclick="window.scroll({
                   top: 0,
@@ -131,8 +131,8 @@
                   height: 1.5rem;
                   font-size:inherit;
                "]],[
-                  '<div class="scroll_button_arrow_bar scroll_down_button_arrow_left_bar"></div>',
-                  '<div class="scroll_button_arrow_bar scroll_down_button_arrow_right_bar"></div>',
+                  '<div class="vertical_arrow_bar down_arrow_left_bar"></div>',
+                  '<div class="vertical_arrow_bar down_arrow_right_bar"></div>',
                ],[],[
                   'onclick="window.scroll({
                      top: 100000,
