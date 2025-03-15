@@ -149,7 +149,7 @@
             $this->add_subcomponent("div","articles_links_container","main",[
             ["","
                display:flex;
-               flex-direction:column;
+               flex-wrap:wrap;
                gap:1.35rem;
                width:100%;
                transition: none;

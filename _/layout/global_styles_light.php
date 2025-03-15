@@ -108,7 +108,7 @@ function provide_global_styles($root_folder)
          h3{
             font-family: f1b; 
             font-size: 1rem;
-            line-height: 1rem;
+            line-height: 1.25rem;
          }
          h4{font-family: f1b; font-size: 1rem;}
 
@@ -176,7 +176,7 @@ function provide_global_styles($root_folder)
             display:flex;
             flex-direction:column;
             gap:.5rem;
-            width:100%;
+            width:15rem;
             transition: none;
             padding: 1.25rem 1rem;
             box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
