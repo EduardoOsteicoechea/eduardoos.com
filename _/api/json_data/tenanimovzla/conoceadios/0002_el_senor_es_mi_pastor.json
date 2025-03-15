@@ -18,21 +18,24 @@
             ["\"Debemos tolerar las fallas de otros porque Jesús toleró a la mujer sorprendida en adulterio\"... Decimos con frecuencia.",""]
          ]
       ],
-      ["Una visión incompleta","una_vision_incompleta",[
-         ["Pero aquel que conozca la enseñanza de Cristo sabrá que hay un problema con esto.",""],
-         ["Jesús dijo:",""],
-         ["Si tu hermano peca, repréndelo a solas. Si no te oye, busca dos o tres testigos. Si no les oye, dilo a la iglesia. Y si no escucha a la iglesia, tenlo como un publicano y pecador","biblical_passage","Mateo.18.15-20"],
-         ["Jesús ordenó expulsar a quienes persisten en pecado.",""],
-         ["¿Cómo decimos que no debemos juzgar?",""]
+      ["Conflicto de valores","conflicto_de_valores",[
+            ["Pero aquel que conozca la enseñanza de Cristo sabrá que hay un problema con esto.",""],
+            ["Jesús dijo:",""],
+            ["Si tu hermano peca, repréndelo a solas. Si no te oye, busca dos o tres testigos. Si no les oye, dilo a la iglesia. Y si no escucha a la iglesia, tenlo como un publicano y pecador","biblical_passage","Mateo.18.15-20"],
+            ["Jesús ordenó expulsar a quienes persisten en pecado.",""],
+            ["¿Cómo decimos que no debemos juzgar?",""]
          ]
       ],
-      ["Gracia para el arrepentido","gracia_para_el_arrepentido",[
+      ["Una visión más completa","una_vision_mas_completa",[
             ["La diferencia es esta:",""],
             ["Jesús recibió a los pecadores que VENÍAN EN ARREPENTIMIENTO.",""],
             ["Jesús dijo esto a un paralítico:",""],
             ["Mira, has sido sanado; no peques más, para que no te suceda algo peor","biblical_passage","Juan 5:14"],
             ["También dijo a quienes le escuchaban:",""],
-            ["Si no os arrepentís, todos pereceréis igualmente","biblical_passage","Lucas.13.5"],
+            ["Si no os arrepentís, todos pereceréis igualmente","biblical_passage","Lucas.13.5"]
+         ]
+      ],
+      ["Gracia para el arrepentido","gracia_para_el_arrepentido",[
             ["En verdad Dios desea reconciliarse con los pecadores.",""],
             ["Pero únicamente recibirá a quienes abandonen el pecado.",""],
             ["Como dice la Escritura:",""],
