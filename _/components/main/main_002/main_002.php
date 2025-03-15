@@ -125,9 +125,9 @@
       {
          $this->article_content = "";
          
-         $title = $this->generate_article_title($this->content_data["data"][0]["title"]);
-         $content = $this->generate_article_body($this->content_data["data"][0]["article"]);
-         $abstract = $this->generate_article_abstract($this->content_data["data"][0]["abstract"]);
+         $title = $this->generate_article_title($this->content_data["title"]);
+         $content = $this->generate_article_body($this->content_data["article"]);
+         $abstract = $this->generate_article_abstract($this->content_data["abstract"]);
 
          $this->article_content = $title . $abstract . $content;
       }

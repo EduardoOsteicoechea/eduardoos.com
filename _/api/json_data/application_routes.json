@@ -1,15 +1,13 @@
 {
    "non_authenticated":[
       ["inicio","Inicio"],
-      ["creencias","Creencias"],
       ["contacto","Contacto"],
       ["tenanimovzla","Ten Ánimo Venezuela",
          [
             ["conoce_a_dios", "Conoce a Dios"],
             ["sobre_esta_iniciativa", "Sobre esta iniciativa"]
          ]
-      ],      
-      ["inicia_sesion","Inicia Sesión"]
+      ]
    ],
    "authenticated_base_user":[
       ["inicio","Inicio"],

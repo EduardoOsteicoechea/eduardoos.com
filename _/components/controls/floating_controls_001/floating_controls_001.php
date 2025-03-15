@@ -44,7 +44,7 @@
       {
          $markup = "";
          $counter = 1;
-         foreach ($this->content_data["data"][0]["article"] as $article) 
+         foreach ($this->content_data["article"] as $article) 
          {
             $subcomponent_id = $article[1]."_button";
             $article_idea_id = $article[1]."_article_idea";

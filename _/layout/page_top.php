@@ -252,8 +252,9 @@
          border-radius:.2rem !important;
       }
          
-      a { font-size: 1rem; cursor: pointer; text-decoration:none; }
-      p { font-size: 1rem; }
+      a,b,p { font-size: 1rem;}
+      a { cursor: pointer; text-decoration:none; }
+      p {  }
       b { font-family:f1bl; }
       h1{
          font-family: f1b; 
@@ -265,7 +266,11 @@
          font-size: 1.5rem;
          line-height: 1.5rem;
       }
-      h3{font-family: f1b; font-size: 1.5rem;}
+      h3{
+         font-family: f1b; 
+         font-size: 1rem;
+         line-height: 1.25rem;
+      }
       h4{font-family: f1b; font-size: 1rem;}
       
 
@@ -305,6 +310,52 @@
          font-size:.75rem;
          font-family:f1b;
          color:var(--c7);
+      }
+      
+      .articles_links_container
+      {
+         display:flex;
+         flex-direction:column;
+         gap:1.35rem;
+         width:100%;
+         transition: none;
+         padding: 0 0 1.25rem 0;
+      }
+      
+      .article_card
+      {
+         display:flex;
+         flex-direction:column;
+         gap:.5rem;
+         width:100%;
+         transition: none;
+         padding: 1.25rem 1rem;
+         box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
+      }
+      
+      .article_card_heading
+      {
+         margin-bottom:.5rem;
+      }
+      
+      .article_card_abstract
+      {
+         background: var(--c3);
+         padding:1rem;
+         margin-bottom:.5rem;
+         font-size:.8rem !important;
+      }
+      
+      .article_card_author
+      {
+         font-size:.75rem;
+         line-height:.75rem;
+      }
+      
+      .article_card_date
+      {
+         font-size:.75rem;
+         color:var(--c7)
       }
       
       .article_idea
