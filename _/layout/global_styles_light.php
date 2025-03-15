@@ -91,7 +91,7 @@ function provide_global_styles($root_folder)
             border-radius:.2rem !important;
          }
             
-         a,b,p { font-size: 1rem;}
+         a,b,p { font-size: .9rem;}
          a { cursor: pointer; text-decoration:none; }
          p {  }
          b { font-family:f1bl; }
