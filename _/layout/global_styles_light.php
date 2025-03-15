@@ -96,9 +96,9 @@ function provide_global_styles($root_folder)
          p {  }
          b { font-family:f1bl; }
          h1{
-            font-family: f1b; 
-            font-size: 2.75rem;
-            line-height: 3rem;
+            font-family:f1b; 
+            font-size:2.5rem;
+            line-height:2.75rem;
          }
          h2{
             font-family: f1b; 
@@ -150,13 +150,13 @@ function provide_global_styles($root_folder)
                   
          .article_main_heading
          {
-            margin-top:1.5rem;
+            margin-top:1.25rem;
          }
          .article_abstract
          {
             background: var(--c3);
             padding:1rem;
-            margin:1.5rem 0 2rem 0;
+            margin:1.25rem 0 1.5rem 0;
          }
          .article_abstract > *
          {
