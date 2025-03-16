@@ -129,7 +129,7 @@ function provide_global_styles($root_folder)
          {
             height:.1rem;
             width:40%;
-            background:var(--c1);
+            background:var(--c2);
             border-radius:2rem;
          }
          
@@ -220,6 +220,13 @@ function provide_global_styles($root_folder)
             width:100%;
             transition: none;
             padding: 0 0 1.25rem 0;
+         }
+         .article_body_regular_list
+         {
+            display:flex;
+            flex-direction:column;
+            gap:.5rem;
+            padding: 0 0 0 2rem;
          }
 
 

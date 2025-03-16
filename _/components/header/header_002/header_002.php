@@ -75,6 +75,7 @@
                   font-size: 1rem;
                   width: var(--header_item_height);
                   height: var(--header_item_height);
+                  background:var(--c3) !important;
                "]],[
                   '<div class="header_button_bar"></div>',
                   '<div class="header_button_bar"></div>',

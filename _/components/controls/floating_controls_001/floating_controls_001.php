@@ -44,35 +44,37 @@
       {
          $markup = "";
          $counter = 1;
-         foreach ($this->content_data["article"] as $article) 
+         if(isset($this->content_data["article"]))
          {
-            $subcomponent_id = $article[1]."_button";
-            $article_idea_id = $article[1]."_article_idea";
-            $markup .= $this->add_subcomponent(
-               "button",$subcomponent_id,"",[
-               ["","
-                  display:flex;
-                  align-items:center;
-                  justify-content:center;
-                  background:var(--c1);
-                  color:var(--c2);
-                  width: 1.25rem;
-                  height: 1.25rem;
-                  font-size:inherit;
-                  border-radius:10rem !important;
-               "]],["p.".$counter],[],[
-                  'onclick="
-                     const element = document.getElementById(\''.$article_idea_id.'\');
-                     element.scrollIntoView();
-                  "'
-               ]
-            );
-            
-            $counter = $counter + 1;
-         };
+            foreach ($this->content_data["article"] as $article) 
+            {
+               $subcomponent_id = $article[1]."_button";
+               $article_idea_id = $article[1]."_article_idea";
+               $markup .= $this->add_subcomponent(
+                  "button",$subcomponent_id,"",[
+                  ["","
+                     display:flex;
+                     align-items:center;
+                     justify-content:center;
+                     background:var(--c1);
+                     color:var(--c2);
+                     width: 1.25rem;
+                     height: 1.25rem;
+                     font-size:inherit;
+                     border-radius:10rem !important;
+                  "]],["p.".$counter],[],[
+                     'onclick="
+                        const element = document.getElementById(\''.$article_idea_id.'\');
+                        element.scrollIntoView();
+                     "'
+                  ]
+               );
+               
+               $counter = $counter + 1;
+            };
+         };         
 
          return $markup;
-
       }
 
       // box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
@@ -134,11 +136,12 @@
                   '<div class="vertical_arrow_bar down_arrow_left_bar"></div>',
                   '<div class="vertical_arrow_bar down_arrow_right_bar"></div>',
                ],[],[
-                  'onclick="window.scroll({
+                  'onclick="
+                  window.scroll({
                      top: 100000,
                      left: 0,
                      behavior: \'smooth\'
-                     });
+                  });
                   "',
                ])
          ],[],[],[""]);
