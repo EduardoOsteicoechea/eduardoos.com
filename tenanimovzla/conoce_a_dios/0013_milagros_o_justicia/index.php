@@ -7,8 +7,8 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "tenanimovzla - Conoce a Dios - ¿Estrechez o la anchura?";
-   $page_name = "estrechez_o_anchura";
+   $page_title = "tenanimovzla - Conoce a Dios - ¿Milagros o justicia?";
+   $page_name = "milagros_o_justicia";
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0013_estrechez_o_anchura/article_data.json",
+      "tenanimovzla/conoce_a_dios/0013_milagros_o_justicia/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["¿Estrechez o la anchura?","tenanimovzla/conoce_a_dios/0013_estrechez_o_anchura/"],
+         ["¿Milagros o justicia?","tenanimovzla/conoce_a_dios/0013_milagros_o_justicia/"],
       ]
    );
 

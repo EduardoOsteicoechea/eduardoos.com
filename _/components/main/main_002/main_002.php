@@ -158,6 +158,14 @@
                </div>
             ';
          };
+         $markup .= '
+            <a
+            href="https://wa.me/584147281033?text="
+            target="_blank"
+            >
+               <button class="article_lets_talk_button">WhatsApp</button>
+            </a>
+         ';
          return $markup;
       }
 

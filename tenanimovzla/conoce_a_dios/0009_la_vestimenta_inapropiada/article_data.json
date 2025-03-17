@@ -1,7 +1,7 @@
 {
-   "id": "no_estaba_preparado",
-   "title": "No estaba preparado",
-   "abstract": "Si bien Dios recibe a los pecadores, solo recibe a aquellos que vienen en arrepentimiento.",
+   "id": "la_vestimenta_inapropiada",
+   "title": "La vestimenta inapropiada",
+   "abstract": "Formar parte de una iglesia no garantiza la vida eterna.",
    "author":"Eduardo Osteicoechea",
    "date":"2025/03/15",
    "passages": [
@@ -11,17 +11,17 @@
       "Isaías.55.6-7"
    ],
    "article": [
-      ["Protegiendo a los señalados","potegiendo_a_los_senalados",[
-            ["_\"El Rey encontró un hombre sin vestimenta de bodas\"_",""],
-            ["_\"¡Aténlo y échenlo en las tinieblas de afuera! Allí será el lloro y el crujir de dientes\"._ Mateo.20..",""],
+      ["","punto_1",[
+            ["El Rey encontró un hombre sin vestimenta de bodas", "biblical_passage",""],
+            ["¡Aténlo y échenlo en las tinieblas de afuera! Allí será el lloro y el crujir de dientes", "biblical_passage","Mateo.22.11-13."],
             ["Este es uno de los relatos más atemorizantes de las Escrituras.",""],
             ["Dios ha invitado a todos a formar parte de Su pueblo.",""],
             ["Los admirables, los criminales, los ricos, pobres, los sabios, los ignorantes, todos estamos invitados.",""],
             ["Solo hay una condición para disfrutar de este reino.",""],
             ["Debemos vestirnos de bodas.",""],
-            ["Lamentablemente, esta parábola enseña que muchos entraremos en la iglesia pero encontraremos una realidad dolorosa:",""],
-            ["_\"Muchos son llamados, pero pocos escogidos\"._ Mateo.20..",""],
-            ["Muchos entramos, pero pocos quedaremos.",""],
+            ["Lamentablemente, esta parábola enseña que muchos entraremos en la iglesia, pero muchos encontrarán una realidad dolorosa:",""],
+            ["Muchos son llamados, pero pocos escogidos", "biblical_passage", "Mateo.20.."],
+            ["Muchos entrarán, pero pocos quedarán en aquel día.",""],
             ["Solo aquellos vestidos de bodas permanecerán en día del juicio.",""],
             ["Esta vestimenta es la confianza en la obra de Jesucristo y la obediencia a Su palabra.",""],
             ["Muchos vendremos a refugiarnos entre las multitudes del pueblo escogido, pero muchos carecerán de la realidad interna que verdaderamente atestigua de una relación correcta con el Creador.",""],
@@ -32,12 +32,7 @@
             ["Quiero seguirle hasta que regrese por Su iglesia.",""],
             ["¿Quisieras tener igualmente esta confianza?",""],
             ["Responde a este mensaje y hablaremos sobre ello.",""],
-            ["Que Dios te ayude en todo.",""]
-         ]
-      ],
-      ["Conversemos al respecto","conversemos_al_respecto",[
-            ["Si deseas conocer más sobre esta fe verdadera, responde a este mensaje y hablaremos sobre ello.", ""],
-            ["Que Dios te ayude en todo.", ""]
+            ["Que Dios te ayude.",""]
          ]
       ]
    ]

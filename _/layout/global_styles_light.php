@@ -57,6 +57,7 @@ function provide_global_styles($root_folder)
             --c10: rgb(194, 194, 194);
             --c11:rgb(0, 255, 128);
             --c_whatsapp: #25D366;
+            --accent_color_001 : rgb(255, 145, 0);
 
             --success_1:rgb(0, 200, 73);
             --success_1_dark:rgb(0, 185, 68);
@@ -228,6 +229,25 @@ function provide_global_styles($root_folder)
             gap:.5rem;
             padding: 0 0 0 2rem;
          }
+         .article_key_phrase
+         {
+            font-family: f1b;
+            color:var(--accent_color_001);
+         }
+         .article_regular_quote
+         {
+            font-family: f1li;
+         }
+         .article_lets_talk_button
+         {
+            height: 2rem;
+            padding:0 1rem;
+            background: var(--accent_color_001);
+            background: var(--c11);
+            background: var(--c_whatsapp);
+            color: var(--c1);
+         }
+
 
 
          .vertical_arrow_bar

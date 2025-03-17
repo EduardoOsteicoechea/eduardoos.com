@@ -7,8 +7,8 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "tenanimovzla - Conoce a Dios - ¡No más milagros!";
-   $page_name = "no_mas_milagros";
+   $page_title = "tenanimovzla - Conoce a Dios - ¿Roca o arena?";
+   $page_name = "roca_o_arena";
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0012_no_mas_milagros/article_data.json",
+      "tenanimovzla/conoce_a_dios/0014_roca_o_arena/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["¡No más milagros!","tenanimovzla/conoce_a_dios/0012_no_mas_milagros/"],
+         ["¿Roca o arena?","tenanimovzla/conoce_a_dios/0014_roca_o_arena/"],
       ]
    );
 
