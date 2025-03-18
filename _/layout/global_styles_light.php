@@ -245,6 +245,7 @@ function provide_global_styles($root_folder)
             background: var(--accent_color_001);
             background: var(--c11);
             background: var(--c_whatsapp);
+            background: var(--c2);
             color: var(--c1);
          }
 

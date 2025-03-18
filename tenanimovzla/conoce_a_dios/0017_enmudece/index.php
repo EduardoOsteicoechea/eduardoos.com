@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0018_enmudece/article_data.json",
+      "tenanimovzla/conoce_a_dios/0017_enmudece/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["¡Enmudece!","tenanimovzla/conoce_a_dios/0018_enmudece/"],
+         ["¡Enmudece!","tenanimovzla/conoce_a_dios/0017_enmudece/"],
       ]
    );
 

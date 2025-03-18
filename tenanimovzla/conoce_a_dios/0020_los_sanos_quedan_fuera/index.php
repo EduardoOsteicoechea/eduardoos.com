@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0021_los_sanos_quedan_fuera/article_data.json",
+      "tenanimovzla/conoce_a_dios/0020_los_sanos_quedan_fuera/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["Los sanos quedan fuera","tenanimovzla/conoce_a_dios/0021_los_sanos_quedan_fuera/"],
+         ["Los sanos quedan fuera","tenanimovzla/conoce_a_dios/0020_los_sanos_quedan_fuera/"],
       ]
    );
 

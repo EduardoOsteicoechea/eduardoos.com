@@ -7,8 +7,8 @@
    redirect_if_variable_is_populated($root_folder, $_FILES);
    $session = isset($_SESSION) ? $_SESSION : null;
 
-   $page_title = "tenanimovzla - Conoce a Dios - Dos demonios aterrorizados";
-   $page_name = "dos_demonios_aterrorizados";
+   $page_title = "tenanimovzla - Conoce a Dios - Te demostraré que puedo perdonar pecados";
+   $page_name = "te_demostrare_que_puedo_perdonar_pecados";
    $page_description = "Contenido para conocer al Dios de la Biblia";
    $page_color_scheme = "light";
 
@@ -19,11 +19,11 @@
       $page_name, 
       $page_description, 
       "","",null, $page_color_scheme, $session,null,null,null,[true,true,true],
-      "tenanimovzla/conoce_a_dios/0019_dos_demonios_aterrorizados/article_data.json",
+      "tenanimovzla/conoce_a_dios/0019_te_demostrare_que_puedo_perdonar_pecados/article_data.json",
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["Dos demonios aterrorizados","tenanimovzla/conoce_a_dios/0019_dos_demonios_aterrorizados/"],
+         ["Te demostraré que puedo perdonar pecados","tenanimovzla/conoce_a_dios/0019_te_demostrare_que_puedo_perdonar_pecados/"],
       ]
    );
 

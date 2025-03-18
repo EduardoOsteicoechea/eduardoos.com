@@ -163,7 +163,7 @@
             href="https://wa.me/584147281033?text="
             target="_blank"
             >
-               <button class="article_lets_talk_button">WhatsApp</button>
+               <button class="article_lets_talk_button">Conversemos</button>
             </a>
          ';
          return $markup;
