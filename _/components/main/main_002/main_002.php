@@ -192,6 +192,7 @@
          "]],[
             $this->location_tracker_markup,
             $this->article_content,
+            $this->location_tracker_markup,
          ],[],[],[""]);
       }
    }

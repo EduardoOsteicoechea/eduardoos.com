@@ -247,6 +247,7 @@ function provide_global_styles($root_folder)
             background: var(--c_whatsapp);
             background: var(--c2);
             color: var(--c1);
+            margin-bottom:1.25rem;
          }
 
 
