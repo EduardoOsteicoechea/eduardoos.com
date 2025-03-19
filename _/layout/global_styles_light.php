@@ -177,7 +177,7 @@ function provide_global_styles($root_folder)
             display:flex;
             flex-direction:column;
             gap:.0rem;
-            width:15rem;
+            width:14rem;
             transition: none;
             padding: 1.25rem 1rem;
             border-radius:.4rem;
@@ -436,7 +436,7 @@ function provide_global_styles($root_folder)
             }         
             .article_card_author
             {
-               margin: 1.25rem 0 0 0;
+               margin: 1rem 0 0 0;
             }         
             .article_card_date
             {
