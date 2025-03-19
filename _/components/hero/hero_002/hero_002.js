@@ -23,8 +23,25 @@ export default class
       let outer_container_background_image_container = outer_container.children[0];
       let outer_container_background_image_container_image = outer_container_background_image_container.children[0];
 
-      window.addEventListener("resize", () => this.change_background_image_if_required(root_folder, outer_container_background_image_container_image, outer_container_background_image_container));
-      window.addEventListener("load", () => this.change_background_image_if_required(root_folder, outer_container_background_image_container_image, outer_container_background_image_container));
+      if (window.innerWidth < 950)
+         {
+            let image_path = root_folder + "_/media/fotoPersonal1080x1920.jpg";
+            if (outer_container_background_image_container_image.src !== image_path) 
+            {
+               outer_container_background_image_container_image.src = image_path;
+            };
+         }
+         else
+         {
+            let image_path = root_folder + "_/media/fotoPersonal3840x2160.jpg";
+            if (outer_container_background_image_container_image.src !== image_path) 
+            {
+               outer_container_background_image_container_image.src = image_path;
+            };
+         };
+
+      // window.addEventListener("resize", () => this.change_background_image_if_required(root_folder, outer_container_background_image_container_image, outer_container_background_image_container));
+      // window.addEventListener("load", () => this.change_background_image_if_required(root_folder, outer_container_background_image_container_image, outer_container_background_image_container));
    }
 
    change_background_image_if_required(root_folder, image_element, image_container_element)

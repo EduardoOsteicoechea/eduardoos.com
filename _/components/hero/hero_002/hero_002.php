@@ -80,8 +80,11 @@ class hero_002 extends base_component
             transition:all ease 0ms !important;
           "]
         ],[$this->add_subcomponent("img","image","background_image_container",[
-            ["","transition:all ease 0ms !important;"]
-          ],[],[],["src='".$this->root_folder."_/media/".$this->background_images_data[0][1]."'"])
+            ["","
+               transition:all ease 0ms !important;
+               height:110%;
+            "]
+          ],[],[],[])
         ],[],[])
 
       ],[],[],[$this->component_id . "_outer_container"]
