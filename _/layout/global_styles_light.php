@@ -347,6 +347,55 @@ function provide_global_styles($root_folder)
             background:var(--c3) !important;
          }
 
+         .anchors_expand_button
+         {
+            height:100%;
+            width:100%;
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            text-decoration:none;
+            background:none;
+            font-size:1rem;
+            padding: 0 .75rem;
+            font-family: f1bl;
+            color: var(--c2);
+            transition:none;
+         }
+         .anchors_expand_button_extended
+         {
+            color: var(--c10);
+         }
+         .anchors_expand_button_subitems_container
+         {
+            height:100%;
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            text-decoration:none;
+            background:none;
+            font-size:1rem;
+            padding: 0 .75rem;
+            font-family: f1bl;
+            color: var(--c2);  
+         }
+         .anchors_expand_button_subitems_container_item
+         {
+            height:100%;
+            width:100%;
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            text-decoration:none;
+            background:none;
+            font-size:1rem;
+            padding: 0 .75rem 0 3rem;
+            font-family: f1bl;
+            color: var(--c2);
+         }
+
          @media only screen and (max-width: 950px) and (min-width: 451px) 
          {
          }

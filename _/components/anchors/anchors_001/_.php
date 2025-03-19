@@ -39,7 +39,7 @@ class anchors_001
       $this->html .= '
                <li
                id="' . $this->component_id . "_" . "li" . "_" . $item[0] . '"
-               class="' . $this->component_class . "_" . "li" . " " . $current_page_markup . '"
+               class="' . $this->component_class . "_" . "li" . " " . $current_page_markup . ' "
                >
             ';
 
@@ -48,19 +48,22 @@ class anchors_001
         $this->html .= '
                      <button
                      id="' . $this->component_id . "_" . "li" . "_" . "expand_button" . '"
-                     class="' . $this->component_id . "_" . "li" . "_" . "expand_button" . '"
+                     class="' . $this->component_id . "_" . "li" . "_" . "expand_button" . ' anchors_expand_button"
                      onclick="
                         let ' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . ' = document.getElementById(\'' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . '\');
-
+                        let ' . $this->component_id . "_" . "li" . "_" . "expand_button" . ' = document.getElementById(\'' . $this->component_id . "_" . "li" . "_" . "expand_button" . '\');
                         if(
                            ' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . '.style.height === \'0px\'
+                           
                         )
                         {
                            ' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . '.style.height=\'auto\'
+                           ' . $this->component_id . "_" . "li" . "_" . "expand_button" . '.classList.add(\'anchors_expand_button_extended\')
                         }
                         else
                         {
                            ' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . '.style.height=\'0px\'
+                           ' . $this->component_id . "_" . "li" . "_" . "expand_button" . '.classList.remove(\'anchors_expand_button_extended\')
                         }
                      "
                      >
@@ -69,7 +72,7 @@ class anchors_001
                   </li>
                   <div
                   id="' . $this->component_id . "_" . "li" . "_" . "subitems_container" . "_" . $item[0] . '"
-                  class="' . $this->component_id . "_" . "li" . "_" . "subitems_container" . '"
+                  class="' . $this->component_id . "_" . "li" . "_" . "subitems_container" . ' anchors_expand_button_subitems_container"
                   style="height:0px"
                   >
                      ' . $this->generate_anchor_subitems($item[2], $item[0]) . '
@@ -102,7 +105,7 @@ class anchors_001
       $markup .= '
                <a
                   id="' . $this->component_id . "_" . "li" . "_" . "subitem" . "_" . $subitem[0] . '"
-                  class="' . $this->component_class . "_" . "li" . "_" . "subitem" . '"
+                  class="' . $this->component_class . "_" . "li" . "_" . "subitem" . ' anchors_expand_button_subitems_container_item"
                   href="' . $this->root_folder . $base_path . "/" . $subitem[0] . '"
                   >
                   ' . $subitem[1] . '
