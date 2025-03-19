@@ -398,14 +398,104 @@ function provide_global_styles($root_folder)
 
          @media only screen and (max-width: 950px) and (min-width: 451px) 
          {
+
          }
 
          @media only screen and (max-width: 950px) and (min-width: 621px) 
          {
+
          }
          
          @media only screen and (max-width: 600px) 
          {
+            .article_main_heading
+            {
+            }
+            .article_abstract
+            {
+            }
+            .article_abstract > *
+            {
+            }
+            .articles_links_container
+            {
+            }         
+            .article_card
+            {
+               display:flex;
+               flex-direction:column;
+               gap:.5rem;
+               width:15rem;
+               transition: none;
+               padding: 1.25rem 1rem;
+               border-radius:.4rem;
+               background: rgb(251, 247, 235);
+               background: var(--c4);
+            }         
+            .article_card_heading
+            {
+               margin-bottom:.5rem;
+               height:auto;
+            }         
+            .article_card_abstract
+            {
+               height:auto;
+               margin: .25rem 0 0 0;
+            }         
+            .article_card_author
+            {
+               margin: 1.25rem 0 0 0;
+            }         
+            .article_card_date
+            {
+               line-height: .5rem;
+            }
+            .article_card_button
+            {
+               height:1.75rem;
+               font-size:.7rem;
+               width:45%;
+               margin: 1rem 0 0 auto;
+               display:flex;
+               align-items:center;
+               justify-content:center;
+            }        
+            .article_idea
+            {
+               display:flex;
+               flex-direction:column;
+               gap:1.15rem;
+               width:100%;
+               transition: none;
+               padding: 0 0 1.25rem 0;
+            }
+            .article_body_regular_list
+            {
+               display:flex;
+               flex-direction:column;
+               gap:.5rem;
+               padding: 0 0 0 2rem;
+            }
+            .article_key_phrase
+            {
+               font-family: f1b;
+               color:var(--accent_color_001);
+            }
+            .article_regular_quote
+            {
+               font-family: f1li;
+            }
+            .article_lets_talk_button
+            {
+               height: 2rem;
+               padding:0 1rem;
+               background: var(--accent_color_001);
+               background: var(--c11);
+               background: var(--c_whatsapp);
+               background: var(--c2);
+               color: var(--c1);
+               margin-bottom:1.25rem;
+            }
          }
 
          @media only screen and (max-width: 350px) {  
