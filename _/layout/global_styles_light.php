@@ -182,6 +182,7 @@ function provide_global_styles($root_folder)
             padding: 1.25rem 1rem;
             border-radius:.4rem;
             background: rgb(251, 247, 235);
+            background: var(--c4);
          }         
          .article_card_heading
          {
