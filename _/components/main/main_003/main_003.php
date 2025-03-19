@@ -161,6 +161,8 @@
                column-gap:.75rem;
                width:100%;
                transition: none;
+            "],["@media only screen and (max-width: 950px)","
+               margin-bottom:1rem;
             "]],[
                $this->articles_cards
             ]),
