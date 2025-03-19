@@ -177,7 +177,7 @@ function provide_global_styles($root_folder)
             display:flex;
             flex-direction:column;
             gap:.0rem;
-            width:14rem;
+            width:15rem;
             transition: none;
             padding: 1.25rem 1rem;
             border-radius:.4rem;

@@ -163,7 +163,9 @@
                transition: none;
             "]],[
                $this->articles_cards
-            ])
+            ]),
+            
+            $this->location_tracker_markup,
 
          ],[],[],[""]);
       }
