@@ -69,8 +69,11 @@
             {
                .main_content
                {
-                  flex-direction:row;
-                  flex-wrap:wrap;
+                  width:100%;
+                  padding: 0 0 1.25rem 0;
+                  display:grid;
+                  gap:0;
+                  grid-template-columns: var(--margin_common) auto var(--margin_common) var(--header_item_height) var(--margin_common);
                }
             }
          ');

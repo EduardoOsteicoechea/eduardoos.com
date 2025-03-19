@@ -176,25 +176,31 @@ function provide_global_styles($root_folder)
          {
             display:flex;
             flex-direction:column;
-            gap:.5rem;
-            width:15rem;
+            gap:.0rem;
+            width:14rem;
             transition: none;
             padding: 1.25rem 1rem;
-            box-shadow: .5rem .5rem .5rem rgba(0,0,0,.15);
+            border-radius:.4rem;
+            background: rgb(251, 247, 235);
          }         
          .article_card_heading
          {
             margin-bottom:.5rem;
+            height:3rem;
          }         
          .article_card_abstract
          {
-            background: var(--c3);
-            padding:1rem;
+            background: var(--c1);
+            padding:.5rem .75rem;
             font-size:.8rem !important;
             margin:0rem 0 .75rem 0;
+            border-radius:.4rem;
+            height:8rem;
+            overflow-y:auto
          }         
          .article_card_author
          {
+            margin: 1rem 0 0 0;
             font-size:.75rem;
             line-height:.75rem;
          }         
@@ -208,7 +214,7 @@ function provide_global_styles($root_folder)
             height:1.75rem;
             font-size:.7rem;
             width:45%;
-            margin: auto 0 0 auto;
+            margin: 1rem 0 0 auto;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -340,9 +346,17 @@ function provide_global_styles($root_folder)
             background:var(--c3) !important;
          }
 
-         @media only screen and (max-width: 950px) and (min-width: 451px) {}
+         @media only screen and (max-width: 950px) and (min-width: 451px) 
+         {
+         }
+
+         @media only screen and (max-width: 950px) and (min-width: 621px) 
+         {
+         }
          
-         @media only screen and (max-width: 450px) {}
+         @media only screen and (max-width: 600px) 
+         {
+         }
 
          @media only screen and (max-width: 350px) {  
             body

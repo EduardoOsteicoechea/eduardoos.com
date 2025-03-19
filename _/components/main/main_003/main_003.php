@@ -112,7 +112,8 @@
             href="'.$this->articles_directory_path . "/" . $article_data[0].'"
             >
             ';
-            $markup .= '<h3 class="article_card_heading">' . ($i + 1) . ". " . $article_data[1]["title"] . '</h3>';
+            // $markup .= '<h3 class="article_card_heading">' . ($i + 1) . ". " . $article_data[1]["title"] . '</h3>';
+            $markup .= '<h3 class="article_card_heading">' . $article_data[1]["title"] . '</h3>';
             $markup .= '<p class="article_card_abstract">' . $article_data[1]["abstract"] . '</p>';
             $markup .= '<p class="article_card_author">' . $article_data[1]["author"] . '</p>';
             $markup .= '<p class="article_card_date">' . $article_data[1]["date"] . '</p>';
@@ -139,6 +140,7 @@
             transition: none;
             padding: 0 0 1.25rem 0rem;
          "],["@media only screen and (max-width: 950px)","
+            grid-column:2;
             padding: 0 0 1.25rem 0rem;
             width:100%;
          "]],[
@@ -155,7 +157,8 @@
             ["","
                display:flex;
                flex-wrap:wrap;
-               gap:1.35rem;
+               row-gap:.75rem;
+               column-gap:.75rem;
                width:100%;
                transition: none;
             "]],[

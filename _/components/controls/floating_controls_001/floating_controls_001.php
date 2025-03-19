@@ -103,9 +103,11 @@
             font-size:.5rem;
          "],
          ["@media only screen and (max-width: 950px)", "
+            grid-column:4;
             width:var(--header_item_height);
             right: var(--margin_common);
             bottom: var(--margin_common);
+            margin-right: auto;
          "],
       ],[
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
