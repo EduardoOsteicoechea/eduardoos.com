@@ -408,6 +408,21 @@ function provide_global_styles($root_folder)
          
          @media only screen and (max-width: 600px) 
          {
+            h1{
+               font-family:f1b; 
+               font-size:2rem;
+               line-height:2.25rem;
+            }
+            h2{
+               font-family: f1b; 
+               font-size: 1.75rem;
+               line-height: 1.75rem;
+            }
+            h3{
+               font-family: f1b; 
+               font-size: 1rem;
+               line-height: 1.25rem;
+            }
             .article_main_heading
             {
             }

@@ -59,7 +59,7 @@
                         display:flex;
                         align-items:center;
                         justify-content:center;
-                        background:var(--c1);
+                        background:var(--c3);
                         color:var(--c2);
                         width: 1.1rem;
                         height: 1.1rem;
@@ -86,7 +86,7 @@
                         display:flex;
                         align-items:center;
                         justify-content:center;
-                        background:var(--c1);
+                        background:var(--c3);
                         color:var(--c2);
                         width: 1.1rem;
                         height: 1.1rem;
@@ -125,7 +125,7 @@
             overflow-x:hidden;
             z-index:0;
             border-radius:.2rem;
-            background:var(--c3);
+            background:var(--c1);
             color:var(--c1);
             transition: none;
             font-size:.5rem;
