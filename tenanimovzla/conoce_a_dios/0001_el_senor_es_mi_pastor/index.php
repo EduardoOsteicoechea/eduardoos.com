@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["El Señor es Mi pastor, nada me faltará","tenanimovzla/conoce_a_dios/0001_el_senor_es_mi_pastor/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

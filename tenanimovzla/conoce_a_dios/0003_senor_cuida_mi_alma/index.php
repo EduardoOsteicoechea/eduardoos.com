@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Señor, cuida mi alma","tenanimovzla/conoce_a_dios/0003_senor_cuida_mi_alma/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

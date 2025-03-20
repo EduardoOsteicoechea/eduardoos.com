@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¡No más milagros!","tenanimovzla/conoce_a_dios/0011_no_mas_milagros/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

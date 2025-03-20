@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Te demostraré que puedo perdonar pecados","tenanimovzla/conoce_a_dios/0019_te_demostrare_que_puedo_perdonar_pecados/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¿Roca o arena?","tenanimovzla/conoce_a_dios/0014_roca_o_arena/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¡Pero qué insípido!","tenanimovzla/conoce_a_dios/0010_pero_que_insipido/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

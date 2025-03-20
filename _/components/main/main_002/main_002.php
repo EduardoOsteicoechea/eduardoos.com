@@ -8,6 +8,8 @@
       public sidebar_001 | null $page_sidebar = null;
       public aside_001 | null $page_aside = null;
       public string $article_content = "";
+      public string $current_set_pagination = "";
+      public string $current_set_containing_directory = "";
 
       public function __construct
       (
@@ -28,6 +30,7 @@
          $content_data,
          string $main_content_json_file_path = "",
          array | null $location_tracker_elements = null,
+         string $current_set_containing_directory = "",
       )
       {
          parent::__construct
@@ -46,9 +49,11 @@
             $post,
             $files,
          );
+         $this->current_set_containing_directory = $current_set_containing_directory;
          $this->location_tracker_elements = $location_tracker_elements;
          $this->articles_directory_path = $main_content_json_file_path;
          $this->content_data = $content_data;
+         $this->generate_current_set_pagination();
          $this->generate_article_content();
          $this->generate_and_register_location_tracker_markup();
          $this->generate_component_markup_and_styles();
@@ -180,6 +185,122 @@
          $this->article_content = $title . $abstract . $content;
       }
 
+      protected function get_current_set_items_urls()
+      {
+         $directories_paths = [];
+         $current_directory = dirname(getcwd());
+
+         if (is_dir($this->current_set_containing_directory))
+         {
+            $handle = opendir($current_directory);
+            if ($handle)
+            {
+               while (($file = readdir($handle)) !== false)
+               {
+                  if ($file != "." && $file != "..")
+                  {
+                     $path = realpath($current_directory . DIRECTORY_SEPARATOR . $file);
+                     if (is_dir($path))
+                     {
+                        $directories_paths[] .= $file;
+                     };
+                  };
+               };
+               closedir($handle);
+            };
+         };
+
+         return $directories_paths;
+      }
+
+      protected function generate_current_set_pagination()
+      {
+         $current_set_urls = $this->get_current_set_items_urls();
+         
+         $current_location = $this->location_tracker_elements[count($this->location_tracker_elements) - 1][1];
+         $current_location_parts = explode("/", $current_location);
+         $current_set_parent_directory_name = $current_location_parts[count($current_location_parts)-4];
+         $current_set_directory_name = $current_location_parts[count($current_location_parts)-3];
+         $current_location_directory_name = $current_location_parts[count($current_location_parts)-2];
+         $current_set_base_location_path = $this->root_folder . $current_set_parent_directory_name . "/" .$current_set_directory_name . "/";
+
+         $this->current_set_pagination .= '
+            <div
+            id="'.$this->component_id.'_current_set_pagination"
+            class="current_set_pagination"
+            >
+         ';
+
+         // print_r($current_set_urls);
+
+         if(count($current_set_urls) > 5)
+         {
+            $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[0].'"><div>'."First".'</div></a>';
+
+            for ($i = 1; $i < count($current_set_urls) - 1; $i++) 
+            { 
+               $current_url = $current_set_urls[$i];
+
+               // if(
+               //    $i === 1 && $i !== count($current_set_urls) - 1 && $current_url !== $current_location_directory_name
+               // )
+               // {
+               //    $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[$i+1].'"><div>'.($i+1).'</div>';
+               // }
+               // else if(
+               //    $i === count($current_set_urls) - 2 && $i !== 1 && $current_url !== $current_location_directory_name
+               // )
+               // {
+               //    $enter = false;
+               //    $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[$i-1].'"><div>'.($i).'</div></a>';
+               // }
+               // else 
+               if($current_url === $current_location_directory_name)
+               {
+                  $enter = false;
+                  if(isset($current_set_urls[$i-1]))
+                  {
+                     $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[$i-1].'"><div>'.($i).'</div></a>';
+                  };
+
+                  $this->current_set_pagination .= '<div class="current_pagination_item">'.($i+1).'</div>';
+
+                  if(isset($current_set_urls[$i+1]))
+                  {
+                     $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[$i+1].'"><div>'.($i+2).'</div>';
+                  };
+               }               
+            };
+            
+            $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[count($current_set_urls)-1].'"><div>'."Last".'</div></a>';
+         }
+         else if(count($current_set_urls) > 1)
+         {
+            $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[0].'"><div>'."First".'</div></a>';
+
+            for ($i=1; $i < count($current_set_urls) - 1; $i++) 
+            { 
+               $current_url = $current_set_urls[$i];
+
+               if($current_url === $current_location_directory_name)
+               {
+                  $this->current_set_pagination .= '<div class="current_pagination_item">'.($i+1).'</div>';
+               }
+            };
+            
+            $this->current_set_pagination .= '<a href="'.$current_set_base_location_path.$current_set_urls[count($current_set_urls)-1].'"><div>'."Last".'</div></a>';
+         }
+         else
+         {
+            $this->current_set_pagination .= '<div>current</div>';
+         };
+
+         $this->current_set_pagination .= '
+            
+         </div>
+         ';
+      }
+
       protected function generate_component_markup_and_styles()
       {
          $this->add_component("main","main",[["","
@@ -191,7 +312,9 @@
             width:calc(100% - 3.25rem);
          "]],[
             $this->location_tracker_markup,
+            $this->current_set_pagination,
             $this->article_content,
+            $this->current_set_pagination,
             $this->location_tracker_markup,
          ],[],[],[""]);
       }

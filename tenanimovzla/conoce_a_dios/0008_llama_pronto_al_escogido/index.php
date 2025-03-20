@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¡Llama pronto al Escogido!","tenanimovzla/conoce_a_dios/0008_llama_pronto_al_escogido/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

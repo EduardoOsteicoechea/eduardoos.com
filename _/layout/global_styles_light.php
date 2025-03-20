@@ -258,11 +258,19 @@ function provide_global_styles($root_folder)
          }
 
 
+         .current_pagination_item
+         {
+            background:red;
+         }
+
+
+
+
 
          .vertical_arrow_bar
          {
             width:.15rem;
-            height:50%;
+            height:40%;
             background:var(--c2);
             border-radius:1rem;
          }

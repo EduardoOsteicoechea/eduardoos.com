@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Sin apoyo para Su cabeza","tenanimovzla/conoce_a_dios/0016_sin_apoyo_para_su_cabeza/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Dios de mis expectativas","tenanimovzla/conoce_a_dios/0007_dios_de_mis_expectativas/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

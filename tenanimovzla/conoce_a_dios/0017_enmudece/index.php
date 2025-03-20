@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¡Enmudece!","tenanimovzla/conoce_a_dios/0017_enmudece/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

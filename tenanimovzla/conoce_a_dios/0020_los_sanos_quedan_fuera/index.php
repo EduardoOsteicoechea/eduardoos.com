@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Los sanos quedan fuera","tenanimovzla/conoce_a_dios/0020_los_sanos_quedan_fuera/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¡No estaba preparado!","tenanimovzla/conoce_a_dios/0009_la_vestimenta_inapropiada/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Cuánta imaginación","tenanimovzla/conoce_a_dios/0005_cuanta_imaginacion/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

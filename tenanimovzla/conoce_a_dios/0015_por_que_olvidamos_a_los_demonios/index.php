@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¿Por qué olvidamos a los demonios?","tenanimovzla/conoce_a_dios/0015_por_que_olvidamos_a_los_demonios/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

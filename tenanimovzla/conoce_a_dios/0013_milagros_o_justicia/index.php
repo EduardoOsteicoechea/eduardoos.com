@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¿Milagros o justicia?","tenanimovzla/conoce_a_dios/0013_milagros_o_justicia/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

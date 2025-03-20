@@ -21,6 +21,7 @@ class base_component
    public array | null $location_tracker_elements = null;
    public string $location_tracker_markup = "";
    public string $articles_directory_path = "";
+   public string $current_set_containing_directory = "";
 
 
    public function __construct

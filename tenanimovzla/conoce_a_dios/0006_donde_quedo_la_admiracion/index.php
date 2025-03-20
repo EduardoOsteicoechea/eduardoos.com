@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["¿Dónde quedó la admiración?","tenanimovzla/conoce_a_dios/0006_donde_quedo_la_admiracion/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

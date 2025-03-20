@@ -159,7 +159,6 @@
          };
 
          return $directories_article_data;
-         // return $directories_paths;
       }
       
       public function determine_required_elements($components_to_render):void

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["Dos demonios aterrorizados","tenanimovzla/conoce_a_dios/0018_dos_demonios_aterrorizados/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

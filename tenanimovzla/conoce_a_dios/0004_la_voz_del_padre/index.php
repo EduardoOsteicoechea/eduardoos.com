@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["La voz del Padre","tenanimovzla/conoce_a_dios/0004_la_voz_del_padre/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

@@ -24,7 +24,8 @@
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
          ["El que esté sin pecado, lance la primera piedra","tenanimovzla/conoce_a_dios/0002_el_que_este_sin_pecado/"],
-      ]
+      ],
+      getcwd()
    );
 
    new public_page

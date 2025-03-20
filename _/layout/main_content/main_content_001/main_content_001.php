@@ -29,6 +29,7 @@
          array | null $components_to_render = null,
          string $main_content_json_file_path = "",
          array | null $location_tracker_elements = null,
+         string $current_set_containing_directory = "",
       )
       { 
          parent::__construct
@@ -50,6 +51,7 @@
             $location_tracker_elements,
          );
 
+         $this->current_set_containing_directory = $current_set_containing_directory;
          $this->location_tracker_elements = $location_tracker_elements;
          $this->articles_directory_path = $main_content_json_file_path;
          
@@ -149,6 +151,7 @@
             $this->content_data,
             $this->articles_directory_path,
             $this->location_tracker_elements,
+            $this->current_set_containing_directory
          );
          
          $this->register_component_markup($this->page_main->provide_markup());
