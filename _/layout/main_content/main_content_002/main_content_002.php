@@ -85,6 +85,8 @@
             >
          ');
          
+         $this->content_data["article"] = $this->generate_floating_control_data_from_articles_folder_names($this->root_folder . $articles_directory_path);
+
          $this->generate_sidebar_if_required();
          $this->generate_main();
          $this->generate_floating_controls_if_required();
@@ -113,6 +115,51 @@
                );
             </script>
          ');
+      }
+
+      public function generate_floating_control_data_from_articles_folder_names(string $directory_path)
+      {
+         $directories_paths = [];
+         $current_directory = getcwd();
+
+         if (is_dir($current_directory))
+         {
+            $handle = opendir($current_directory);
+            if ($handle)
+            {
+               while (($file = readdir($handle)) !== false)
+               {
+                  if ($file != "." && $file != "..")
+                  {
+                     $path = realpath($current_directory . DIRECTORY_SEPARATOR . $file);
+                     if (is_dir($path))
+                     {
+                        $directories_paths[] .= $file;
+                     };
+                  };
+               };
+               closedir($handle);
+            };
+         };
+
+         $directories_article_data = [];
+
+         for ($i=0; $i < count($directories_paths); $i++) 
+         { 
+            $directory_path = $directories_paths[$i];
+
+            $file_path = $directory_path . "/" . "article_data.json";
+
+            if (file_exists($file_path))
+            {
+               $contents = file_get_contents($file_path);
+               $decoded_content = json_decode($contents, true);
+               $directories_article_data[] = $decoded_content["id"];
+            };
+         };
+
+         return $directories_article_data;
+         // return $directories_paths;
       }
       
       public function determine_required_elements($components_to_render):void
@@ -165,6 +212,7 @@
             $subcomponent_directory = $this->root_folder . "_/components/controls/floating_controls_001/";
             
             include $subcomponent_directory . "floating_controls_001.php";
+            
 
             $this->page_floating_controls = new floating_controls_001
             (

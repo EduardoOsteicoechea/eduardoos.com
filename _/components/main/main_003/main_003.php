@@ -108,6 +108,7 @@
             $article_data = $directories_articles_data[$i];
             $markup .= '
             <a 
+            id="'.$article_data[1]["id"].'"
             class="article_card"
             href="'.$this->articles_directory_path . "/" . $article_data[0].'"
             >

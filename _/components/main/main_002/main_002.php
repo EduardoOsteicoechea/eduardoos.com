@@ -146,7 +146,7 @@
             $idea = $content[$i];
             $idea_heading = $this->generate_article_idea_heading($idea[0], ($i + 1));
             $idea_id = $this->component_id . "_" . $idea[1];
-            $idea_id = $idea[1] . "_article_idea";
+            $idea_id = $idea[1];
             $idea_subideas = $this->generate_article_body_idea($idea[2]);
             $markup .= '
                <div

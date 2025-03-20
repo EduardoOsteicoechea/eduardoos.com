@@ -362,7 +362,7 @@ class base_component
       {
          $contents = file_get_contents($filepath);
          $this->content_data = json_decode($contents, true);
-      };
+      };      
    }
       
    public function generate_and_register_location_tracker_markup():void

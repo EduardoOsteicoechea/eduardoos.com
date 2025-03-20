@@ -43,35 +43,63 @@
       protected function generate_article_control_points(): string
       {
          $markup = "";
-         $counter = 1;
+         
          if(isset($this->content_data["article"]))
-         {
-            foreach ($this->content_data["article"] as $article) 
+         {  
+            if(is_array($this->content_data["article"][0]) === false)
             {
-               $subcomponent_id = $article[1]."_button";
-               $article_idea_id = $article[1]."_article_idea";
-               $markup .= $this->add_subcomponent(
-                  "button",$subcomponent_id,"",[
-                  ["","
-                     display:flex;
-                     align-items:center;
-                     justify-content:center;
-                     background:var(--c1);
-                     color:var(--c2);
-                     width: 1.25rem;
-                     height: 1.25rem;
-                     font-size:inherit;
-                     border-radius:10rem !important;
-                  "]],["p.".$counter],[],[
-                     'onclick="
-                        const element = document.getElementById(\''.$article_idea_id.'\');
-                        element.scrollIntoView();
-                     "'
-                  ]
-               );
-               
-               $counter = $counter + 1;
-            };
+               for ($i=0; $i < count($this->content_data["article"]); $i++) 
+               { 
+                  $subcomponent_id = $this->content_data["article"][$i]."_button";
+                  $article_idea_id = $this->content_data["article"][$i];
+
+                  $markup .= $this->add_subcomponent(
+                     "button",$subcomponent_id,"",[
+                     ["","
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:var(--c1);
+                        color:var(--c2);
+                        width: 1.1rem;
+                        height: 1.1rem;
+                        font-size:inherit;
+                     "]],[($i+1)],[],[
+                        'onclick="
+                           const element = document.getElementById(\''.$article_idea_id.'\');
+                           element.scrollIntoView();
+                        "'
+                     ]
+                  );
+               };
+            }
+            else
+            {
+               for ($i=0; $i < count($this->content_data["article"]); $i++) 
+               { 
+                  $subcomponent_id = $this->content_data["article"][0][1]."_button";
+                  $article_idea_id = $this->content_data["article"][0][1];
+
+                  $markup .= $this->add_subcomponent(
+                     "button",$subcomponent_id,"",[
+                     ["","
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:var(--c1);
+                        color:var(--c2);
+                        width: 1.1rem;
+                        height: 1.1rem;
+                        font-size:inherit;
+                     "]],[($i+1)],[],[
+                        'onclick="
+                           const element = document.getElementById(\''.$article_idea_id.'\');
+                           element.scrollIntoView();
+                        "'
+                     ]
+                  );
+               };
+            };            
          };         
 
          return $markup;
@@ -89,7 +117,7 @@
             flex-direction:column;
             align-items:center;
             justify-content:center;
-            gap:1rem;
+            gap:.5rem;
             height:fit-content;
             width:var(--header_item_height);
             padding:.75rem 1rem;
@@ -113,8 +141,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
             ["","
                background:var(--c3);
-               width: 1rem;
-               height: 1rem;
+               width: 1.5rem;
+               height: 1.5rem;
                font-size:inherit;
             "]],[
                '<div class="vertical_arrow_bar top_arrow_left_bar"></div>',
