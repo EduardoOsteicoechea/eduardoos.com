@@ -23,7 +23,7 @@
       [
          ["Inicio","inicio"],
          ["Conoce a Dios","tenanimovzla/conoce_a_dios/"],
-         ["¿Estrechez o la anchura?","tenanimovzla/conoce_a_dios/0012_estrechez_o_anchura/"],
+         ["¿Estrechez o anchura?","tenanimovzla/conoce_a_dios/0012_estrechez_o_anchura/"],
       ],
       getcwd()
    );

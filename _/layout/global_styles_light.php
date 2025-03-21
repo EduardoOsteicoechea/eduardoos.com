@@ -151,7 +151,7 @@ function provide_global_styles($root_folder)
                   
          .article_main_heading
          {
-            margin-top:1.25rem;
+            margin-top:.5rem;
          }
          .article_abstract
          {
@@ -258,9 +258,37 @@ function provide_global_styles($root_folder)
          }
 
 
-         .current_pagination_item
+         .current_set_pagination
          {
-            background:red;
+            display:flex;
+            align-items:center;
+            gap:.5rem;
+            width:fit-content;
+            margin: 1rem 0 0 0;
+            height:2rem;
+         }
+         .current_set_pagination_item
+         {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background:var(--c3);
+            width: 1.25rem;
+            height: 1.25rem;
+            font-size:.6rem;
+            border-radius:.2rem;
+            color: var(--c7);
+         }
+         .current_set_pagination_current_item
+         {
+            background: var(--c2);
+            color: var(--c1);
+            font-family:f1b;
+         }
+         .current_set_first_or_last_pagination_item
+         {
+            font-family:f1bl;
          }
 
 
