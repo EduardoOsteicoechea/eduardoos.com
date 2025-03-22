@@ -46,10 +46,16 @@
          
          if(isset($this->content_data["article"]))
          {  
+            $markup .= '
+               <div
+               class="floating_controls_items_container"
+               >
+            ';
+
             if(is_array($this->content_data["article"][0]) === false)
-            {
+            { 
                for ($i=0; $i < count($this->content_data["article"]); $i++) 
-               { 
+               {
                   $subcomponent_id = $this->content_data["article"][$i]."_button";
                   $article_idea_id = $this->content_data["article"][$i];
 
@@ -64,6 +70,7 @@
                         width: var(--square_arrow_button_dimension);
                         height: var(--square_arrow_button_dimension);
                         font-size:inherit;
+                        margin-top:7px;
                      "]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
@@ -99,7 +106,11 @@
                      ]
                   );
                };
-            };            
+            }; 
+
+            $markup .= '
+               </div>
+            ';           
          };         
 
          return $markup;

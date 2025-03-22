@@ -151,7 +151,15 @@ function provide_global_styles($root_folder)
             color:var(--c7);
          }
 
-
+         .floating_controls_items_container
+         {
+            gap:.5rem;
+            height:fit-content;
+            max-height: calc(100dvh - 150px);
+            overflow-y:auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+         }
 
                   
          .article_main_heading
