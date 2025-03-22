@@ -70,7 +70,7 @@
                   $subcomponent_id = $this->content_data["article"][$i]."_button";
                   $article_idea_id = $this->content_data["article"][$i];
 
-                  if($i !== 0)
+                  if($i > 0)
                   {
                      $button_styles_markup .= 'margin-top:7px;';
                   };
@@ -93,7 +93,7 @@
                   $subcomponent_id = $this->content_data["article"][0][1]."_button";
                   $article_idea_id = $this->content_data["article"][0][1];
 
-                  if($i !== 0)
+                  if($i > 0)
                   {
                      $button_styles_markup .= 'margin-top:7px;';
                   };

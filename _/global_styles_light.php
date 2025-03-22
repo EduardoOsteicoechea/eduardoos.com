@@ -159,6 +159,7 @@ function provide_global_styles($root_folder)
             overflow-y:auto;
             scrollbar-width: none; /* Firefox */
             -ms-overflow-style: none; /* Internet Explorer and Edge */
+            margin-top: -7px;
          }
 
                   
@@ -538,6 +539,7 @@ function provide_global_styles($root_folder)
             }
             .article_abstract
             {
+               padding:.5rem .5rem .25rem .5rem;
             }
             .article_abstract > *
             {
