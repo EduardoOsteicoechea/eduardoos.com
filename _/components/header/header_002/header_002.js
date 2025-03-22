@@ -18,6 +18,7 @@ export default class
          session,
       ) 
    {
+
       let outer_container = document.getElementById(external_elements_ids[0]);
       let outer_container_button = outer_container.children[1];
 

@@ -40,11 +40,10 @@
       protected function generate_component_markup_and_styles()
       {
          $this->add_component("aside","aside",[["","
-            height:200px;
-            width:var(--main_content_aside_width);
-            background:red;
+            grid-column:10;
             transition: none;
             background:var(--c1);
+            background:red;
             border-radius:.2rem;
             padding:1.25rem;
          "],

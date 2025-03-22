@@ -11,10 +11,10 @@
       private page_top | null $page_top = null;
       private object | null $page_bottom = null;
 
-      private string $page_styles = "";
-      private string $page_main_content = "";
+      public string $page_styles = "";
+      public string $page_main_content = "";
 
-      private array $elements_ids = [];
+      public array $elements_ids = [];
 
       private array $environment_variables = [];
 
@@ -32,9 +32,9 @@
          "document_download_001" => "document_download_001",
       ];
 
-      private array | null $page_main_components = null;
+      public array | null $page_main_components = null;
 
-      private string $page_markup = "";
+      public string $page_markup = "";
 
       public function __construct
       (
@@ -129,7 +129,21 @@
       }
    
       protected function generate_page_markup()
-      {
+      {       
+         $this->page_styles .= '
+            body
+            {
+               grid-template-rows:    0% 0% 0% 5% 0% auto 0% 0% 0% 0% 2%;
+            }               
+            @media only screen and (max-width: 950px)
+            {
+               body
+               {
+                  grid-template-rows:    0% 0% 0% 4% 0% auto 0% 0% 0% 0% 2%;
+               } 
+            }
+         ';
+
          foreach ($this->page_main_components as $component)
          {
             $this->page_styles .= $component["styles"];

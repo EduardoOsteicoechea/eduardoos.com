@@ -40,11 +40,10 @@
       protected function generate_component_markup_and_styles()
       {
          $this->add_component("sidebar","sidebar",[["","
-            height:200px;
-            width:var(--main_content_sidebar_width);
-            background:green;
+            grid-column:2;
             transition: none;
             background:var(--c1);
+            background:green;
             border-radius:.2rem;
             padding:1.25rem;
          "],

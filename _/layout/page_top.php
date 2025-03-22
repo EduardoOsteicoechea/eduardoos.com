@@ -110,7 +110,7 @@
       
       private function generate_global_styles($root_folder, $color_mode)
       {
-         include $root_folder . '_/layout/global_styles_'.$color_mode.'.php';
+         include $root_folder . '_/global_styles_'.$color_mode.'.php';
          return provide_global_styles($root_folder);
       }
    }

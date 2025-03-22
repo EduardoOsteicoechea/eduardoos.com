@@ -1,5 +1,5 @@
 <?php
-   class main_content_001 extends base_component
+   class main_content_002 extends base_component
    {
       private bool $must_print_floating_controls = false;
       private bool $must_print_sidebar = false;
@@ -7,7 +7,8 @@
       public floating_controls_001 | null $page_floating_controls = null;
       public sidebar_001 | null $page_sidebar = null;
       public aside_001 | null $page_aside = null;
-      public main_002 | null $page_main = null;
+      public main_003 | null $page_main = null;
+      public string $articles_directory_path = "";
       public array | null $location_tracker_elements = null;
       public string $location_tracker_markup = "";
 
@@ -27,9 +28,8 @@
          array | null $post = null,
          array | null $files = null,
          array | null $components_to_render = null,
-         string $main_content_json_file_path = "",
+         string $articles_directory_path = "",
          array | null $location_tracker_elements = null,
-         string $current_set_containing_directory = "",
       )
       { 
          parent::__construct
@@ -47,44 +47,40 @@
             $get,
             $post,
             $files,
-            $main_content_json_file_path,
+            $articles_directory_path,
             $location_tracker_elements,
          );
 
-         $this->current_set_containing_directory = $current_set_containing_directory;
          $this->location_tracker_elements = $location_tracker_elements;
-         $this->articles_directory_path = $main_content_json_file_path;
-         
-         $this->determine_required_elements($components_to_render);
+         $this->articles_directory_path = $articles_directory_path;         
 
          $this->register_component_styles('
-            .main_content_001
+            .main_content_002
             {
-               display:flex;
-               gap:1rem;
+               grid-row:6;
+               display:grid;
+               grid-template-columns: var(--common_margin_desktop) 10% var(--common_margin_desktop) 5% var(--common_margin_desktop) auto var(--common_margin_desktop) 5% var(--common_margin_desktop) 10% var(--common_margin_desktop);
                width:100%;
-               height:auto;
-               padding: 0 0rem 1rem 1rem;
             }
             @media only screen and (max-width: 950px)
             {
-               .main_content_001
+               .main_content_002
                {
-                  flex-direction:row;
-                  flex-wrap:wrap;
-                  gap:.75rem;
+                  grid-template-columns: var(--common_margin_mobile) 0% 0% 0% 0% auto var(--common_margin_mobile) 6% 0% 0% var(--common_margin_mobile);
                }
             }
-         ');         
+         ');
          
          $this->register_component_markup('
             <div
             id="main_content"
-            class="main_content_001"
+            class="main_content main_content_002"
             >
          ');
 
-         $this->get_content_data_from_json_file($this->root_folder . $main_content_json_file_path);
+         $this->determine_required_elements($components_to_render);
+         
+         $this->content_data["article"] = $this->generate_floating_control_data_from_articles_folder_names($this->root_folder . $articles_directory_path);
 
          $this->generate_sidebar_if_required();
          $this->generate_main();
@@ -100,10 +96,10 @@
          $this->register_component_markup('
             </div>
             <script
-            id="main_content_001"
+            id="main_content"
             type="module"
             >
-               import main_content_class from "'.$this->root_folder.'_/layout/main_content/main_content_001/main_content_001.js";
+               import main_content_class from "'.$this->root_folder.'_/components/main_content/main_content_002/main_content_002.js";
                new main_content_class(
                   "'.$this->root_folder.'", 
                   "'.$this->component_folder.'", 
@@ -114,6 +110,50 @@
                );
             </script>
          ');
+      }
+
+      public function generate_floating_control_data_from_articles_folder_names(string $directory_path)
+      {
+         $directories_paths = [];
+         $current_directory = getcwd();
+
+         if (is_dir($current_directory))
+         {
+            $handle = opendir($current_directory);
+            if ($handle)
+            {
+               while (($file = readdir($handle)) !== false)
+               {
+                  if ($file != "." && $file != "..")
+                  {
+                     $path = realpath($current_directory . DIRECTORY_SEPARATOR . $file);
+                     if (is_dir($path))
+                     {
+                        $directories_paths[] .= $file;
+                     };
+                  };
+               };
+               closedir($handle);
+            };
+         };
+
+         $directories_article_data = [];
+
+         for ($i=0; $i < count($directories_paths); $i++) 
+         { 
+            $directory_path = $directories_paths[$i];
+
+            $file_path = $directory_path . "/" . "article_data.json";
+
+            if (file_exists($file_path))
+            {
+               $contents = file_get_contents($file_path);
+               $decoded_content = json_decode($contents, true);
+               $directories_article_data[] = $decoded_content["id"];
+            };
+         };
+
+         return $directories_article_data;
       }
       
       public function determine_required_elements($components_to_render):void
@@ -129,11 +169,11 @@
 
       public function generate_main():void
       {
-         $subcomponent_directory = $this->root_folder . "_/components/main/main_002/";
+         $subcomponent_directory = $this->root_folder . "_/components/main/main_003/";
          
-         include $subcomponent_directory . "main_002.php";
+         include $subcomponent_directory . "main_003.php";
 
-         $this->page_main = new main_002
+         $this->page_main = new main_003
          (
             $this->root_folder, 
             $subcomponent_directory, 
@@ -149,10 +189,9 @@
             $this->environment_variables["post"],
             $this->environment_variables["files"],
             null,
-            $this->content_data,
             $this->articles_directory_path,
-            $this->location_tracker_elements,
-            $this->current_set_containing_directory
+            "",
+            $this->location_tracker_elements
          );
          
          $this->register_component_markup($this->page_main->provide_markup());
@@ -167,6 +206,7 @@
             $subcomponent_directory = $this->root_folder . "_/components/controls/floating_controls_001/";
             
             include $subcomponent_directory . "floating_controls_001.php";
+            
 
             $this->page_floating_controls = new floating_controls_001
             (

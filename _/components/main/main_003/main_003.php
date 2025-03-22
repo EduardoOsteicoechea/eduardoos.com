@@ -137,15 +137,13 @@
          $this->articles_cards = $this->generate_articles_cards_markup();
          $this->generate_and_register_location_tracker_markup();
 
-         $this->add_component("main","main",[["","
+         $this->add_component("main","main_003",[["","
+            grid-column:6;
             display:flex;
             flex-direction:column;
             gap:1.35rem;
-            width:100%;
-            transition: none;
          "],["@media only screen and (max-width: 950px)","
-            grid-column:2;
-            width:100%;
+         
          "]],[
             
             $this->location_tracker_markup,

@@ -166,6 +166,7 @@ class main_002 extends base_component
             <a
             href="https://wa.me/584147281033?text="
             target="_blank"
+            class="article_lets_talk_button_anchor"
             >
                <button class="article_lets_talk_button">Conversemos</button>
             </a>
@@ -385,14 +386,15 @@ class main_002 extends base_component
 
    protected function generate_component_markup_and_styles()
    {
-      $this->add_component("main", "main", [["", "
+      $this->add_component("main", "", [["", "
+            grid-column:6;
             display:flex;
             flex-direction:column;
             gap:.75rem;
             width:100%;
+            height:fit-content;
             transition: none;
-         "], ["@media only screen and (max-width: 950px)", "
-            width:calc(100% - 3.25rem);
+            overflow: hidden;
          "]], [
          $this->location_tracker_markup,
          $this->current_set_pagination,

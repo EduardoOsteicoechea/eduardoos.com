@@ -18,6 +18,6 @@ export default class
          session,
       ) 
    {
-      console.log("From floating_controls_001");
+      // console.log("From floating_controls_001");
    }
 }

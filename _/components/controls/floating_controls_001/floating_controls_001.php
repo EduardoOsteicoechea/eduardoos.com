@@ -61,8 +61,8 @@
                         justify-content:center;
                         background:var(--c3);
                         color:var(--c2);
-                        width: 1.5rem;
-                        height: 1.5rem;
+                        width: var(--square_arrow_button_dimension);
+                        height: var(--square_arrow_button_dimension);
                         font-size:inherit;
                      "]],[($i+1)],[],[
                         'onclick="
@@ -88,8 +88,8 @@
                         justify-content:center;
                         background:var(--c3);
                         color:var(--c2);
-                        width: 1.5rem;
-                        height: 1.5rem;
+                        width: var(--square_arrow_button_dimension);
+                        height: var(--square_arrow_button_dimension);
                         font-size:inherit;
                      "]],[($i+1)],[],[
                         'onclick="
@@ -111,8 +111,7 @@
          $articles_control_points = $this->generate_article_control_points();
 
          $this->add_component("div","floating_controls",[["","
-            position: sticky;
-            top: 1.25rem;
+            grid-column: 8;
             display:flex;
             flex-direction:column;
             align-items:center;
@@ -120,24 +119,23 @@
             gap:.5rem;
             height:fit-content;
             padding:0rem 0rem;
-            overflow-y:auto;
-            overflow-x:hidden;
             z-index:0;
             border-radius:.2rem;
             background:var(--c1);
             color:var(--c1);
             transition: none;
             font-size:.6rem;
+            width:100%;
          "],
          ["@media only screen and (max-width: 950px)", "
-            grid-column:4;
+         
          "],
       ],[
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
             ["","
                background:var(--c3);
-               width: 1.5rem;
-               height: 1.5rem;
+                  width: var(--square_arrow_button_dimension);
+                  height: var(--square_arrow_button_dimension);
                font-size:inherit;
             "]],[
                '<div class="vertical_arrow_bar top_arrow_left_bar"></div>',
@@ -154,8 +152,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
                ["","
                   background:var(--c3);
-                  width: 1.5rem;
-                  height: 1.5rem;
+                  width: var(--square_arrow_button_dimension);
+                  height: var(--square_arrow_button_dimension);
                   font-size:inherit;
                "]],[
                   '<div class="vertical_arrow_bar down_arrow_left_bar"></div>',

@@ -18,7 +18,7 @@ export default class
          session,
       ) 
    {
-      console.log("From main_002.js");
+      // console.log("From main_002.js");
 
    }
 }

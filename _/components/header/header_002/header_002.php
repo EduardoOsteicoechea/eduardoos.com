@@ -43,23 +43,26 @@
          
          $this->add_component("div","outer_container",[
                ["","
-                  display:flex;
+                  grid-row:4;                  
+                  display:grid;
+                  grid-template-columns: var(--common_margin_desktop) 22% var(--common_margin_desktop) var(--common_margin_desktop) var(--common_margin_desktop) auto var(--common_margin_desktop) var(--common_margin_desktop) var(--common_margin_desktop) 22% var(--common_margin_desktop);
                   align-items:center;
-                  justify-content: space-between;
-                  padding: 0rem 1rem 0rem 0rem;
                   width:100%;
                   z-index:12000;
                   height:var(--header_height);
+               "],["@media only screen and (max-width: 950px)", "
+
+                  grid-template-columns: var(--common_margin_mobile) auto 0% 0% 0% auto 0 0% 0% var(--square_arrow_button_dimension) var(--common_margin_mobile);
                "]
             ],[
-               $this->add_subcomponent("a","header_logo_anchor","outer_container",[],[
+               $this->add_subcomponent("a","header_logo_anchor","outer_container",[["","
+                  grid-column:2;
+               "]],[
                   $this->add_subcomponent("h2","header_logo_h2","outer_container_header_logo_anchor",[
                      ["","
                         display:flex;
                         align-items:center;
                         font-family:f1bl;
-                        padding: var(--header_item_padding);
-                        height: var(--header_item_height);
                         font-size: 1.25rem;
                      "]
                   ],["eduardoos.com"]),
@@ -67,15 +70,17 @@
 
                $this->add_subcomponent("button","menu_button","outer_container",[
                ["","
+                  grid-column:10;
                   display:flex;
                   flex-direction:column;
                   align-items:center;
+                  justify-content:center;
                   gap:.25rem;
-                  font-family:f1bl;
-                  font-size: 1rem;
-                  width: 1.5rem;
-                  height: 1.5rem;
+                  width: var(--square_arrow_button_dimension);
+                  height: var(--square_arrow_button_dimension);
                   background:var(--c3) !important;
+               "],["@media only screen and (max-width: 950px)", "
+
                "]],[
                   '<div class="header_button_bar"></div>',
                   '<div class="header_button_bar"></div>',

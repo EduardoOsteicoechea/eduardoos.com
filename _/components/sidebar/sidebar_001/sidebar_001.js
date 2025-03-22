@@ -18,6 +18,6 @@ export default class
          session,
       ) 
    {
-      console.log("From sidebar_001");
+      // console.log("From sidebar_001");
    }
 }
