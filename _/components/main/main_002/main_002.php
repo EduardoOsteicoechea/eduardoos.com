@@ -138,7 +138,8 @@ class main_002 extends base_component
    {
       if ($content === "") return "";
 
-      return '<h2>' . $counter . ". " . $content . '</h2>';
+      // return '<h2>' . $counter . ". " . $content . '</h2>';
+      return '<h2>' . $content . '</h2>';
    }
 
    protected function generate_article_body(array $content): string

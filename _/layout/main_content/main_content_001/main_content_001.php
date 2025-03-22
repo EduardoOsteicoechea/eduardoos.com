@@ -64,7 +64,7 @@
                gap:1rem;
                width:100%;
                height:auto;
-               padding: 0 1.25rem 1.25rem 1.25rem;
+               padding: 0 0.25rem 1rem 1rem;
             }
             @media only screen and (max-width: 950px)
             {

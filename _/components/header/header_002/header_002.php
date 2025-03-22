@@ -46,7 +46,7 @@
                   display:flex;
                   align-items:center;
                   justify-content: space-between;
-                  padding: 0rem 1.25rem 0rem 0rem;
+                  padding: 0rem 1rem 0rem 0rem;
                   width:100%;
                   z-index:12000;
                   height:var(--header_height);

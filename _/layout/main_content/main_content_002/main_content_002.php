@@ -70,10 +70,10 @@
                .main_content
                {
                   width:100%;
-                  padding: 0 0 1.25rem 0;
+                  padding: 0 0 1rem 0;
                   display:grid;
                   gap:0;
-                  grid-template-columns: var(--margin_common) auto var(--margin_common) var(--header_item_height) var(--margin_common);
+                  grid-template-columns: 1rem auto 1.25rem 1.5rem 1rem;
                }
             }
          ');

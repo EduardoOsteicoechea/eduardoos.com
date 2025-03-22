@@ -64,7 +64,6 @@
                         width: 1.5rem;
                         height: 1.5rem;
                         font-size:inherit;
-                        border-radius: 3rem !important;
                      "]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
@@ -120,8 +119,7 @@
             justify-content:center;
             gap:.5rem;
             height:fit-content;
-            width:var(--header_item_height);
-            padding:0rem 1rem;
+            padding:0rem 0rem;
             overflow-y:auto;
             overflow-x:hidden;
             z-index:0;
@@ -133,10 +131,6 @@
          "],
          ["@media only screen and (max-width: 950px)", "
             grid-column:4;
-            width:var(--header_item_height);
-            right: var(--margin_common);
-            bottom: var(--margin_common);
-            margin-right: auto;
          "],
       ],[
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
