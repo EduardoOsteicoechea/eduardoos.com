@@ -73,7 +73,7 @@
                   padding: 0 0 1rem 0;
                   display:grid;
                   gap:0;
-                  grid-template-columns: 1rem auto 1.25rem 1.5rem 1rem;
+                  grid-template-columns: 1rem auto 1rem 1.5rem 1rem;
                }
             }
          ');
