@@ -229,19 +229,6 @@ class main_002 extends base_component
          >
       ';
 
-      // $this->current_set_pagination .= '
-      //    <a 
-      //    href="' . $current_set_base_location_path . $current_set_urls[0] . '"
-      //    >
-      //       <div
-      //       class="left_set_pagination_item current_set_pagination_item location_tracker_outer_container_arrow_container"
-      //       >
-      //          <div class="horizontal_arrow_bar top_arrow_top_bar"></div>
-      //          <div class="horizontal_arrow_bar top_arrow_bottom_bar"></div>
-      //       </div>
-      //    </a>
-      // ';
-
       $this->current_set_pagination .= '
          <a 
          href="' . $current_set_base_location_path . $current_set_urls[0] . '"
@@ -380,19 +367,6 @@ class main_002 extends base_component
             </div>
          </a>
       ';
-
-      // $this->current_set_pagination .= '
-      //    <a 
-      //    href="' . $current_set_base_location_path . $current_set_urls[count($current_set_urls) - 1] . '"
-      //    >
-      //       <div
-      //       class="current_set_pagination_item location_tracker_outer_container_arrow_container"
-      //       >
-      //          <div class="horizontal_arrow_bar top_arrow_top_bar"></div>
-      //          <div class="horizontal_arrow_bar top_arrow_bottom_bar"></div>
-      //       </div>
-      //    </a>
-      // ';
 
       $this->current_set_pagination .= '
          </div>
