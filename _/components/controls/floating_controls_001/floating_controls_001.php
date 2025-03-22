@@ -92,7 +92,6 @@
                         width: 1.5rem;
                         height: 1.5rem;
                         font-size:inherit;
-                        border-radius: 3rem !important;
                      "]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
