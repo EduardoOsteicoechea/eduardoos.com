@@ -88,8 +88,8 @@
                         justify-content:center;
                         background:var(--c3);
                         color:var(--c2);
-                        width: 1.1rem;
-                        height: 1.1rem;
+                        width: 1.5rem;
+                        height: 1.5rem;
                         font-size:inherit;
                      "]],[($i+1)],[],[
                         'onclick="
@@ -159,8 +159,8 @@
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[
                ["","
                   background:var(--c3);
-                  width: 1rem;
-                  height: 1rem;
+                  width: 1.5rem;
+                  height: 1.5rem;
                   font-size:inherit;
                "]],[
                   '<div class="vertical_arrow_bar down_arrow_left_bar"></div>',

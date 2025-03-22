@@ -151,13 +151,11 @@ function provide_global_styles($root_folder)
                   
          .article_main_heading
          {
-            margin-top:.5rem;
          }
          .article_abstract
          {
             background: var(--c3);
             padding:1rem;
-            margin:1.25rem 0 1.5rem 0;
          }
          .article_abstract > *
          {
@@ -227,7 +225,7 @@ function provide_global_styles($root_folder)
             gap:1.15rem;
             width:100%;
             transition: none;
-            padding: 0 0 1.25rem 0;
+            padding: 0 0 0 0;
          }
          .article_body_regular_list
          {
@@ -254,7 +252,7 @@ function provide_global_styles($root_folder)
             background: var(--c_whatsapp);
             background: var(--c2);
             color: var(--c1);
-            margin-bottom:1.25rem;
+            margin-bottom: 1.25rem;
          }
 
 
@@ -265,6 +263,7 @@ function provide_global_styles($root_folder)
             gap:.5rem;
             width:fit-content;
             margin: 1rem 0 0 0;
+            margin: 0 0 0 0;
             height:2rem;
          }
          .current_set_pagination_item
@@ -383,6 +382,10 @@ function provide_global_styles($root_folder)
             background:var(--c3) !important;
          }
 
+
+
+
+
          .anchors_expand_button
          {
             height:100%;
@@ -459,6 +462,10 @@ function provide_global_styles($root_folder)
                font-size: 1rem;
                line-height: 1.25rem;
             }
+
+
+
+
             .article_main_heading
             {
             }
@@ -537,7 +544,6 @@ function provide_global_styles($root_folder)
                background: var(--c_whatsapp);
                background: var(--c2);
                color: var(--c1);
-               margin-bottom:1.25rem;
             }
          }
 

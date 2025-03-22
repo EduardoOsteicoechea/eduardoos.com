@@ -378,6 +378,7 @@ class main_002 extends base_component
       $this->add_component("main", "main", [["", "
             display:flex;
             flex-direction:column;
+            gap:1.75rem;
             width:100%;
             transition: none;
          "], ["@media only screen and (max-width: 950px)", "
