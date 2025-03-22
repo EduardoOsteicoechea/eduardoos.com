@@ -82,6 +82,7 @@
                   width: var(--square_arrow_button_dimension);
                   height: var(--square_arrow_button_dimension);
                   background:var(--c3) !important;
+                  justify-self:end;
                "],["@media only screen and (max-width: 950px)", "
 
                "]],[
