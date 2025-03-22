@@ -164,7 +164,7 @@ function provide_global_styles($root_folder)
                   
          .article_main_heading
          {
-            margin: 20px 0 15px 0;
+            margin: 0px 0 0px 0;
          }
          .article_abstract
          {
