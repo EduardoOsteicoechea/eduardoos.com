@@ -144,8 +144,10 @@ class base_component
       ///////////////////////////////
 
       $formatted_id = $this->component_id . "_" . $component_name;
-      $formatted_class = $this->component_class . "_" . $component_name;
-      $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
+      // $formatted_class = $this->component_class . "_" . $component_name;
+      // $formatted_classes = $this->component_class . "_" . $component_name . " " . implode(" ", $component_classes);
+      $formatted_class = $this->component_class;
+      $formatted_classes = $this->component_class . " " . implode(" ", $component_classes);
       $formatted_attributes = implode(" ", $component_attributes);
       $formatted_content = implode(" ", $component_content);
 
@@ -397,7 +399,7 @@ class base_component
 
          if($i === $location_tracker_elements_count - 1)
          {
-            $this->location_tracker_markup .= 'location_tracker_outer_container_Last_anchor';
+            $this->location_tracker_markup .= 'location_tracker_outer_container_last_anchor';
          };
 
          $this->location_tracker_markup .= '

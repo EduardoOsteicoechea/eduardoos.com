@@ -68,7 +68,7 @@ function provide_global_styles($root_folder)
 
             --common_margin_desktop:15px;
             --common_margin_mobile:15px;
-            --square_arrow_button_dimension:30px;
+            --square_arrow_button_dimension:25px;
          }
 
          * 
@@ -110,9 +110,7 @@ function provide_global_styles($root_folder)
          a,b,p { font-size: .9rem;}
          a 
          { 
-            cursor: pointer; text-decoration:none; 
-            display:flex;
-            align-items:center;
+            cursor: pointer; text-decoration:none;
          }
          p {  }
          b { font-family:f1bl; }
@@ -158,6 +156,7 @@ function provide_global_styles($root_folder)
                   
          .article_main_heading
          {
+            margin: 20px 0 15px 0;
          }
          .article_abstract
          {
@@ -244,7 +243,7 @@ function provide_global_styles($root_folder)
             gap:1.15rem;
             width:100%;
             transition: none;
-            padding: 0 0 0 0;
+            padding: 0px 0;
          }
          .article_body_regular_list
          {
@@ -274,6 +273,8 @@ function provide_global_styles($root_folder)
             background: var(--c_whatsapp);
             background: var(--c2);
             color: var(--c1);
+            
+            margin: 20px 0 25px 0;
          }
 
 
@@ -379,8 +380,11 @@ function provide_global_styles($root_folder)
             background:var(--c1) !important;
             border-radius:.2rem;
          }
-         .location_tracker_outer_container_Last_anchor
+         .location_tracker_outer_container_last_anchor
          {
+            display:flex;
+            align-items:center;
+            justify-content:center;
             color:var(--c1);
             background:var(--c2) !important;
             font-family:f1b;
@@ -392,14 +396,14 @@ function provide_global_styles($root_folder)
 
          .vertical_arrow_bar
          {
-            width:.15rem;
+            width:2px;
             height:25%;
             background:var(--c2);
             border-radius:1rem;
          }
          .horizontal_arrow_bar
          {
-            width:25%;
+            width:5px;
             height:.1rem;
             background:var(--c2);
             border-radius:1rem;
@@ -585,12 +589,6 @@ function provide_global_styles($root_folder)
             }        
             .article_idea
             {
-               display:flex;
-               flex-direction:column;
-               gap:1.15rem;
-               width:100%;
-               transition: none;
-               padding: 0 0 1.25rem 0;
             }
             .article_body_regular_list
             {

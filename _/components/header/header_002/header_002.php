@@ -45,11 +45,14 @@
                ["","
                   grid-row:4;                  
                   display:grid;
+                  position:fixed;
+                  background:var(--c1);
                   grid-template-columns: var(--common_margin_desktop) 22% var(--common_margin_desktop) var(--common_margin_desktop) var(--common_margin_desktop) auto var(--common_margin_desktop) var(--common_margin_desktop) var(--common_margin_desktop) 22% var(--common_margin_desktop);
                   align-items:center;
                   width:100%;
                   z-index:12000;
                   height:var(--header_height);
+                  border-radius:0;
                "],["@media only screen and (max-width: 950px)", "
 
                   grid-template-columns: var(--common_margin_mobile) auto 0% 0% 0% auto 0 0% 0% var(--square_arrow_button_dimension) var(--common_margin_mobile);

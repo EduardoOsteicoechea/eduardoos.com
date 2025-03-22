@@ -182,7 +182,7 @@ class main_002 extends base_component
       $content = $this->generate_article_body($this->content_data["article"]);
       $abstract = $this->generate_article_abstract($this->content_data["abstract"]);
 
-      $this->article_content = $title . $abstract . $content;
+      $this->article_content = $abstract . $title . $content;
    }
 
    protected function get_current_set_items_urls()
@@ -386,7 +386,7 @@ class main_002 extends base_component
 
    protected function generate_component_markup_and_styles()
    {
-      $this->add_component("main", "", [["", "
+      $this->add_component("main", "outer_container", [["", "
             grid-column:6;
             display:flex;
             flex-direction:column;

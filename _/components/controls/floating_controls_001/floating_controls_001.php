@@ -111,6 +111,9 @@
          $articles_control_points = $this->generate_article_control_points();
 
          $this->add_component("div","floating_controls",[["","
+            position:fixed;
+            top:65px;
+            right:0;
             grid-column: 8;
             display:flex;
             flex-direction:column;
@@ -125,10 +128,9 @@
             color:var(--c1);
             transition: none;
             font-size:.6rem;
-            width:100%;
          "],
          ["@media only screen and (max-width: 950px)", "
-         
+            right:var(--common_margin_mobile);
          "],
       ],[
             $this->add_subcomponent("button","scroll_to_top_button","floating_controls",[

@@ -133,13 +133,13 @@
          $this->page_styles .= '
             body
             {
-               grid-template-rows:    0% 0% 0% 5% 0% auto 0% 0% 0% 0% 2%;
+               grid-template-rows:    0% 0% 0% 60px 0% auto 0% 0% 0% 0% 2%;
             }               
             @media only screen and (max-width: 950px)
             {
                body
                {
-                  grid-template-rows:    0% 0% 0% 4% 0% auto 0% 0% 0% 0% 2%;
+                  grid-template-rows:    0% 0% 0% 60px 0% auto 0% 0% 0% 0% var(--common_margin_mobile);
                } 
             }
          ';
