@@ -77,6 +77,7 @@ function provide_global_styles($root_folder)
             transition: var(--tr1);
             color: var(--c2);
             font-family: var(--f1l);
+            border-radius: .2rem;
          }
          
          button 
