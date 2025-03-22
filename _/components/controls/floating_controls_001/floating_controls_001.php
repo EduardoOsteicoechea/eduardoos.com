@@ -52,26 +52,32 @@
                >
             ';
 
+            $button_styles_markup = '
+               display:flex;
+               align-items:center;
+               justify-content:center;
+               background:var(--c3);
+               color:var(--c2);
+               width: var(--square_arrow_button_dimension);
+               height: var(--square_arrow_button_dimension);
+               font-size:inherit;
+            ';
+
             if(is_array($this->content_data["article"][0]) === false)
             { 
                for ($i=0; $i < count($this->content_data["article"]); $i++) 
                {
                   $subcomponent_id = $this->content_data["article"][$i]."_button";
                   $article_idea_id = $this->content_data["article"][$i];
+                  
+                  if($i > 0)
+                  {
+                     $button_styles_markup .= 'margin-top:7px;';
+                  };
 
                   $markup .= $this->add_subcomponent(
                      "button",$subcomponent_id,"",[
-                     ["","
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        background:var(--c3);
-                        color:var(--c2);
-                        width: var(--square_arrow_button_dimension);
-                        height: var(--square_arrow_button_dimension);
-                        font-size:inherit;
-                        margin-top:7px;
-                     "]],[($i+1)],[],[
+                     ["",$button_styles_markup]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
                            element.scrollIntoView();
@@ -86,19 +92,15 @@
                { 
                   $subcomponent_id = $this->content_data["article"][0][1]."_button";
                   $article_idea_id = $this->content_data["article"][0][1];
+                  
+                  if($i > 0)
+                  {
+                     $button_styles_markup .= 'margin-top:7px;';
+                  };
 
                   $markup .= $this->add_subcomponent(
                      "button",$subcomponent_id,"",[
-                     ["","
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        background:var(--c3);
-                        color:var(--c2);
-                        width: var(--square_arrow_button_dimension);
-                        height: var(--square_arrow_button_dimension);
-                        font-size:inherit;
-                     "]],[($i+1)],[],[
+                     ["",$button_styles_markup]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
                            element.scrollIntoView();

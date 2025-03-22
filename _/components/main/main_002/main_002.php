@@ -395,6 +395,7 @@ class main_002 extends base_component
             height:fit-content;
             transition: none;
             overflow: hidden;
+            padding: 5px 0 0 0;
          "]], [
          $this->location_tracker_markup,
          $this->current_set_pagination,

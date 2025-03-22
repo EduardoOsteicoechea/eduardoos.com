@@ -142,6 +142,7 @@
             display:flex;
             flex-direction:column;
             gap:1.35rem;
+            padding: 5px 0 0 0;
          "],["@media only screen and (max-width: 950px)","
          
          "]],[
