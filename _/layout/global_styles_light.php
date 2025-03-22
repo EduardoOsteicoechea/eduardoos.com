@@ -174,7 +174,7 @@ function provide_global_styles($root_folder)
          {
             display:flex;
             flex-direction:column;
-            gap:.0rem;
+            gap:.0rem !important;
             width:14rem;
             transition: none;
             padding: 1.25rem 1rem;
@@ -196,7 +196,19 @@ function provide_global_styles($root_folder)
             border-radius:.4rem;
             height:8rem;
             overflow-y:auto
-         }         
+         }   
+         .article_card_bottom_elements_container
+         {
+            display:flex;
+            align-items:end;
+         }
+         .article_card_author_and_date_container
+         {
+            display:flex;
+            flex-direction:column;
+            gap:.5rem;
+
+         }
          .article_card_author
          {
             margin: 1rem 0 0 0;
@@ -259,12 +271,23 @@ function provide_global_styles($root_folder)
          .current_set_pagination
          {
             display:flex;
+            flex-direction:column;
+            background:var(--c3);
+            padding:.5rem .5rem .25rem .5rem;
+            border-radius:.2rem;
+         }
+         .current_set_pagination_heading
+         {
+            font-size:.8rem;
+         }
+         .current_set_pagination_anchors_container
+         {
+            display:flex;
             align-items:center;
             gap:.5rem;
-            width:fit-content;
-            margin: 1rem 0 0 0;
-            margin: 0 0 0 0;
             height:2rem;
+            background:var(--c3);
+            border-radius:.2rem;
          }
          .current_set_pagination_item
          {
@@ -272,7 +295,7 @@ function provide_global_styles($root_folder)
             flex-direction:column;
             align-items:center;
             justify-content:center;
-            background:var(--c3);
+            background:var(--c1);
             width: 1.25rem;
             height: 1.25rem;
             font-size:.6rem;
@@ -291,13 +314,77 @@ function provide_global_styles($root_folder)
          }
 
 
+         .location_tracker_outer_container
+         {
+            display:flex;
+            flex-direction:column;
+            background:var(--c3);
+            padding:.5rem .5rem .25rem .5rem;
+            border-radius:.2rem;
+         }
+         .location_tracker_heading
+         {
+            font-size:.8rem;
+         }
+         .location_tracker_anchors_container
+         {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap:0rem;
+            row-gap:.5rem;
+            padding:.5rem 0;
+            width:100%;
+            background:var(--c3);
+            border-radius:.2rem;
+         }
+         .location_tracker_outer_container_item
+         {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap:1rem;
+            width:100%;
+         }
+         .location_tracker_outer_container_arrow_container
+         {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            width: 1.25rem;
+            height: 1.25rem;
+            font-size:inherit;
+            border-radius:.2rem;
+         }
+         .location_tracker_outer_container_anchor
+         {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:var(--c7);
+            font-size:.65rem;
+            line-height:.8rem;
+            padding:.35rem .5rem;
+            overflow:hidden;
+            background:var(--c1) !important;
+            border-radius:.2rem;
+         }
+         .location_tracker_outer_container_Last_anchor
+         {
+            color:var(--c1);
+            background:var(--c2) !important;
+            font-family:f1b;
+         }
+
+
 
 
 
          .vertical_arrow_bar
          {
             width:.15rem;
-            height:40%;
+            height:25%;
             background:var(--c2);
             border-radius:1rem;
          }
@@ -323,63 +410,22 @@ function provide_global_styles($root_folder)
          .top_arrow_left_bar
          {
             transform: rotate(45deg);
-            left:-7%;
+            left:-3%;
          }
          .top_arrow_right_bar
          {
             transform: rotate(-45deg);
-            left:7%;
+            left:3%;
          }
          .down_arrow_left_bar
          {
             transform: rotate(135deg);
-            left:-7%;
+            left:-3%;
          }
          .down_arrow_right_bar
          {
             transform: rotate(-135deg);
-            left:7%;
-         }
-
-
-         .location_tracker_outer_container
-         {
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            column-gap:.5rem;
-            row-gap:.5rem;
-            width:100%;
-         }
-         .location_tracker_outer_container_item
-         {
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap:1rem;
-            width:100%;
-         }
-         .location_tracker_outer_container_arrow_container
-         {
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:center;
-            background:var(--c3);
-            width: 1.25rem;
-            height: 1.25rem;
-            font-size:inherit;
-         }
-         .location_tracker_outer_container_anchor
-         {
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:var(--c7);
-            font-size:.65rem;
-            padding:0 .5rem;
-            height: 1.25rem;
-            background:var(--c3) !important;
+            left:3%;
          }
 
 
@@ -481,20 +527,38 @@ function provide_global_styles($root_folder)
             .article_card
             {
                gap:.5rem;
+               width:100%;
+               padding: .75rem;
             }         
             .article_card_heading
             {
-               margin-bottom:.5rem;
+               margin-bottom:0;
                height:auto;
+               font-size:.8rem !important;
+               line-height:1rem;
             }         
             .article_card_abstract
             {
+               display:none;
                height:auto;
                margin: .25rem 0 0 0;
-            }         
+            }   
+            .article_card_bottom_elements_container
+            {
+               display:flex;
+               align-items:end;
+            }
+            .article_card_author_and_date_container
+            {
+               display:flex;
+               flex-direction:column;
+               gap:.25rem;
+
+            }     
             .article_card_author
             {
                margin: 1rem 0 0 0;
+               font-size:.7rem !important;
             }         
             .article_card_date
             {
@@ -502,9 +566,9 @@ function provide_global_styles($root_folder)
             }
             .article_card_button
             {
-               height:1.75rem;
+               height:1.5rem;
                font-size:.7rem;
-               width:45%;
+               width:35%;
                margin: 1rem 0 0 auto;
                display:flex;
                align-items:center;

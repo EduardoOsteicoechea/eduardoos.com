@@ -373,6 +373,14 @@ class base_component
       id="location_tracker"
       class="location_tracker_outer_container"
       >
+         <h3
+         class="location_tracker_heading"
+         >
+            Ubicación en la aplicación
+         </h3>
+         <div
+         class="location_tracker_anchors_container"
+         >
       ';
 
       $location_tracker_elements_count = count($this->location_tracker_elements);
@@ -384,8 +392,16 @@ class base_component
          $this->location_tracker_markup .= '
             <a
             href="'.$this->root_folder . $location_tracker_element[1].'"
-            class="location_tracker_outer_container_anchor"
-            >
+            class="location_tracker_outer_container_anchor 
+         ';  
+
+         if($i === $location_tracker_elements_count - 1)
+         {
+            $this->location_tracker_markup .= 'location_tracker_outer_container_Last_anchor';
+         };
+
+         $this->location_tracker_markup .= '
+            ">
                '.$location_tracker_element[0].'
             </a>
          ';
@@ -403,7 +419,10 @@ class base_component
          };
       }
 
-      $this->location_tracker_markup .= '</div>';      
+      $this->location_tracker_markup .= '
+            </div>
+         </div>
+      ';      
    }
 }
 ?>

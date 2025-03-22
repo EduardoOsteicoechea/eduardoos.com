@@ -116,9 +116,13 @@
             // $markup .= '<h3 class="article_card_heading">' . ($i + 1) . ". " . $article_data[1]["title"] . '</h3>';
             $markup .= '<h3 class="article_card_heading">' . $article_data[1]["title"] . '</h3>';
             $markup .= '<p class="article_card_abstract">' . $article_data[1]["abstract"] . '</p>';
+            $markup .= '<div class="article_card_bottom_elements_container">';
+            $markup .= '<div class="article_card_author_and_date_container">';
             $markup .= '<p class="article_card_author">' . $article_data[1]["author"] . '</p>';
             $markup .= '<p class="article_card_date">' . $article_data[1]["date"] . '</p>';
+            $markup .= '</div>';
             $markup .= '<button class="article_card_button">Leer</button>';
+            $markup .= '</div>';
             $markup .= '</a>';
          };
          foreach ($directories_articles_data as $article_data) 
@@ -139,10 +143,10 @@
             gap:1.35rem;
             width:100%;
             transition: none;
-            padding: 0 0 1.25rem 0rem;
+            padding: 0 0 0rem 0rem;
          "],["@media only screen and (max-width: 950px)","
             grid-column:2;
-            padding: 0 0 1.25rem 0rem;
+            padding: 0 0 0rem 0rem;
             width:100%;
          "]],[
             
@@ -163,12 +167,10 @@
                width:100%;
                transition: none;
             "],["@media only screen and (max-width: 950px)","
-               margin-bottom:1rem;
+            
             "]],[
                $this->articles_cards
             ]),
-            
-            $this->location_tracker_markup,
 
          ],[],[],[""]);
       }

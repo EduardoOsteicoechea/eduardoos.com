@@ -227,6 +227,14 @@ class main_002 extends base_component
          id="' . $this->component_id . '_current_set_pagination"
          class="current_set_pagination"
          >
+            <h3
+            class="current_set_pagination_heading"
+            >
+               Ubicación en la serie
+            </h3>
+            <div
+            class="current_set_pagination_anchors_container"
+            >
       ';
 
       $this->current_set_pagination .= '
@@ -369,6 +377,7 @@ class main_002 extends base_component
       ';
 
       $this->current_set_pagination .= '
+            </div>
          </div>
       ';
    }
@@ -378,7 +387,7 @@ class main_002 extends base_component
       $this->add_component("main", "main", [["", "
             display:flex;
             flex-direction:column;
-            gap:1.75rem;
+            gap:.75rem;
             width:100%;
             transition: none;
          "], ["@media only screen and (max-width: 950px)", "

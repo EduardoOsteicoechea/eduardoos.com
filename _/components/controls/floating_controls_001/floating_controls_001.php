@@ -61,9 +61,10 @@
                         justify-content:center;
                         background:var(--c3);
                         color:var(--c2);
-                        width: 1.1rem;
-                        height: 1.1rem;
+                        width: 1.5rem;
+                        height: 1.5rem;
                         font-size:inherit;
+                        border-radius: 3rem !important;
                      "]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
@@ -91,6 +92,7 @@
                         width: 1.5rem;
                         height: 1.5rem;
                         font-size:inherit;
+                        border-radius: 3rem !important;
                      "]],[($i+1)],[],[
                         'onclick="
                            const element = document.getElementById(\''.$article_idea_id.'\');
@@ -120,7 +122,7 @@
             gap:.5rem;
             height:fit-content;
             width:var(--header_item_height);
-            padding:.75rem 1rem;
+            padding:0rem 1rem;
             overflow-y:auto;
             overflow-x:hidden;
             z-index:0;
@@ -128,7 +130,7 @@
             background:var(--c1);
             color:var(--c1);
             transition: none;
-            font-size:.5rem;
+            font-size:.6rem;
          "],
          ["@media only screen and (max-width: 950px)", "
             grid-column:4;

@@ -37,7 +37,7 @@
             $files,
          );
 
-         $this->generate_page_footer();
+         // $this->generate_page_footer();
          $this->complete_page_markup();
       }
 
