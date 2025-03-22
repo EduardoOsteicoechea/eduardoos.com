@@ -57,7 +57,7 @@
          $this->determine_required_elements($components_to_render);
 
          $this->register_component_styles('
-            .main_content
+            .main_content_002
             {
                display:flex;
                gap:1rem;
@@ -67,7 +67,7 @@
             }
             @media only screen and (max-width: 950px)
             {
-               .main_content
+               .main_content_002
                {
                   width:100%;
                   padding: 0 0 1rem 0;
@@ -81,7 +81,7 @@
          $this->register_component_markup('
             <div
             id="main_content"
-            class="main_content"
+            class="main_content_002"
             >
          ');
          

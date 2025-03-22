@@ -58,20 +58,21 @@
          $this->determine_required_elements($components_to_render);
 
          $this->register_component_styles('
-            .main_content
+            .main_content_001
             {
                display:flex;
                gap:1rem;
                width:100%;
                height:auto;
-               padding: 0 0.25rem 1rem 1rem;
+               padding: 0 0rem 1rem 1rem;
             }
             @media only screen and (max-width: 950px)
             {
-               .main_content
+               .main_content_001
                {
                   flex-direction:row;
                   flex-wrap:wrap;
+                  gap:.75rem;
                }
             }
          ');         
@@ -79,7 +80,7 @@
          $this->register_component_markup('
             <div
             id="main_content"
-            class="main_content"
+            class="main_content_001"
             >
          ');
 
@@ -99,7 +100,7 @@
          $this->register_component_markup('
             </div>
             <script
-            id="main_content"
+            id="main_content_001"
             type="module"
             >
                import main_content_class from "'.$this->root_folder.'_/layout/main_content/main_content_001/main_content_001.js";
