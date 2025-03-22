@@ -143,10 +143,8 @@
             gap:1.35rem;
             width:100%;
             transition: none;
-            padding: 0 0 0rem 0rem;
          "],["@media only screen and (max-width: 950px)","
             grid-column:2;
-            padding: 0 0 0rem 0rem;
             width:100%;
          "]],[
             
