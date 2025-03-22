@@ -73,8 +73,8 @@
                   gap:.25rem;
                   font-family:f1bl;
                   font-size: 1rem;
-                  width: var(--header_item_height);
-                  height: var(--header_item_height);
+                  width: 1.25rem;
+                  height: 1.25rem;
                   background:var(--c3) !important;
                "]],[
                   '<div class="header_button_bar"></div>',
