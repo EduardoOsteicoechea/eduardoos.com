@@ -42,8 +42,8 @@
          $this->add_component("aside","aside",[["","
             grid-column:10;
             transition: none;
-            background:var(--c1);
             background:red;
+            background:var(--c1);
             border-radius:.2rem;
             padding:1.25rem;
          "],

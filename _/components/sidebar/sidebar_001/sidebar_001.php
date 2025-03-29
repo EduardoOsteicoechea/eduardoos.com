@@ -42,8 +42,8 @@
          $this->add_component("sidebar","sidebar",[["","
             grid-column:2;
             transition: none;
-            background:var(--c1);
             background:green;
+            background:var(--c1);
             border-radius:.2rem;
             padding:1.25rem;
          "],
